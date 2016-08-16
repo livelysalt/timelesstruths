@@ -1,0 +1,796 @@
+/* POSITION rules */
+/* general rules to be overridden in specific cases */
+#column .inprint,
+.hidden {
+	display: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+table {
+	border-collapse: collapse; /* IE */
+	border-spacing: 0; /* NN */
+}
+td {
+	padding: 0;
+}
+.clearer {
+	line-height: 0;
+	height: 0;
+	clear: both;
+}
+
+/* no class "first" should be overridden */
+#column .first {
+	margin-top: 0;
+}
+#column .last {
+	margin-bottom: 0;
+}
+
+/* */
+#column {
+	margin: auto auto;
+	padding: 0;
+	max-width : 760px;
+	min-width: 580px;
+	width: expression( document.body.clientWidth > 760 ? "760px" : (document.body.clientWidth < 580 ? "580px" : "auto") );
+	text-align: left;
+}
+
+#logo {
+	width: 300px;
+}
+#logo a {
+	display: block;
+	width: 100%;
+	height: 65px;
+}
+#logo span,
+.skipnav {
+	display: none;
+}
+
+#translate {
+	position: relative;
+	width: 100%;
+	height: 0;
+	z-index: 999;
+	top: -70px;
+	text-align: right;
+}
+#google_translate {
+	display: none;
+	background: #ffc;
+	border: 1px solid #999;
+	padding: 0 5px;
+}
+/*
+#babelfish {
+	position: absolute;
+	right: 0;
+}*/
+
+/* global navigation */
+#globalnav {
+	position: relative;
+	width: 100%;
+	height: 25px;
+}
+
+#tab-bible {
+	position: absolute;
+	left: 10px;
+	width: 93px;
+	height: 25px;
+	text-align: center;
+}
+#tab-texts {
+	position: absolute;
+	left: 103px;
+	width: 94px;
+	height: 25px;
+	text-align: center;
+}
+#tab-music {
+	position: absolute;
+	left: 197px;
+	width: 93px;
+	height: 25px;
+	text-align: center;
+}
+#tab-bible a,
+#tab-texts a,
+#tab-music a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#site-links {
+	float: right;
+	text-align: right;
+}
+
+/* horizontal bars */
+.navbar {
+	clear: both;
+	width: 100%;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+.navbar p {
+	margin: 0 10px;
+	padding: 0;
+}
+
+.header {
+	padding: 10px;
+}
+.header .title {
+	float: left;
+}
+.header .subject {
+	text-align: right;
+}
+.header .score_link {
+	float: left;
+	padding: 1px 4px 0 0;
+}
+
+.docnav {
+	position: relative;
+	height: 25px;
+}
+.docnav table {
+	position: absolute;
+	left: 10px;
+	height: 25px;
+	padding: 0;
+}
+.docnav table td {
+	padding-top: 1px;
+	vertical-align: middle;
+}
+.docnav form {
+	display: inline;
+}
+.docnav select {
+	margin-top: 1px;
+	border: 0;
+}
+.docnav input {
+	height: 21px;
+	padding: 0;
+	margin-top: 0;
+	vertical-align: top;
+}
+.docnav div {
+	position: absolute;
+	right: 10px;
+}
+
+/* recent-type sidebar */
+.recent {
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+.recent h1 {
+	margin: 0;
+}
+.recent table {
+	margin-top: 20px;
+}
+.recent td {
+	text-align: center;
+}
+.recent p {
+	margin: 0;
+}
+.recent .RSS {
+	margin-top: 20px;
+}
+
+.site h1,
+.sidebar form p {
+	text-align: center;
+}
+.report form p {
+	text-align: left;
+}
+.site .green_header,
+.site .blue_header {
+	padding-left: 10px;
+}
+.site h2 {
+	margin: 1em 0 0 0;
+}
+.site dl {
+	margin: 1em 0 0 20px;
+}
+.site dd {
+	margin-left: 20px;
+}
+.site .info {
+	padding-left: 20px;
+}
+.site .info p {
+	margin: 1em 0 0 0;
+}
+.site .right {
+	text-align: right;
+}
+
+
+
+/* content */
+.content {
+	clear: both;
+	text-align: left;
+}
+.content table {
+	width: 100%;
+}
+.content th {
+	width: 300px;
+	vertical-align: top;
+	text-align: left;
+}
+.content th .sidebar {
+	padding: 20px;
+}
+.content th hr {
+	margin: 6px 0;
+}
+.content th fieldset {
+	margin: 1em -10px 0 -10px;
+	padding: 0 9px
+}
+.content th fieldset p {
+	margin: 0;
+	padding: .35em 0;
+}
+.content th fieldset p.last {
+	padding-bottom: 0;
+}
+.content th fieldset p.first {
+	padding-top: 0;
+}
+.content th fieldset img {
+	vertical-align: middle;
+}
+.content th .excerpted {
+	text-align: right;
+}
+.content td {
+	vertical-align: top;
+}
+
+.site,
+.document,
+.panel,
+.list {
+	padding: 20px;
+}
+.image {
+	padding: 0;
+}
+
+.lyrics object {
+	height: 0;
+}
+
+.lyrics ol,
+.lyrics ul {
+	margin: 0;
+	padding: 0;
+}
+
+.lyrics li {
+	list-style-type: none;
+	margin-top: 1em;
+}
+.lyrics li.refrain {
+	margin-left: 20px;
+}
+.lyrics span.refrain {
+	font-style: italic;
+}
+
+.lyrics .verses div {
+	margin-top: 1em;
+	padding-left: 20px;
+}
+.lyrics div.refrain {
+	margin-left: 40px;
+}
+.lyrics .verses p {
+	text-indent: -20px;
+	margin: 0;
+}
+.site .notes,
+.lyrics .notes {
+	margin-top: 1em;
+	padding: .5em 10px;
+}
+.lyrics .notes p {
+	margin: 1em 0 0 0;
+}
+/* TOC */
+.content .toc {
+	padding: 20px;
+}
+
+.toc h2 {
+	margin: 0;
+	padding: .35em 0;
+}
+.toc h2.first {
+	padding-top: 0;
+}
+.toc p {
+	margin: 1em 0 .5em 0;
+}
+.toc .preface {
+	padding: .2em 0;
+}
+.toc ul {
+	padding: 0;
+	margin: 0;
+}
+
+.toc .list {
+	border-top: solid .2em #fff;
+}
+.toc ul.closed {
+	display: none;
+}
+.toc ul.open {
+	margin-top: .2em;
+	border-top: dashed .2em #fff;
+	padding-top: .2em;
+}
+.toc li {
+	list-style-type: none;
+	padding: .35em 0 .35em 26px;
+}
+.toc li .blurb {
+	display: block;
+	padding-left: 26px;
+}
+.toc li img {
+	vertical-align: middle;
+}
+.toc li.score_link {
+	padding-left: 0;
+}
+.toc a.score_link {
+	margin-right: 4px;
+}
+/*
+.toc li.i {
+	padding-left:3px;
+}
+*/
+.toc li.i a {
+	position: relative;
+	left: -23px;
+	padding-left: 23px;
+	background: url(toc_image.gif) no-repeat 6px 50%;
+}
+.toc .tab_open li,
+.toc .tab_closed li {
+	padding-left:3px;
+}
+.toc .tab_closed a,
+.toc .tab_open a,
+.toc .tab_open span {
+	padding-left:23px;
+}
+.toc .tab_closed a:link {
+	background: url(toc_plus_unvisited.gif) no-repeat 6px 50%;
+}
+.toc .tab_closed a:visited {
+	background: url(toc_plus_visited.gif) no-repeat 6px 50%;
+}
+.toc .tab_open a:link {
+	background: url(toc_minus_unvisited.gif) no-repeat 6px 50%;
+}
+.toc .tab_open a:visited {
+	background: url(toc_minus_visited.gif) no-repeat 6px 50%;
+}
+.toc hr {
+	margin: .35em 0;
+}
+
+.header form,
+.score form {
+	display: inline;
+	margin: 0;
+}
+.header select,
+.header input,
+.score select,
+.score input {
+	vertical-align: middle;
+}
+.header p,
+.score p {
+	margin: 1em 0 0 0;
+}
+
+/* LIST ITEM TABLES */
+/* div.table-list as a child of div.main-list is required for cross-browser compatibility of 100% width tables within padding */
+.list_table,
+.list_table table {
+	width: 100%; /* 100% required for IE; only for single-column layouts */
+}
+
+.list_table table {
+	margin-top: 20px;
+}
+
+.list_table .icon {
+	padding-right: 10px;
+}
+.section_head,
+.list_table td.top {
+	clear: both;
+	height: 20px;
+	vertical-align: top;
+	line-height: 20px;
+	padding: 0;
+	margin: 0;
+}
+.section_head .left {
+	float: left;
+}
+.content .section_head .left {
+	padding-left: 10px;
+	margin: 0;
+}
+.content .section_head .left p {
+	padding: 0;
+	margin: 0;
+}
+.section_head .right,
+.list_table .top .right {
+	float: right;
+	font-weight: normal;
+}
+.section_head .right a {
+	position: relative;
+	top: .2em;
+	font-size: 1.3em;
+	padding: 0 2px;
+}
+.content .page .section_head .right {
+	padding: 0;
+	margin: 0;
+}
+.content .page .section_head .right p,
+.list_table .section_head .right p,
+.list_table .top .right p {
+	padding-right: 10px;
+	margin: 0;
+}
+.list_table td.title {
+	height: 40px;
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 10px;
+}
+.list_table td.title img {
+	vertical-align: middle;
+}
+.list_table td.subject {
+	height: 40px;
+	vertical-align: middle;
+	text-align: right;
+	padding: 0 10px;
+}
+.list_table td.blurb {
+	vertical-align: top;
+	width: 100%;
+}
+.list_table td.blurb div {
+	padding: 0 10px;
+	line-height: 20px;
+}
+
+/* AUDIO */
+object {
+	display: block; /* needed for Netscape */
+	height: 0;
+}
+#audio_obj {
+	width: 100%;
+	height: 5px;
+	background-color: #dee;
+	margin-bottom: 5px;
+}
+
+.page {
+	position: relative;
+	padding: 20px 0;
+	width: 100%;
+/*	overflow: auto;  // disabled: cuts off long pages */
+}
+.page h1,
+.page h2,
+.page h3 {
+	margin: 1em 15% .5em 15%;
+}
+/*.page h3 {
+	margin-bottom: 0;
+}*/
+.page h2.subtitle {
+	margin-top: -.5em;
+	margin-bottom: 1em;
+}
+.page ul,
+.page ol {
+	margin: 1em 15% 0 15%;
+	padding: 0;
+}
+.page ol ul,
+.page ol ol,
+.page ul ol,
+.page ul ul,
+.page blockquote ol ul,
+.page blockquote ol ol {
+	margin: 1em 0 0 0;
+}
+.page ol ol.list-a {
+	margin-top: 0;
+}
+.page ul.recipe {
+	list-style-type: none;
+}
+.page ol.list-a {
+	list-style-type: lower-alpha;
+}
+.page ol.list-a-upper {
+	list-style-type: upper-alpha;
+}
+.page ol.list-i {
+	list-style-type: lower-roman;
+}
+.page ol.list-i-upper {
+	list-style-type: upper-roman;
+}
+.page li {
+	margin: 0 0 0 2em;
+}
+.page .recipe li {
+	padding: 0 0 0 2em;
+	text-indent: -2em;
+}
+
+.page .author {
+	margin-top: -.5em;
+	padding-bottom: .5em;
+	text-indent: 0;
+}
+
+.page div.right {
+	float: right;
+	clear: right;
+	margin: 0 10px;
+}
+.page div.left {
+	float: left;
+	margin: 0 10px;
+}
+.site .center,
+.page .center {
+	text-align: center;
+}
+.page p.center {
+	text-indent: 0;
+}
+.page .inline,
+.page .inline img {
+	display: inline;
+}
+.page .block { /* used for figures or illustrations */
+	padding: 0;
+	margin: auto;
+}
+.page .block hr {
+	margin: .5em 0;
+	text-align: center; /* IE rule */
+}
+.page .block h3,
+.page .block p {
+	margin-left: 0;
+	margin-right: 0;
+	text-indent: 0;
+	text-align: center;
+}
+.page p {
+	margin: .75em 15%;
+	text-indent: 1em;
+	text-align: justify;
+}
+.page div.section_head {
+	margin: 20px 20px 0 20px;
+}
+.page .section_head p {
+	text-indent: 0;
+}
+
+.page .note {
+	display: block;
+	background-color: #ffc;
+	border: 1px solid #ccc;
+}
+
+.page blockquote,
+.page .blurb,
+.page .note {
+	margin: 1em 15% 0 15%;
+	padding: .2em 0;
+}
+.page blockquote.pre {
+	padding: 0;
+}
+.page blockquote .blurb,
+.page .blurb blockquote,
+.page .note blockquote,
+.page blockquote .note,
+.page blockquote blockquote,
+.page ol blockquote {
+	margin: 1em 2em 0 2em;
+}
+.page blockquote ul,
+.page blockquote ol {
+	margin: 1em 2em 0 4em;
+}
+.page blockquote p,
+.page blockquote p.heading,
+.page .blurb p,
+.page .note p {
+	margin: .75em 2em 0 2em;
+}
+.page li p {
+	margin: .75em 0 0 0;
+}
+.page blockquote h1 {
+	margin: .5em 1.25em; /* to counterbalance the 1.6 font increase */
+}
+.page blockquote h2,
+.page .blurb h2,
+.page .note h2 {
+	margin: .5em 1.65em; /* to counterbalance the 1.2 font increase */
+}
+.page blockquote h3,
+.page .blurb h3,
+.page .note h3 {
+	margin: .5em 2em;
+}
+
+.page blockquote p.citation {
+	text-indent: 0;
+}
+.page .verse {
+	text-indent: 0;
+	padding-left: 2em;
+}
+.page .refrain_line {
+	font-style: italic;
+}
+.page .refrain {
+	padding-left: 4em;
+}
+.page hr {
+	width: 70%; /* 100% - 15% - 15% to line up with paragraphs */
+	margin: auto; /* Opera rule */
+	text-align: center; /* IE rule */
+}
+.page hr.minor {
+	width: 30%;
+	margin: auto; /* Opera rule */
+	text-align: center; /* IE rule */
+}
+/* Mozilla hack */
+html>body .page hr,
+html>body .page hr.minor {
+	margin-top: 1em;
+}
+.page .noindent {
+	text-indent: 0;
+}
+.page .signature {
+	text-indent: 0;
+	padding-left: 2em;
+}
+
+.page pre {
+	font-size: .8em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	width: 100%;
+	height: auto;
+	overflow: scroll;
+}
+
+h1 a.score_link {
+	margin-left: -26px;
+	margin-right: 4px;
+}
+/* only in Bible */
+ul.KJV {
+	position: relative;
+	margin: 0;
+	padding: 0 15%;
+	text-align: justify;
+}
+ul.KJV li {
+	list-style-type: none;
+	padding: .75em 0 0 0;
+	margin: 0;
+	text-align: justify;
+}
+
+.page span.KJV_num,
+.page a.notefrom {
+	vertical-align: 20%;
+	font-size: .8em;
+}
+/* not in Bible */
+.page .script_ver {
+	vertical-align: 20%;
+	font-size: .8em;
+	cursor: help;
+}
+
+#source ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+#source li {
+	padding:0;
+	margin:0;
+	list-style-position: inside;
+}
+
+
+
+.index .item {
+	float: left;
+	height: 1.35em;
+	width: 2em;
+	background-color: #fff;
+}
+.index .excerpt {
+	background: #def url(list_index_blue_tr.gif) no-repeat right top;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 1.35em;
+	overflow: hidden;
+}
+.index .excerpt span {
+	display: block;
+	font-size: .8em;
+	padding-top: .2em;
+}
+#column .index .excerpt a:hover {
+	background-color: #fff;
+}
+
+
+#scorch .error-message {
+	padding: 2em;
+}
+
+#scorch p {
+	margin: 0;
+	padding: .5em 0;
+}

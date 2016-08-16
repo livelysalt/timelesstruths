@@ -1,0 +1,135 @@
+/* FONT rules */
+/* global navigation */
+body {
+	font-size: 100%;
+}
+
+#btn_translate {
+	font: normal 12px Arial, Helvetica, sans-serif;
+}
+
+#globalnav {
+	font: 16px/24px Arial, Helvetica, sans-serif;
+}
+
+/* horizontal bars */
+.navbar p,
+.navbar div {
+	font: 12px/25px Arial, Helvetica, sans-serif;
+}
+
+.header {
+	font: 16px/24px Arial, Helvetica, sans-serif;
+}
+
+.docnav select,
+.docnav input {
+	font: 12px Arial, Helvetica, sans-serif;
+}
+
+/* recent-type sidebar */
+.recent .top {
+	font: 12px/20px Arial, Helvetica, sans-serif;
+}
+.site.search,
+.site h2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.site h2 {
+	font-size: 18px;
+}
+.site dl {
+	line-height: 1.5em;
+}
+.site p,
+.contact p {
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.content th {
+	font: 16px Arial, Helvetica, sans-serif;
+}
+
+.content th h1 {
+	font-size: 18px;
+}
+.content th .excerpted,
+.content th .help,
+.content th .source {
+	font-size: 14px;
+}
+
+/* TOC  */
+.toc,
+.toc li p {
+	font-size: 1em;
+}
+.toc li .blurb {
+	font-size: .8em;
+}
+
+.panel.score {
+	font: 16px Arial, Helvetica, sans-serif;
+}
+
+.document {
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* for the right-shaped asterisk */
+span.script_ref,
+a.script_ref,
+a.lib_ref {
+	font-family: "Times New Roman", Times, serif;
+}
+
+.document h1 {
+	font-size: 1.6em;
+}
+.document h2 {
+	font-size: 1.2em;
+}
+.document h3 {
+	font-size: 1em;
+}
+
+.document .citation span {
+	font-size: .8em;
+}
+
+.section_break {
+	font: 12px/20px Arial, Helvetica, sans-serif;
+}
+
+.list_table {
+	font: 16px Arial, Helvetica, sans-serif;
+}
+.section_head,
+.list_table td.top {
+	font: 12px/20px Arial, Helvetica, sans-serif;
+}
+.list_table td.blurb {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.KJVsc {
+	text-transform: lowercase;
+	font-variant: small-caps;
+}
+.KJVi {
+	font-style: italic;
+}
+
+.sym_music {
+	font: 1.25em/1em "Times New Roman", Times, serif;
+}
+
+div.source {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+#scorch {
+	font: 16px/24px Arial, Helvetica, sans-serif;
+}

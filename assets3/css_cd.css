@@ -1,0 +1,19 @@
+/* @CD specific items */
+
+/* CD version label */
+#cd-version {
+	float: right;
+	width: 400px;
+	height: 25px;
+	text-align: right;
+	font: 12px/25px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #009;
+}
+/* links to online content */
+#column a.www {
+	text-decoration: underline;
+}
+#footer-hostedby {
+    display:none;
+}

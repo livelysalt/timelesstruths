@@ -1,0 +1,73 @@
+#body {
+	background-color: #fff;
+}
+
+#column {
+	width: auto;
+}
+
+.byline {
+	font-style: italic;
+}
+
+#logo,
+#globalnav,
+.navbar,
+.section_head,
+.panel.score,
+.noprint {
+	display: none;
+}
+a.script_ref {
+	text-decoration: none;
+}
+
+#column .inprint.block {
+	display: block;
+}
+#column .inprint.inline {
+	display: inline;
+}
+
+.section_head {
+	page-break-before: always;
+}
+
+.page h1,
+.page h2,
+.page h3,
+.page ul,
+.page ol,
+.page p,
+.page blockquote,
+.page div.blurb {
+	margin-left: 0;
+	margin-right: 0;
+}
+.page hr {
+	width: 100%;
+	margin: auto; /* Opera rule */
+	text-align: center; /* IE rule */
+}
+.page hr.minor {
+	width: 50%;
+}
+.page img {
+	page-break-inside: avoid; /* not supported yet */
+}
+ul.KJV {
+	padding-left: 0;
+	padding-right: 0;
+}
+a.scripture {
+	text-decoration: none;
+}
+.document {
+	font: 12pt/15pt "Times New Roman", Times, serif;
+}
+
+.page span.KJV_num,
+.page a.notefrom,
+.page .script_ver {
+	font-size: .6em;
+}

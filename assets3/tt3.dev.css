@@ -1,0 +1,1996 @@
+/* use http://refresh-sf.com/ for production */
+
+/*************************************************************************************************/
+/* POSITION rules */
+/* general rules to be overridden in specific cases */
+#column .inprint,
+.hidden {
+	display: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+table {
+	border-collapse: collapse; /* IE */
+	border-spacing: 0; /* NN */
+}
+td {
+	padding: 0;
+}
+.clearer {
+	line-height: 0;
+	height: 0;
+	clear: both;
+}
+
+/* no class "first" should be overridden */
+#column .first {
+	margin-top: 0;
+}
+#column .last {
+	margin-bottom: 0;
+}
+
+/* */
+#column {
+	margin: auto auto;
+	padding: 0;
+	max-width : 760px;
+	min-width: 580px;
+	width: expression( document.body.clientWidth > 760 ? "760px" : (document.body.clientWidth < 580 ? "580px" : "auto") );
+	text-align: left;
+}
+
+#logo {
+	width: 300px;
+}
+#logo a {
+	display: block;
+	width: 100%;
+	height: 65px;
+}
+#logo span,
+.skipnav {
+	display: none;
+}
+
+#translate {
+	position: relative;
+	width: 100%;
+	height: 0;
+	z-index: 999;
+	top: -70px;
+	text-align: right;
+}
+#google_translate {
+	display: none;
+	background: #ffc;
+	border: 1px solid #999;
+	padding: 0 5px;
+}
+#translate.open #google_translate {
+    display: inline-block;
+}
+
+/* global navigation */
+#globalnav {
+	position: relative;
+	width: 100%;
+	height: 25px;
+	overflow: hidden;
+}
+
+nav .tab {
+    float: left;
+    width: 92px;
+    height: 25px;
+    text-align: center;
+}
+nav .tab:first-child {
+    margin-left:10px;
+    }
+nav .tab:nth-child(2) {
+    margin: 0 2px;
+}
+nav .tab a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #9cc;
+    border: 1px solid #399;
+    border-bottom: 0;
+}
+nav .tab:first-child a {
+    border-radius: 10px 0 0 0;
+}
+nav .tab:nth-child(3) a {
+    border-radius: 0 10px 0 0;
+}
+nav .tab.current a {
+    background-color: #399;
+}
+nav .tab a:hover {
+    background-color: #66b3b3;
+}
+/*
+#tab-bible {
+	position: absolute;
+	left: 10px;
+	width: 93px;
+	height: 25px;
+	text-align: center;
+}
+#tab-texts {
+	position: absolute;
+	left: 103px;
+	width: 94px;
+	height: 25px;
+	text-align: center;
+}
+#tab-music {
+	position: absolute;
+	left: 197px;
+	width: 93px;
+	height: 25px;
+	text-align: center;
+}
+#tab-bible a,
+#tab-texts a,
+#tab-music a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+*/
+#site-links {
+	float: right;
+	text-align: right;
+}
+
+/* horizontal bars */
+.navbar {
+	clear: both;
+	width: 100%;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+.navbar p {
+	margin: 0 10px;
+	padding: 0;
+}
+
+.header {
+	padding: 10px;
+}
+.header .title {
+	float: left;
+}
+.header .subject {
+	text-align: right;
+}
+.header .score_link {
+	float: left;
+	padding: 1px 4px 0 0;
+}
+
+.docnav {
+	position: relative;
+	height: 25px;
+}
+.docnav table {
+	position: absolute;
+	left: 10px;
+	height: 25px;
+	padding: 0;
+}
+.docnav table td {
+	padding-top: 1px;
+	vertical-align: middle;
+}
+.docnav form {
+	display: inline;
+}
+.docnav select {
+	margin-top: 1px;
+	border: 0;
+}
+.docnav input {
+	height: 21px;
+	padding: 0;
+	margin-top: 0;
+	vertical-align: top;
+}
+.docnav div {
+	position: absolute;
+	right: 10px;
+}
+
+/* recent-type sidebar */
+.recent {
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+.recent h1 {
+	margin: 0;
+}
+.recent table {
+	margin-top: 20px;
+}
+.recent td {
+	text-align: center;
+}
+.recent p {
+	margin: 0;
+}
+.recent .RSS {
+	margin-top: 20px;
+}
+
+.site h1,
+.sidebar form p {
+	text-align: center;
+}
+.report form p {
+	text-align: left;
+}
+.site .green_header,
+.site .blue_header {
+	padding-left: 10px;
+}
+.site h2 {
+	margin: 1em 0 0 0;
+}
+.site dl {
+	margin: 1em 0 0 20px;
+}
+.site dd {
+	margin-left: 20px;
+}
+.site .info {
+	padding-left: 20px;
+}
+.site .info p {
+	margin: 1em 0 0 0;
+}
+.site .right {
+	text-align: right;
+}
+
+
+
+/* content */
+.content {
+	clear: both;
+	text-align: left;
+}
+.content table {
+	width: 100%;
+}
+.content th {
+	width: 300px;
+	vertical-align: top;
+	text-align: left;
+}
+.content th .sidebar {
+	padding: 20px;
+}
+.content th hr {
+	margin: 6px 0;
+}
+.content th fieldset {
+	margin: 1em -10px 0 -10px;
+	padding: 0 9px
+}
+.content th fieldset p {
+	margin: 0;
+	padding: .35em 0;
+}
+.content th fieldset p.last {
+	padding-bottom: 0;
+}
+.content th fieldset p.first {
+	padding-top: 0;
+}
+.content th fieldset img {
+	vertical-align: middle;
+}
+.content th .excerpted {
+	text-align: right;
+}
+.content td {
+	vertical-align: top;
+}
+.content .sidebar .pubstatus {
+    font-size: 11px;
+    font-style: italic;
+}
+
+.site,
+.document,
+.panel,
+.list {
+	padding: 20px;
+}
+.image {
+	padding: 0;
+}
+
+.lyrics object {
+	height: 0;
+}
+
+.lyrics ol,
+.lyrics ul {
+	margin: 0;
+	padding: 0;
+}
+
+.lyrics li {
+	list-style-type: none;
+	margin-top: 1em;
+}
+.lyrics li.refrain {
+	margin-left: 20px;
+}
+.lyrics span.refrain {
+	font-style: italic;
+}
+
+.lyrics .verses div {
+	margin-top: 1em;
+	padding-left: 20px;
+}
+.lyrics div.refrain {
+	margin-left: 40px;
+}
+.lyrics .verses p {
+	text-indent: -20px;
+	margin: 0;
+}
+.site .notes,
+.lyrics .notes {
+	margin-top: 1em;
+	padding: .5em 10px;
+}
+.lyrics .notes p {
+	margin: 1em 0 0 0;
+}
+/* TOC */
+.content .toc {
+	padding: 20px;
+}
+
+.toc h2 {
+	margin: 0;
+	padding: .35em 0;
+}
+.toc h2.first {
+	padding-top: 0;
+}
+.toc p {
+	margin: 1em 0 .5em 0;
+}
+.toc .preface {
+	padding: .2em 0;
+}
+.toc ul {
+	padding: 0;
+	margin: 0;
+}
+
+.toc .list {
+	border-top: solid .2em #fff;
+}
+/*
+.toc ul.closed {
+	display: none;
+}
+.toc ul.open {
+	margin-top: .2em;
+	border-top: dashed .2em #fff;
+	padding-top: .2em;
+}
+*/
+.toc li {
+	list-style-type: none;
+	padding: .35em 0 .35em 26px;
+}
+.toc li .blurb {
+	display: block;
+	padding-left: 26px;
+}
+.toc li img {
+	vertical-align: middle;
+}
+.toc li.score_link {
+	padding-left: 0;
+}
+.toc a.score_link {
+	margin-right: 4px;
+}
+/*
+.toc li.i {
+	padding-left:3px;
+}
+*/
+.toc li.i a {
+	position: relative;
+	left: -23px;
+	padding-left: 23px;
+	background: url(toc_image.gif) no-repeat 6px 50%;
+}
+.toc .collapsible .toggle li {
+    padding-left:3px;
+}
+.toc .collapsible .toggle a,
+.toc .collapsible .toggle span {
+    padding-left:23px;
+}
+.toc .collapsible .toggle a {
+    background: url(toc_minus_unvisited.gif) no-repeat 6px 50%;
+}
+/*.toc .collapsible .toggle a:visited {
+    background: url(toc_minus_visited.gif) no-repeat 6px 50%;
+}*/
+.toc .collapsible.min .toggle a {
+    background: url(toc_plus_unvisited.gif) no-repeat 6px 50%;
+}
+/*.toc .collapsible.min .toggle a:visited {
+    background: url(toc_plus_visited.gif) no-repeat 6px 50%;
+}*/
+.toc .collapsible:not(.min) .toggle {
+    padding-bottom: 0.2em;
+    border-bottom: 0.2em dashed white;
+}
+.toc .collapsible.min ul:not(.toggle) {
+    display: none;
+}
+/*
+.toc .tab_closed a,
+.toc .tab_open a,
+.toc .tab_open span {
+    padding-left:23px;
+}
+.toc .tab_open li,
+.toc .tab_closed li {
+	padding-left:3px;
+}
+.toc .tab_closed a,
+.toc .tab_open a,
+.toc .tab_open span {
+	padding-left:23px;
+}
+.toc .tab_closed a:link {
+	background: url(toc_plus_unvisited.gif) no-repeat 6px 50%;
+}
+.toc .tab_closed a:visited {
+	background: url(toc_plus_visited.gif) no-repeat 6px 50%;
+}
+.toc .tab_open a:link {
+	background: url(toc_minus_unvisited.gif) no-repeat 6px 50%;
+}
+.toc .tab_open a:visited {
+	background: url(toc_minus_visited.gif) no-repeat 6px 50%;
+}
+*/
+.toc hr {
+	margin: .35em 0;
+}
+
+.header form,
+.score form {
+	display: inline;
+	margin: 0;
+}
+.header select,
+.header input,
+.score select,
+.score input {
+	vertical-align: middle;
+}
+.header p,
+.score p {
+	margin: 1em 0 0 0;
+}
+
+/* LIST ITEM TABLES */
+/* div.table-list as a child of div.main-list is required for cross-browser compatibility of 100% width tables within padding */
+.list_table,
+.list_table table {
+	width: 100%; /* 100% required for IE; only for single-column layouts */
+}
+
+.list_table table {
+	margin-top: 20px;
+}
+
+.list_table .icon {
+	padding-right: 10px;
+}
+.list_table .icon img {
+    vertical-align: middle;
+}
+.section_head,
+.list_table td.top {
+	clear: both;
+	height: 20px;
+	vertical-align: top;
+	line-height: 20px;
+	padding: 0;
+	margin: 0;
+}
+.section_head .left {
+	float: left;
+}
+.content .section_head .left {
+	padding-left: 10px;
+	margin: 0;
+}
+.content .section_head .left p {
+	padding: 0;
+	margin: 0;
+}
+.section_head .right,
+.list_table .top .right {
+	float: right;
+	font-weight: normal;
+}
+.section_head .right a {
+	position: relative;
+	top: .2em;
+	font-size: 1.3em;
+	padding: 0 2px;
+}
+.content .page .section_head .right {
+	padding: 0;
+	margin: 0;
+}
+.content .page .section_head .right p,
+.list_table .section_head .right p,
+.list_table .top .right p {
+	padding-right: 10px;
+	margin: 0;
+}
+.list_table td.title {
+	height: 40px;
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 10px;
+}
+.list_table td.title img {
+	vertical-align: middle;
+}
+.list_table td.subject {
+	height: 40px;
+	vertical-align: middle;
+	text-align: right;
+	padding: 0 10px;
+}
+.list_table td.blurb {
+	vertical-align: top;
+	width: 100%;
+}
+.list_table td.blurb div {
+	padding: 0 10px;
+	line-height: 20px;
+}
+
+/* AUDIO */
+object {
+	display: block; /* needed for Netscape */
+	height: 0;
+}
+#audio_obj {
+	width: 100%;
+	height: 5px;
+	background-color: #dee;
+	margin-bottom: 5px;
+}
+
+.page {
+	position: relative;
+	padding: 20px 0;
+	width: 100%;
+/*	overflow: auto;  // disabled: cuts off long pages */
+}
+.page h1,
+.page h2,
+.page h3 {
+	margin: 1em 15% .5em 15%;
+}
+.page p .h1,
+.page p .h2,
+.page p .h3 {
+    display: block;
+    margin: 1em 0;
+}
+/*.page h3 {
+	margin-bottom: 0;
+}*/
+.page h2.subtitle {
+	margin-top: -.5em;
+	margin-bottom: 1em;
+}
+.page ul,
+.page ol {
+	margin: 1em 15% 0 15%;
+	padding: 0;
+}
+.page ol ul,
+.page ol ol,
+.page ul ol,
+.page ul ul,
+.page blockquote ol ul,
+.page blockquote ol ol {
+	margin: 1em 0 0 0;
+}
+.page ol ol.list-a {
+	margin-top: 0;
+}
+.page ul.recipe {
+	list-style-type: none;
+}
+.page ol.list-a {
+	list-style-type: lower-alpha;
+}
+.page ol.list-a-upper {
+	list-style-type: upper-alpha;
+}
+.page ol.list-i {
+	list-style-type: lower-roman;
+}
+.page ol.list-i-upper {
+	list-style-type: upper-roman;
+}
+.page li {
+	margin: 0 0 0 2em;
+}
+.page .recipe li {
+	padding: 0 0 0 2em;
+	text-indent: -2em;
+}
+
+.page .author {
+	margin-top: -.5em;
+	padding-bottom: .5em;
+	text-indent: 0;
+}
+
+.page div.right {
+	float: right;
+	clear: right;
+	margin: 0 10px;
+}
+.page div.left {
+	float: left;
+	margin: 0 10px;
+}
+.site .center,
+.page .center {
+	text-align: center;
+}
+.page p.center {
+	text-indent: 0;
+}
+.page .inline,
+.page .inline img {
+	display: inline;
+}
+.page .block { /* used for figures or illustrations */
+	padding: 0;
+	margin: auto;
+}
+.page .block hr {
+	margin: .5em 0;
+	text-align: center; /* IE rule */
+}
+.page .block h3,
+.page .block p {
+	margin-left: 0;
+	margin-right: 0;
+	text-indent: 0;
+	text-align: center;
+}
+.page p {
+	margin: .75em 15%;
+	text-indent: 1em;
+	text-align: justify;
+}
+.page p .h1,
+.page p .h2,
+.page p .h3 {
+    text-indent: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+.page div.section_head {
+	margin: 20px 20px 0 20px;
+}
+.page .section_head p {
+	text-indent: 0;
+}
+
+.page .note {
+	display: block;
+	background-color: #ffc;
+	border: 1px solid #ccc;
+}
+.js .page .note {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    margin-top: 1.5em;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 1em 0;
+    z-index: 1;
+}
+.js .page .note-num span {
+    display: none;
+}
+.js .page .note-num:before {
+    content: '\00d7';
+    padding: 0.25em;
+}
+.js .page .note-num {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 1.5em;
+    height: 1em;
+    line-height: 1em;
+    margin: 0;
+}
+.js .page .note-num:hover {
+    color: black;
+}
+.js .page .note-num + p {
+    margin-top: 0;
+    text-indent: 0;
+}
+
+.page blockquote,
+.page .blurb,
+.page .note {
+	margin: 1em 15% 0 15%;
+	padding: .2em 0;
+}
+.page blockquote.pre {
+	padding: 0;
+}
+.page blockquote .blurb,
+.page .blurb blockquote,
+.page .note blockquote,
+.page blockquote .note,
+.page blockquote blockquote,
+.page ol blockquote {
+	margin: 1em 2em 0 2em;
+}
+.page blockquote ul,
+.page blockquote ol {
+	margin: 1em 2em 0 4em;
+}
+.page blockquote p,
+.page blockquote p.heading,
+.page .blurb p,
+.page .note p {
+	margin: .75em 2em 0 2em;
+}
+.page li p {
+	margin: .75em 0 0 0;
+}
+.page blockquote h1 {
+	margin: .5em 1.25em; /* to counterbalance the 1.6 font increase */
+}
+.page blockquote h2,
+.page .blurb h2,
+.page .note h2 {
+	margin: .5em 1.65em; /* to counterbalance the 1.2 font increase */
+}
+.page blockquote h3,
+.page .blurb h3,
+.page .note h3 {
+	margin: .5em 2em;
+}
+
+.page blockquote p.citation {
+	text-indent: 0;
+}
+.page .verse {
+	text-indent: 0;
+	padding-left: 2em;
+}
+.page .refrain_line {
+	font-style: italic;
+}
+.page .refrain {
+	padding-left: 4em;
+}
+.page hr {
+	width: 70%; /* 100% - 15% - 15% to line up with paragraphs */
+	margin: auto; /* Opera rule */
+	text-align: center; /* IE rule */
+}
+.page hr.minor {
+	width: 30%;
+	margin: auto; /* Opera rule */
+	text-align: center; /* IE rule */
+}
+/* Mozilla hack */
+html>body .page hr,
+html>body .page hr.minor {
+	margin-top: 1em;
+}
+.page .noindent {
+	text-indent: 0;
+}
+.page .signature {
+	text-indent: 0;
+	padding-left: 2em;
+}
+
+.page pre {
+	font-size: .8em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	width: 100%;
+	height: auto;
+	overflow: scroll;
+}
+
+h1 a.score_link {
+	margin-left: -26px;
+	margin-right: 4px;
+}
+/* only in Bible */
+ul.KJV {
+	position: relative;
+	margin: 0;
+	padding: 0 15%;
+	text-align: justify;
+}
+ul.KJV li {
+	list-style-type: none;
+	padding: .75em 0 0 0;
+	margin: 0;
+	text-align: justify;
+}
+
+.page span.KJV_num,
+.page .note-ref {
+	vertical-align: 20%;
+	font-size: .8em;
+}
+/* not in Bible */
+.page .script_ver {
+	vertical-align: 20%;
+	font-size: .8em;
+	cursor: help;
+}
+
+#source ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+#source li {
+	padding:0;
+	margin:0;
+	list-style-position: inside;
+}
+
+
+
+.index .item {
+	float: left;
+	height: 1.35em;
+	width: 2em;
+	background-color: #fff;
+}
+.index .excerpt {
+	background: #def;
+	border-radius: 0 10px 0 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 1.35em;
+	overflow: hidden;
+}
+.index .excerpt span {
+	display: block;
+	font-size: .8em;
+	padding-top: .2em;
+}
+#column .index .excerpt a:hover {
+	background-color: #fff;
+}
+
+.panel-toggle {
+    position: relative;
+}
+.panel-toggle .toggle {
+    position: relative;
+    padding: 20px;
+}
+.panel-toggle.hide .panel {
+    display: none;
+}
+
+html .help .panel {
+    background-color: #fff;
+}
+
+.help-score .toggle {
+    float: right;
+    line-height: 20px;
+}
+.help-score.hide .toggle {
+    top: -60px;
+}
+.help-score .toggle .show,
+.help-score.hide .toggle .hide {
+    display: none;
+}
+.help-score.hide .toggle .show {
+    display: inline;
+}
+.help-score .toggle .hide:before {
+    content: '×';
+    font-size: 24px;
+    font-weight: normal;
+}
+.help-score .toggle .hide:not(:hover):before {
+    color: '#999';
+}
+
+.js #fscore [type="submit"] {
+    display: none;
+}
+
+#score {
+    position: relative;
+}
+#score .wrapper {
+    position: absolute;
+}
+
+#score .wrapper,
+#score object,
+#score iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#score .error-message {
+	padding: 2em;
+}
+
+#score p {
+	margin: 0;
+	padding: .5em 0;
+}
+
+/* FONT rules */
+/* global navigation */
+body {
+	font-size: 100%;
+}
+
+#btn_translate {
+	font: normal 12px Arial, Helvetica, sans-serif;
+}
+
+#globalnav {
+	font: 16px/24px Arial, Helvetica, sans-serif;
+}
+
+/* horizontal bars */
+.navbar p,
+.navbar div {
+	font: 12px/25px Arial, Helvetica, sans-serif;
+}
+
+.header {
+	font: 16px/24px Arial, Helvetica, sans-serif;
+}
+
+.docnav select,
+.docnav input {
+	font: 12px Arial, Helvetica, sans-serif;
+}
+
+/* recent-type sidebar */
+.recent .top {
+	font: 12px/20px Arial, Helvetica, sans-serif;
+}
+.site.search,
+.site h2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.site h2 {
+	font-size: 18px;
+}
+.site dl {
+	line-height: 1.5em;
+}
+.site p,
+.contact p {
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.content th {
+	font: 16px Arial, Helvetica, sans-serif;
+}
+
+.content th h1 {
+	font-size: 18px;
+}
+.content th .excerpted,
+.content th .help,
+.content th .source {
+	font-size: 14px;
+}
+
+/* TOC  */
+.toc,
+.toc li p {
+	font-size: 1em;
+}
+.toc li .blurb {
+	font-size: .8em;
+}
+
+.panel.score {
+    position: relative;
+	font: 16px Arial, Helvetica, sans-serif;
+}
+
+.document {
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* for the right-shaped asterisk */
+span.script_ref,
+a.script_ref,
+a.lib_ref {
+	font-family: "Times New Roman", Times, serif;
+}
+
+.document h1,
+.document .h1 {
+	font-size: 1.6em;
+}
+.document h2,
+.document .h2 {
+	font-size: 1.2em;
+}
+.document h3,
+.document .h3 {
+	font-size: 1em;
+}
+
+.document .citation span {
+	font-size: .8em;
+}
+
+.section_break {
+	font: 12px/20px Arial, Helvetica, sans-serif;
+}
+
+.list_table {
+	font: 16px Arial, Helvetica, sans-serif;
+}
+.section_head,
+.list_table td.top {
+	font: 12px/20px Arial, Helvetica, sans-serif;
+}
+.list_table td.blurb {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.KJVsc {
+	text-transform: lowercase;
+	font-variant: small-caps;
+}
+.KJVi {
+	font-style: italic;
+}
+
+.sym_music {
+	font: 1.25em/1em "Times New Roman", Times, serif;
+}
+
+#source {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.help {
+    font: 14px/18px Arial, Helvetica, sans-serif;
+}
+
+#score {
+	font: 16px/24px Arial, Helvetica, sans-serif;
+}
+
+@media screen, projection {
+	/* COLOR rules */
+	/* #green   #blue
+	 *  #dee     #def
+	 *  #9cc     #9cf
+	 *  #66b3b3  #66b3ff
+	 *  #399     #39f
+	 *  #066     #009
+	 *  #033
+	 */
+	
+	/* general rules to be overridden in specific cases */
+	body {
+		background-color: #9cf;
+		color: #000;
+	}
+	a img {
+		border: 0; /* don't show border on linked images */
+	}
+	
+	/* LINKS */
+	a {
+		font-weight: bold;
+		text-decoration: none;
+	}
+	/* green */
+	span.green,
+	.green a,
+	.site .green a,
+	.content a.green {
+		color: #066;
+	}
+	/* blue */
+	span.blue,
+	.blue a,
+	a.blue {
+		color: #009;
+	}
+	/* red */
+	span.red,
+	.red a,
+	a.red {
+		color: #900;
+	}
+	
+	/* LINK unvisited */
+	/* green */
+	.green .list a:link,
+	.green .document a:link,
+	.content .page a.green:link,
+	.site .green a:link,
+	#column a.scripture:link {
+		color: #399;
+	}
+	/* blue */
+	.blue .list a:link,
+	.blue .document a:link,
+	.content .page a.blue:link,
+	.blue a:visited {
+		color: #39f;
+	}
+	/* red */
+	span.orange,
+	.content a.red:link {
+		color: #f93;
+	}
+	
+	/* LINK:visited */
+	/* green */
+	.green .list a:visited,
+	.green .document a:visited,
+	.content .page a.green:visited,
+	.site .green a:visited,
+	#column a.scripture:visited {
+		color: #066;
+	}
+	/* blue */
+	.blue .list a:visited,
+	.blue .document a:visited,
+	.content .page a.blue:visited,
+	.blue a:visited {
+		color: #009;
+	}
+	/* red */
+	.content .red a:visited,
+	.content a.red:visited {
+		color: #900;
+	}
+	/* LINK:hover */
+	/* green */
+	.green .navbar a.current,
+	.green .navbar a.current:visited,
+	.green .navbar a:hover {
+		color: #399;
+	}
+	.green .navbar a.current,
+	.green .navbar a:hover,
+	.green .list a:hover,
+	.green .site a:hover,
+	.green .document a:hover,
+	.content .page a.green:hover,
+	.content .green a:hover,
+	#column a.scripture:hover {
+		background-color: #dee;
+	}
+	/* blue */
+	.blue .navbar a.current,
+	.blue .navbar a.current:visited,
+	.blue .navbar a:hover {
+		color: #39f;
+	}
+	.blue .navbar a.current,
+	.blue .navbar a:hover,
+	.blue .list a:hover,
+	.blue .document a:hover,
+	.content .page a.blue:hover,
+	.site .blue a:hover { /* site map links */
+		background-color: #def;
+	}
+	/* red */
+	.content a.red:hover {
+		background-color: #fed;
+	}
+	/* white to contrast with light background--see below */
+	#column .header a:hover,
+	#column .panel a:hover,
+	#column .notes a:hover,
+	.toc .preface a:hover,
+	.page h1 a.score_link:hover,
+	.toc li a.score_link:hover { /* to correct shadowing in Netscape and Opera */
+		background-color: #fff;
+	}
+	.toc .preface li a.score_link:hover { /* to re-correct shadowing */
+		background-color: #dee;
+	}
+	
+	/* LIGHT background color */
+	/* green */
+	.green .header,
+	.green .panel,
+	.green .toc .preface {
+		background-color: #dee;
+	}
+	/* blue */
+	.blue .header,
+	.blue .panel,
+	.blue .toc .preface {
+		background-color: #def;
+	}
+	
+	
+	
+	#logo {
+		background: url(h_banner.gif) no-repeat;
+	}
+	#logo a:hover {
+		cursor: pointer;
+	}
+	#logo a {
+		background : url(h_banner.gif) no-repeat;
+	}
+	
+	/* global navigation */
+    .global .tab a {
+	    color: #033 !important;
+	}
+	#site-links,
+	#site-links a {
+		color: #009;
+	}
+	#site-links a:hover {
+		background-color: #def;
+	}
+	
+	/* horizontal bars */
+	.navbar,
+	.navbar a,
+	.navbar a:visited,
+	.content .section_head a:link,
+	.content .section_head a:visited {
+		color: #fff;
+	}
+	.green .navbar {
+		background-color: #399;
+	}
+	.blue .navbar {
+		background-color: #39f;
+	}
+	
+	.header span.current {
+		font-weight: bold;
+	}
+	
+	/* docnav select form and links */
+	.green .docnav select {
+		color: #066;
+		background-color: #dee;
+	}
+	.blue .docnav select {
+		color: #009;
+		background-color: #def;
+	}
+	.green .docnav input {
+		color: #066;
+		font-weight: bold;
+	}
+	.blue .docnav input {
+		color: #009;
+		font-weight: bold;
+	}
+	.green .docnav .disabled {
+		font-weight: bold;
+		color: #066;
+	}
+	.blue .docnav .disabled {
+		font-weight: bold;
+		color: #009;
+	}
+	optgroup {
+		background-color: #fff;
+	}
+	.green optgroup.preface {
+		background-color: #dee;
+	}
+	.blue optgroup.preface {
+		background-color: #def;
+	}
+	
+	/* recent-type sidebar */
+	/* following line to correct IE 5.5 */
+	.recent td,
+	#column .recent .icon a:hover { /* to correct shadowing in Netscape and Opera */
+		background-color: #9cc;
+	}
+	.recent .top {
+		background: #9cc;
+		border-radius: 10px 10px 0 0;
+	}
+	.recent .bottom {
+		background: #9cc;
+		border-radius: 0 0 10px 10px;
+	}
+	.recent .title {
+		padding: 5px 10px;
+	}
+	.sidebar .recent .title a:hover {
+		background-color: #dee; /* don't need to use white, as light green will contrast with medium green */
+	}
+	.content .site h2 {
+		font-weight: bold;
+	}
+	.site .green_header {
+		background: #9cc;
+		border-radius: 0 10px 0 0;
+	}
+	.site .blue_header {
+		background: #9cf;
+        border-radius: 0 10px 0 0;
+	}
+	
+	/* list */
+	.list_table td.blurb {
+		background: #def;
+		border-radius: 0 0 10px 0;
+	}
+	.list_table a:hover {
+		background-color: #dee;
+	}
+	.list_table td.top {
+		background: #9cc;
+		border-radius: 0 10px 0 0;
+	}
+	
+	.green .section_head {
+		background: #399;
+        border-radius: 0 10px 0 0;
+		color: #fff;
+	}
+	.blue .section_head {
+		background: #39f;
+        border-radius: 0 10px 0 0;
+		color: #fff;
+	}
+	.content .section_head a,
+	.content .section_head a:visited { /* to counteract the .page visited color change */
+		color: #fff;
+	}
+	
+	.green .list .section_head a:hover,
+	.green .page .section_head a:hover {
+		color: #399;
+		background-color: #dee;
+	}
+	.blue .section_head a:hover,
+	.blue .page .section_head a:hover {
+		color: #39f;
+		background-color: #def;
+	}
+	
+	.form_item {
+		font-weight: bold;
+	}
+	
+	/* content */
+	.content {
+		background-color: #fff;
+	}
+	.document a:hover {
+		background-color: #dee;
+	}
+	.content th .sidebar a:hover {
+		background-color: #fff;
+	}
+	.green .content th {
+		background-color: #dee;
+	}
+	.blue .content th {
+		background-color: #def;
+	}
+	
+	.content th hr {
+		height: 1px;
+		border-style: none;
+		color: #fff; /* IE */
+		background-color: #fff;
+	}
+	.content th fieldset {
+		border: 1px solid #9cc;
+	}
+	.content th .scoretitle {
+		font-weight: bold;
+	}
+	.content th .excerpted a {
+		font-weight: normal;
+	}
+	.green .content th a:hover img {
+		background-color: #dee;
+	}
+	
+	.lyrics p.refrain {
+		font-style: italic;
+	}
+	.site .notes,
+	.lyrics .notes {
+		background-color: #dee;
+	}
+	
+	.content blockquote {
+		background-color: #eee;
+	}
+	#column blockquote a:hover {
+		background-color: #fff;
+	}
+	.content .citation a {
+		font-weight: normal;
+	}
+	
+	/* TOC */
+	.green .toc hr {
+		height: 2px;
+		border-style: none;
+		color: #dee; /* IE */
+		background-color: #dee;
+	}
+	.blue .toc hr {
+		height: 2px;
+		border-style: none;
+		color: #def; /* IE */
+		background-color: #def;
+	}
+	
+	.page .recipe {
+		background-color: #eee;
+	}
+	
+	.paperdoll {
+		border: 1px dashed #999;
+	}
+	
+	
+	span.scripture {
+		color: #066;
+	}
+	.content a.scripture {
+		font-weight: normal;
+		text-decoration: none;
+	}
+	a.lib_ref {
+		font-weight: normal;
+	}
+	
+	
+	span.KJV_Jesus { /* words of Christ in red */
+		color: #f00;
+	}
+	
+	span.q {
+		background: #fe0; /* highlight search query */
+	}
+	
+	#audio {
+		border-bottom: 1px solid #9cc;
+	}
+	
+	#source {
+		color: #999;
+		border-top: 1px solid #9cc;
+	}
+	
+	#score {
+		background-color: #fff;
+	}
+}
+
+@media print {
+	#body {
+		background-color: #fff;
+	}
+	
+	#column {
+		width: auto;
+	}
+	
+	.byline {
+		font-style: italic;
+	}
+	
+	#logo,
+	#globalnav,
+	.navbar,
+	.section_head,
+	.panel.score,
+	.noprint {
+		display: none;
+	}
+	a.script_ref {
+		text-decoration: none;
+	}
+	
+	#column .inprint.block {
+		display: block;
+	}
+	#column .inprint.inline {
+		display: inline;
+	}
+	
+	.section_head {
+		page-break-before: always;
+	}
+	
+	.page h1,
+	.page h2,
+	.page h3,
+	.page ul,
+	.page ol,
+	.page p,
+	.page blockquote,
+	.page div.blurb {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.page hr {
+		width: 100%;
+		margin: auto; /* Opera rule */
+		text-align: center; /* IE rule */
+	}
+	.page hr.minor {
+		width: 50%;
+	}
+	.page img {
+		page-break-inside: avoid; /* not supported yet */
+	}
+	ul.KJV {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	a.scripture {
+		text-decoration: none;
+	}
+	.document {
+		font: 12pt/15pt "Times New Roman", Times, serif;
+	}
+	
+	.page span.KJV_num,
+	.page .note-ref,
+	.page .script_ver {
+		font-size: .6em;
+	}
+}
+
+/* ADMIN */
+.admin [data-editable] {
+    position: relative;
+    }
+.admin a.edit:hover {
+    background: none !important;
+    }
+.admin [data-editable]:not([data-status="loaded"]):hover .edit {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    }
+.admin [data-editable]:not([data-status="loaded"]):hover .edit::before {
+    content: '✏';
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 0.25em;
+    color: red;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    left: 0.25em;
+    }
+    .admin [data-editable]:not([data-status="loaded"]):hover .edit:hover::before {
+        border-color: currentColor;
+        background-color: white;
+        }    
+.admin [data-editable] textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 11px;
+    font-family: Arial;
+    }
+.admin [data-editable] textarea:focus,
+.admin [data-editable] textarea[data-modified] {
+    background-color: #ffd;
+    border: 1px solid #999;
+    padding: 2px;
+    }
+.admin [data-editable] textarea[data-modified] {
+    background-color: #fec;
+    }
+.admin [data-editable] textarea[data-modified="invalid"] {
+    background-color: #fcc;    
+    border-color: #f00;
+    }
+.admin textarea[data-modified] + .edit::before {
+    content: "Save";
+    background-color: white;
+    color: #c60;
+    border: 1px solid currentcolor;
+    border-radius: 0.5em;
+    font-size: 12px;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    }
+.admin textarea[data-modified="invalid"] + .edit::before {
+    content: "Invalid!";
+    color: #f00;
+    cursor: not-allowed;
+    }
+    .admin textarea[data-modified] + .edit:focus {
+        outline: none;
+        }
+    .admin textarea[data-modified] + .edit:focus::before,
+    .admin textarea[data-modified] + .edit:hover::before {
+        box-shadow: 0 1px 2px #999;
+        }
+
+/* DEV */
+#dev {
+    background: none repeat scroll 0 0 #00FF00;
+    border-radius: 0 7px 0 0;
+    bottom: 0;
+    box-shadow: 0 0 5px #000000;
+    font-family: verdana;
+    left: 25px;
+    padding: 2px 5px;
+    position: fixed;
+}
+#dev button {
+    cursor:pointer;
+}
+
+
+/* PLAYER */
+.player-visible #column {
+    margin-bottom: 50px;
+}
+#player {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: hsla(0,100%,100%,0.95);
+    font-family: Calibri, Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 10px;
+    height: 5em;
+    bottom: -5em;
+}
+#player:not(.jp-ready)::after {
+    content: '';
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-45deg, black 25%, white 25%, white 50%, black 50%, black 75%, white 75%, white);
+    background-size: 30px 30px;
+    opacity: 0.1;
+    animation: 1s linear 0s normal none infinite background-loading;
+}
+@keyframes background-loading {
+    to {
+        background-position: -30px 0;
+    }
+}
+
+.player-visible #player {
+    box-shadow: 0 0 5px black;
+    bottom: 0;
+    transition: bottom 1s ease;
+}
+#player:not([data-href])::after {/*mask*/
+    z-index: 999;
+    content: '';
+    position: absolute;
+    background-color: white;
+    opacity: 0.75;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#player :focus {
+    outline: none;
+}
+#player ::-moz-focus-inner {
+    border: 0;
+}
+.jp-gui {
+    height: 100%;
+    position: relative;
+}
+.jp-gui * {
+    position: absolute;
+}
+.jp-progress {
+    z-index: 10;
+    height: 0.2em;
+    width: 100%;
+    bottom: 100%;
+    /*  background-color: rgba(255,0,0,0.1);*/
+    transition: height 0.2s ease-in-out;
+}
+.jp-progress:hover {
+    height: 0.5em;
+}
+.jp-seek-bar {
+    bottom: 0;
+    height: 100%;
+    cursor: pointer;
+    /*  background-color:green;*/
+}
+.jp-seek-bar::before {
+    content: "";
+    position: inherit;
+    display: inherit;
+    width: 100%;
+    bottom: -0.8em;
+    height: 1.8em;
+    transition: all 0.2s ease;
+    /*  outline: 1px solid red;*/
+}
+.jp-seek-bar:hover::before {
+    bottom: -1.25em;
+    height: 3em;
+}
+.jp-play-bar {
+    height: 100%;
+    background-color: hsla(30,100%,50%,1);
+}
+.jp-handle-bar:not(.jp-handle-dragging) .jp-play-bar {
+    transition: all 0.25s ease-in-out;
+}
+.jp-handle {
+    right: 0;
+    top: 50%;
+    height: 0;
+    background-color: inherit;
+}
+.jp-handle:focus {
+    outline: none;
+}
+.jp-handle::before,
+.jp-handle::after {
+    content: "";
+    position: inherit;
+    background-color: inherit;
+    border-radius: 50%;
+    cursor: ew-resize;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    transition: all 0.2s ease;
+}
+/*.jp-handle-bar:hover*/ .jp-handle:hover::before,
+.jp-handle:focus::before {
+    opacity: 0.5;
+    left: -1.5em;
+    top: -1.5em;
+    width: 3em;
+    height: 3em;
+}
+.jp-handle:active::before {
+    opacity: 1;
+}
+.jp-handle-bar:hover .jp-handle::after,
+.jp-handle:focus::after {
+    opacity: 1;
+    left: -0.8em;
+    top: -0.8em;
+    width: 1.6em;
+    height: 1.6em;
+}
+.jp-time {
+    width: 100%;
+    top: 1em;
+    color: #888;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 0.9em;
+}
+.jp-time * {
+    z-index: 9;
+    top: 50%;
+    line-height: 0;
+    cursor: default;
+}
+.jp-current-time {
+    left: 0.5em;
+}
+.jp-duration {
+    z-index: 11; /* over progress track */
+    right: 0.5em;
+}
+.jp-duration:hover {
+    color: hsla(30,100%,50%,1);
+}
+.jp-controls {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.jp-controls li {
+    list-style: none;
+}
+.jp-controls [title]::before {
+    /*content: attr(title);*/
+}
+#player:not(.jp-state-playing) .jp-play .icon-pause,
+#player.jp-state-playing .jp-play .icon-play {
+    display: none;
+}
+.jp-play .jp-btn {/* has to be here to cascade properly */
+    background-color: white;
+    /*background-color: hsl(0,0%,90%);*/
+}
+.jp-btn, .green .jp-btn {
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    color: black;
+    font-size: 1em;
+    padding: 0;
+    border: none;
+/*    border: 2px solid transparent;
+    margin: -2px;*/
+    box-sizing: content-box;
+    cursor: pointer;
+}
+.jp-btn:hover,
+.jp-btn:focus {
+    color: hsla(30,100%,50%,1);
+    border-color: hsla(30,100%,50%,0.5);
+    background-color: white;
+    outline: none;
+}
+.jp-btn:active {
+    border-color: hsla(30,100%,50%,1);
+}
+.jp-btn span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.jp-btn svg {
+    left: 0;
+    top: 0;
+    fill: currentColor;
+}
+
+.jp-play {
+    left: 50%;
+    top: 50%;
+}
+.jp-play .jp-btn {
+    z-index: 11; /* over progress track */
+    top: -2em;
+    left: -2em;
+    width: 4em;
+    height: 4em;
+    overflow: hidden;
+    /*box-shadow: 0 0 5px #ccc;*/
+}
+.jp-play svg {
+    margin: 0.6em;
+}
+
+.jp-download {
+    right: 5em;
+    top: 50%;
+}
+.jp-download .jp-btn {
+    top: -1em;
+    left: -1em;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+}
+.jp-download svg {
+    margin: 0.2em;
+}
+
+.jp-quality {
+    top: 50%;
+    right: 7em;
+    margin-top: -9px;
+    opacity: 0.6; /* ~#999 */
+    z-index: 1;
+}
+
+.jp-quality * {
+    position: relative;
+    font-family: Calibri, Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 10px;
+}
+/*
+ .jp-quality select:hover,
+ .jp-quality select:focus {
+ color: hsla(30,100%,50%,1);
+ }
+ */
+
+.jp-error.show {
+    z-index: 99;
+    padding: 0.5em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    color: red;
+    background-color: hsla(0,100%,100%,0.85);
+    text-align: left;
+}
+.jp-error * {
+    margin: 0;
+    font-size: 12px;
+}
+.jp-error .msg {
+    font-weight: bold;
+}
+
+.use-player::after {
+    content: " play";
+}
+.use-player.is-playing::after {
+    content: " pause";
+}

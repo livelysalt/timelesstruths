@@ -1,0 +1,432 @@
+/* COLOR rules */
+/* general rules to be overridden in specific cases */
+body {
+	background-color: #9cf;
+	color: #000;
+}
+a img {
+	border: 0; /* don't show border on linked images */
+}
+
+/* LINKS */
+a {
+	font-weight: bold;
+	text-decoration: none;
+}
+/* green */
+span.green,
+.green a,
+.site .green a,
+.content a.green {
+	color: #066;
+}
+/* blue */
+span.blue,
+.blue a,
+a.blue {
+	color: #009;
+}
+/* red */
+span.red,
+.red a,
+a.red {
+	color: #900;
+}
+
+/* LINK unvisited */
+/* green */
+.green .list a:link,
+.green .document a:link,
+.content .page a.green:link,
+.site .green a:link,
+#column a.scripture:link {
+	color: #399;
+}
+/* blue */
+.blue .list a:link,
+.blue .document a:link,
+.content .page a.blue:link,
+.blue a:visited {
+	color: #39f;
+}
+/* red */
+span.orange,
+.content a.red:link {
+	color: #f93;
+}
+
+/* LINK:visited */
+/* green */
+.green .list a:visited,
+.green .document a:visited,
+.content .page a.green:visited,
+.site .green a:visited,
+#column a.scripture:visited {
+	color: #066;
+}
+/* blue */
+.blue .list a:visited,
+.blue .document a:visited,
+.content .page a.blue:visited,
+.blue a:visited {
+	color: #009;
+}
+/* red */
+.content .red a:visited,
+.content a.red:visited {
+	color: #900;
+}
+/* LINK:hover */
+/* green */
+.green .navbar a.current,
+.green .navbar a.current:visited,
+.green .navbar a:hover {
+	color: #399;
+}
+.green .navbar a.current,
+.green .navbar a:hover,
+.green .list a:hover,
+.green .site a:hover,
+.green .document a:hover,
+.content .page a.green:hover,
+.content .green a:hover,
+#column a.scripture:hover {
+	background-color: #dee;
+}
+/* blue */
+.blue .navbar a.current,
+.blue .navbar a.current:visited,
+.blue .navbar a:hover {
+	color: #39f;
+}
+.blue .navbar a.current,
+.blue .navbar a:hover,
+.blue .list a:hover,
+.blue .document a:hover,
+.content .page a.blue:hover,
+.site .blue a:hover { /* site map links */
+	background-color: #def;
+}
+/* red */
+.content a.red:hover {
+	background-color: #fed;
+}
+/* white to contrast with light background--see below */
+#column .header a:hover,
+#column .panel a:hover,
+#column .notes a:hover,
+.toc .preface a:hover,
+.page h1 a.score_link:hover,
+.toc li a.score_link:hover { /* to correct shadowing in Netscape and Opera */
+	background-color: #fff;
+}
+.toc .preface li a.score_link:hover { /* to re-correct shadowing */
+	background-color: #dee;
+}
+
+/* LIGHT background color */
+/* green */
+.green .header,
+.green .panel,
+.green .toc .preface {
+	background-color: #dee;
+}
+/* blue */
+.blue .header,
+.blue .panel,
+.blue .toc .preface {
+	background-color: #def;
+}
+
+
+
+#logo {
+	background: url(h_banner.gif) no-repeat;
+}
+#logo a:hover {
+	cursor: pointer;
+}
+#logo a {
+	background : url(h_banner.gif) no-repeat;
+}
+
+/* global navigation */
+#globalnav a {
+	color: #066;
+}
+
+#tab-bible,
+#tab-bible a {
+	color: #033;
+	background: url(h_tab_bible.gif) no-repeat;
+}
+.current#tab-bible,
+.current#tab-bible a {
+	background: url(h_tab_bible.gif) no-repeat 0 -50px;
+}
+#tab-texts,
+#tab-texts a {
+	color: #033;
+	background: url(h_tab_texts.gif) no-repeat;
+}
+.current#tab-texts,
+.current#tab-texts a {
+	background: url(h_tab_texts.gif) no-repeat 0 -50px;
+}
+#tab-music,
+#tab-music a {
+	color: #033;
+	background: url(h_tab_music.gif) no-repeat;
+}
+.current#tab-music,
+.current#tab-music a {
+	background: url(h_tab_music.gif) no-repeat 0 -50px;
+}
+#tab-bible a:hover,
+#tab-texts a:hover,
+#tab-music a:hover {
+	background-position: 0 -100px;
+}
+
+#site-links,
+#site-links a {
+	color: #009;
+}
+#site-links a:hover {
+	background-color: #def;
+}
+
+/* horizontal bars */
+.navbar,
+.navbar a,
+.navbar a:visited,
+.content .section_head a:link,
+.content .section_head a:visited {
+	color: #fff;
+}
+.green .navbar {
+	background-color: #399;
+}
+.blue .navbar {
+	background-color: #39f;
+}
+
+.header span.current {
+	font-weight: bold;
+}
+
+/* docnav select form and links */
+.green .docnav select {
+	color: #066;
+	background-color: #dee;
+}
+.blue .docnav select {
+	color: #009;
+	background-color: #def;
+}
+.green .docnav input {
+	color: #066;
+	font-weight: bold;
+}
+.blue .docnav input {
+	color: #009;
+	font-weight: bold;
+}
+.green .docnav .disabled {
+	font-weight: bold;
+	color: #066;
+}
+.blue .docnav .disabled {
+	font-weight: bold;
+	color: #009;
+}
+optgroup {
+	background-color: #fff;
+}
+.green optgroup.preface {
+	background-color: #dee;
+}
+.blue optgroup.preface {
+	background-color: #def;
+}
+
+/* recent-type sidebar */
+/* following line to correct IE 5.5 */
+.recent td,
+#column .recent .icon a:hover { /* to correct shadowing in Netscape and Opera */
+	background-color: #9cc;
+}
+.recent .top {
+	background: #9cc url(panel_green_tl.gif) no-repeat top left;
+}
+.recent .date {
+	background: url(panel_green_tr.gif) no-repeat top right;
+}
+.recent .bottom {
+	background: #9cc url(panel_green_bl.gif) no-repeat left bottom;
+}
+.recent .title {
+	background: url(panel_green_br.gif) no-repeat right bottom;
+	padding: 5px 10px;
+}
+.sidebar .recent .title a:hover {
+	background-color: #dee; /* don't need to use white, as light green will contrast with medium green */
+}
+.content .site h2 {
+	font-weight: bold;
+}
+.site .green_header {
+	background: #9cc url(green_tr.gif) no-repeat top right;
+}
+.site .blue_header {
+	background: #9cf url(blue_tr.gif) no-repeat top right;
+}
+
+/* list */
+.list_table td.blurb {
+	background: #def url(list_blue_br.gif) no-repeat right bottom;
+}
+.list_table a:hover {
+	background-color: #dee;
+}
+.list_table td.top {
+	background: #9cc url(green_tr.gif) no-repeat top right;
+}
+
+.green .section_head {
+	background: #399 url(list_green_tr.gif) no-repeat top right;
+	color: #fff;
+}
+.blue .section_head {
+	background: #39f url(list_blue_tr.gif) no-repeat top right;
+	color: #fff;
+}
+.content .section_head a,
+.content .section_head a:visited { /* to counteract the .page visited color change */
+	color: #fff;
+}
+
+.green .list .section_head a:hover,
+.green .page .section_head a:hover {
+	color: #399;
+	background-color: #dee;
+}
+.blue .section_head a:hover,
+.blue .page .section_head a:hover {
+	color: #39f;
+	background-color: #def;
+}
+
+.form_item {
+	font-weight: bold;
+}
+
+/* content */
+.content {
+	background-color: #fff;
+}
+.document a:hover {
+	background-color: #dee;
+}
+.content th .sidebar a:hover {
+	background-color: #fff;
+}
+.green .content th {
+	background-color: #dee;
+}
+.blue .content th {
+	background-color: #def;
+}
+
+.content th hr {
+	height: 1px;
+	border-style: none;
+	color: #fff; /* IE */
+	background-color: #fff;
+}
+.content th fieldset {
+	border: 1px solid #9cc;
+}
+.content th .scoretitle {
+	font-weight: bold;
+}
+.content th .excerpted a {
+	font-weight: normal;
+}
+.green .content th a:hover img {
+	background-color: #dee;
+}
+
+.lyrics p.refrain {
+	font-style: italic;
+}
+.site .notes,
+.lyrics .notes {
+	background-color: #dee;
+}
+
+.content blockquote {
+	background-color: #eee;
+}
+#column blockquote a:hover {
+	background-color: #fff;
+}
+.content .citation a {
+	font-weight: normal;
+}
+
+/* TOC */
+.green .toc hr {
+	height: 2px;
+	border-style: none;
+	color: #dee; /* IE */
+	background-color: #dee;
+}
+.blue .toc hr {
+	height: 2px;
+	border-style: none;
+	color: #def; /* IE */
+	background-color: #def;
+}
+
+.page .recipe {
+	background-color: #eee;
+}
+
+.paperdoll {
+	border: 1px dashed #999;
+}
+
+
+span.scripture {
+	color: #066;
+}
+.content a.scripture {
+	font-weight: normal;
+	text-decoration: none;
+}
+a.lib_ref {
+	font-weight: normal;
+}
+
+
+span.KJV_Jesus { /* words of Christ in red */
+	color: #f00;
+}
+
+span.q {
+	background: #fe0; /* highlight search query */
+}
+
+#audio {
+	border-bottom: 1px solid #9cc;
+}
+
+#source {
+	color: #999;
+	border-top: 1px solid #9cc;
+}
+
+#scorch {
+	background-color: #fff;
+}
