@@ -31,10 +31,18 @@ if(strlen($url)) {
 if ($_GET['dev'] == 'true') {
     setcookie('dev','true', time()+60*60*24*30/*30 days*/,'/','.'.$_SERVER['HTTP_HOST']);
 }
-define('DEV',($_COOKIE['dev']=='true'));
+define('DEV',$_COOKIE['dev']);
 if ($_GET['ver'] == '4') {
     setcookie('ver','4', time()+60*60*24*30/*30 days*/,'/','.'.$_SERVER['HTTP_HOST']);
 }
+
+$root_match = (substr_count($_SERVER['HTTP_HOST'],'timelesstruths.org') ? 'timeless/html' : 'timelesstruths');
+define('TT_ROOT', preg_replace("'^(.*{$root_match}).*$'", "$1", getcwd()) );
+ini_set('include_path', ''
+    . (DEV ? TT_ROOT . '/dev/' . DEV . PATH_SEPARATOR : '')
+    . TT_ROOT . PATH_SEPARATOR
+    . ini_get('include_path'));
+    
 ////////////////////////////////////////////////////////////////////////////////////
 
 preg_match("'[google|msn]bot'",$_SERVER['HTTP_USER_AGENT'],$uacrawler);
