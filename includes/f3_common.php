@@ -61,6 +61,11 @@ function level_url_webfront() {
     return level_url() .'-/assets3/';
 }
 
+//
+function level_library() {
+    return (DEV ? '../../' : '');
+}
+
 function add_query() {
 	$query = $_SERVER['QUERY_STRING'];
 	// does not pass on 'query'
@@ -125,16 +130,16 @@ function get_media(&$media, $title, $id = false, $relpath = false, $id3 = false)
 	$title_path = $relpath."library/music/".substr($title_str,0,1)."/$title_str/$title_str".($id ? "_$id" : '');
 
 	// indicate if Sibelius score exists
-	if(file_exists($title_path.'.sib')) { $media['sib'] = date("Y/m/d",filectime($title_path.'.sib'));
+	if(stream_resolve_include_path($title_path.'.sib')) { $media['sib'] = date("Y/m/d",filectime($title_path.'.sib'));
 	} else { $media['sib'] = false; }
 	// indicate if PDF score exists
-	if(file_exists($title_path.'.pdf')) { $media['pdf'] = date("Y/m/d",filectime($title_path.'.pdf'));
+	if(stream_resolve_include_path($title_path.'.pdf')) { $media['pdf'] = date("Y/m/d",filectime($title_path.'.pdf'));
 	} else { $media['pdf'] = false; }
 	// indicate if midi sequence exists
-	if(file_exists($title_path.'.mid')) { $media['mid'] = date("Y/m/d",filectime($title_path.'.mid'));
+	if(stream_resolve_include_path($title_path.'.mid')) { $media['mid'] = date("Y/m/d",filectime($title_path.'.mid'));
 	} else { $media['mid'] = false; }
 	// indicate if hi-fi audio exists
-	if(file_exists($title_path.'_hi.mp3') && $id3) {
+	if(stream_resolve_include_path($title_path.'_hi.mp3') && $id3) {
 		// extracts time from cache
 		if(mysql_num_rows( ($r = mysql_query("SELECT getID3 FROM tt3_getID3 WHERE title ='". addslashes($title)."'")) )) {
 			$rS=mysql_fetch_assoc($r);
@@ -153,10 +158,10 @@ function get_media(&$media, $title, $id = false, $relpath = false, $id3 = false)
 		}
 	} else { $media['hi'] = false; }
 	// indicate if lo-fi audio exists
-	if(file_exists($title_path.'_lo.mp3')) { $media['lo'] = date("Y/m/d",filectime($title_path.'_lo.mp3'));
+	if(stream_resolve_include_path($title_path.'_lo.mp3')) { $media['lo'] = date("Y/m/d",filectime($title_path.'_lo.mp3'));
 	} else { $media['lo'] = false; }
 	// indicate if lo-fi Windows Media audio exists
-	if(file_exists($title_path.'_lo.wma')) { $media['wma'] = date("Y/m/d",filectime($title_path.'_lo.wma'));
+	if(stream_resolve_include_path($title_path.'_lo.wma')) { $media['wma'] = date("Y/m/d",filectime($title_path.'_lo.wma'));
 	} else { $media['wma'] = false; }
 	
 	return ($media['sib'] || $media['mid'] || $media['hi']);
