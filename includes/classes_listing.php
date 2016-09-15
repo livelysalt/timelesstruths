@@ -23,7 +23,7 @@ class Listing {
 	
 	function getHeader() {
 		$fpath = 'library/'.$this->type.'/'.$this->collection.'.xml';
-		if(file_exists($fpath)) {
+		if(stream_resolve_include_path($fpath)) {
 			$fp = fopen($fpath,'r');
 			$header = fread($fp,1000); // should be long enough to grab all of header
 			fclose($fp);
