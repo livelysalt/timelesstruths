@@ -610,17 +610,18 @@ class hAudio extends HTML {
 			}
 		} elseif($type == 'texts' || $type == 'help') {
 			$title = substr($title,0,1).'/'.$title;
-			foreach (glob('library/'.$type.'/'.$title.'/*'.$section.'*.'.$format) as $audio_file) {
+			foreach (glob(level_library() . 'library/'.$type.'/'.$title.'/*'.$section.'*.'.$format) as $audio_file) {
 			}
 			// makes sure audio file matches section title with an optional prefix of ##_ for sequencing and optional postfix of @## for bitrate
-			if (!preg_match("'/(\d+_)?".$section."(@\d+)?\.'",$audio_file)) { return; }
+			if (!preg_match("'/(\d+_)?".$section."(@\d+)?\.'",$audio_file)) return;
 		}
 		
-		$audio_file = $audio_file ? $audio_file : 'library/'.$type.'/'.$title.'/'.$section.'.'.$format;
+		$audio_file = ($audio_file ? $audio_file : 'library/'.$type.'/'.$title.'/'.$section.'.'.$format);
         if ($type == 'bible') {
             $audio_file = '//'. NORMALIZED_LOCALHOST . "bible.timelesstruths.org/{$title}.{$section}.mp3";
         }
-		if (!file_exists($audio_file)) return;
+		$audio_file = str_replace(level_library(), "", $audio_file);
+		if (!stream_resolve_include_path($audio_file)) return;
 
 		$audiopath = level_url_webfront().'f_audio.swf?mp3='.urlencode(level_url().$audio_file);
 		// gets around Flash bug in certain IE 5.5 versions
@@ -694,11 +695,11 @@ class hContent extends HTML {
                 $notes  = DEFAULT_M_SCORE_NOTES;
 
 			    $url_stub = 'library/music/'.substr($title,0,1).'/'.$title.'/'.$title.substr($section,5); // [score]_2 - includes variation suffix, if any
-                $document->has_pdf_standard = file_exists($url_stub.'.pdf');
-                $document->has_pdf_shaped   = file_exists($url_stub.'+.pdf');
+                $document->has_pdf_standard = stream_resolve_include_path($url_stub.'.pdf');
+                $document->has_pdf_shaped   = stream_resolve_include_path($url_stub.'+.pdf');
                 $document->has_pdf          = ($document->has_pdf_standard || $document->has_pdf_shaped);
-			    $document->has_sib_standard = file_exists($url_stub.'.sib');
-                $document->has_sib_shaped   = file_exists($url_stub.'+.sib');
+		$document->has_sib_standard = stream_resolve_include_path($url_stub.'.sib');
+                $document->has_sib_shaped   = stream_resolve_include_path($url_stub.'+.sib');
                 $document->has_sib          = ($document->has_sib_standard || $document->has_sib_shaped);
 
 				$this->html .= "\r\n"
@@ -848,7 +849,7 @@ class hContent extends HTML {
 /*CHANGE TO NEW AUDIO PLAYER:*/				
 			} elseif( substr_count('/hifi/lofi/',$m_type) ) {
 				$quality = '_'.substr($section,0,2);
-                if ($quality == '_hi' && file_exists($path_base.'.mp3')) $quality = '';
+                if ($quality == '_hi' && stream_resolve_include_path($path_base.'.mp3')) $quality = '';
 				// gets the right mp3 to pass to Flash
 				$mediapath = level_url_webfront().'f_stream.swf?mp3='.urlencode($url_base.$quality.'.mp3');
 				// gets around Flash bug in certain IE 5.5 versions
@@ -1044,7 +1045,7 @@ class hSideTable extends HTML {
 			} elseif($type=='music') {
 				// assigns subject margins depending on whether scripture reference will follow
 				$subject_class = ($document->scripture ? 'first' : 'first last');
-				$titleline = format_orphan(apply_formatting($document->title));
+				$titleline  = format_orphan(apply_formatting($document->title));
 				$authoryear = format_author($document->author,'author');
                 $url_title = title_url_format($document->title);
 
@@ -1059,7 +1060,7 @@ class hSideTable extends HTML {
                 $html_langs = '';
                 foreach ($langs as $lang => $language) {
                     $file_pdf = "$file_path@$lang.pdf";
-                    if (file_exists($file_pdf)) {
+                    if (stream_resolve_include_path($file_pdf)) {
                         $html_langs .= "
                             <p><a class='source' href='$url_path@$lang.pdf' title='Download PDF sheet music (". format_filesize($file_pdf).")'><img src='". level_url_webfront() ."icon_pdf.gif' alt='Show PDF' />.pdf</a> $language</p>";
                     }
@@ -1115,7 +1116,8 @@ class hSideTable extends HTML {
                     $authoryear = format_author($document->author,'author');
                 }
 				if($document->type != 'bible') {
-				    $edit_date = date("j F Y",filemtime($root.'/'.$type.'/'.$url_title[0].'/'.$url_title.'/'.$url_title.'.xml'));
+				    $file = stream_resolve_include_path($root.'/'.$type.'/'.$url_title[0].'/'.$url_title.'/'.$url_title.'.xml');
+				    $edit_date = date("j F Y",filemtime($file));
 				    $pubstatus .= ($edit_date != $pub_date ? ($pubstatus ? '<br />' : '') ."last edited on $edit_date" : '');
 					$imageline = '<p><img src="'.level_url().$type.'/'.$url_title.'.jpg" alt="'.$document->title.'" width="120" height="120" /></p>';
 					//$editline = '<p class="last">Last edited: '.date("F j, Y",filemtime($root.'/'.$type.'/'.$url_title[0].'/'.$url_title.'/'.$url_title.'.xml')).'</p>';
@@ -1131,7 +1133,7 @@ class hSideTable extends HTML {
                 $file_pdf    = $file_path.'.pdf';
                 $file_m3u    = $file_path.'.m3u';
 				$url_path    = level_url()."texts/$url_title";
-				$has_other   = file_exists($file_epub) || file_exists($file_pdf) || file_exists($file_kindle) || file_exists($file_m3u);
+				$has_other   = stream_resolve_include_path($file_epub) || stream_resolve_include_path($file_pdf) || stream_resolve_include_path($file_kindle) || stream_resolve_include_path($file_m3u);
 				
 				$onclick = 'onclick="return trackLink(this, \'Downloads\', this.href.replace(/^.+\//,\'\'));"';
 
@@ -1167,10 +1169,10 @@ class hSideTable extends HTML {
 						  		<h2 class="post-title-blue">
 									<span>Other Formats</span>
 								</h2>'
-                          .(file_exists($file_epub)   ? '<p><a href="'.$url_path.'.epub" '.$onclick.' title="Download EPUB file ('.format_filesize($file_epub).')"><img src="'.level_url_webfront().'icon_epub.png" alt="Open EPUB" /></a> EPUB [<a class="source" href="'.$url_path.'.epub" '.$onclick.' title="Download EPUB file ('.format_filesize($file_epub).')">.epub</a>]</p>' : '')
-						  .(file_exists($file_kindle) ? '<p><a href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')"><img src="'.level_url_webfront().'icon_mobi.gif" alt="Open Mobipocket" /></a> Kindle [<a class="source" href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')">.mobi</a>]</p>' : '')
-                          .(file_exists($file_pdf)    ? '<p><a href="'.$url_path.'.pdf"  '.$onclick.' title="Download PDF file ('.format_filesize($file_pdf).')"><img src="'.level_url_webfront().'icon_pdf.gif" alt="Open PDF" /></a> Adobe PDF [<a class="source" href="'.$url_path.'.pdf" '.$onclick.' title="Download PDF file ('.format_filesize($file_pdf).')">.pdf</a>]</p>' : '')
-                          .(file_exists($file_m3u)    ? '<p><a href="'.$url_path.'.m3u"  '.$onclick.' title="Download M3U file"><img src="'.level_url_webfront().'icon_m3u.gif" alt="Open M3U" /></a> MP3 Playlist [<a class="source" href="'.$url_path.'.m3u" '.$onclick.' title="Download M3U file">.m3u</a>]</p>' : '')
+                          .(stream_resolve_include_path($file_epub)   ? '<p><a href="'.$url_path.'.epub" '.$onclick.' title="Download EPUB file ('.format_filesize($file_epub).')"><img src="'.level_url_webfront().'icon_epub.png" alt="Open EPUB" /></a> EPUB [<a class="source" href="'.$url_path.'.epub" '.$onclick.' title="Download EPUB file ('.format_filesize($file_epub).')">.epub</a>]</p>' : '')
+			  .(stream_resolve_include_path($file_kindle) ? '<p><a href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')"><img src="'.level_url_webfront().'icon_mobi.gif" alt="Open Mobipocket" /></a> Kindle [<a class="source" href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')">.mobi</a>]</p>' : '')
+                          .(stream_resolve_include_path($file_pdf)    ? '<p><a href="'.$url_path.'.pdf"  '.$onclick.' title="Download PDF file ('.format_filesize($file_pdf).')"><img src="'.level_url_webfront().'icon_pdf.gif" alt="Open PDF" /></a> Adobe PDF [<a class="source" href="'.$url_path.'.pdf" '.$onclick.' title="Download PDF file ('.format_filesize($file_pdf).')">.pdf</a>]</p>' : '')
+                          .(stream_resolve_include_path($file_m3u)    ? '<p><a href="'.$url_path.'.m3u"  '.$onclick.' title="Download M3U file"><img src="'.level_url_webfront().'icon_m3u.gif" alt="Open M3U" /></a> MP3 Playlist [<a class="source" href="'.$url_path.'.m3u" '.$onclick.' title="Download M3U file">.m3u</a>]</p>' : '')
 						  .'</div>'
 						: '')
 					."\r\n".'</div>
@@ -1312,14 +1314,14 @@ class hSideTable extends HTML {
             $source_sib = level_url().$file_score;
             $score_line .= ' sheet music';
             // provide link to PDF score
-            if(file_exists($file_pdf)) {
+            if(stream_resolve_include_path($file_pdf)) {
                 $source_pdf = level_url().$file_pdf;
                 $score_line .= ' [<a class="source" href="'.$source_pdf.'" title="download PDF source file">.pdf</a>]';
             }
             $score_line .= ' [<a class="source" href="'.$source_sib.'" title="download Sibelius source file">.sib</a>]</p>';
 			// provide link to midi-in-background if not playing, or link to plain lyrics if playing
 			$midi_line = '';
-			if(file_exists($file_midi)) {
+			if(stream_resolve_include_path($file_midi)) {
 				if($section=='midi'.($id ? '_'.$id : '')) {
 					$midi_line = '<p><img src="'.level_url_webfront().'linked_midi.gif" alt="playing midi" /> <a href="'.$url.'">stop</a>';
 				} else {
@@ -1330,7 +1332,7 @@ class hSideTable extends HTML {
 			}
 			// provide link to mp3
 			$mp3_line = '';
-			if(file_exists($file_mp3)) { // hifi is a decimal time value, so '0.0' must be converted to (int)
+			if(stream_resolve_include_path($file_mp3)) { // hifi is a decimal time value, so '0.0' must be converted to (int)
                 // filesize comparisons relative from calling file, which is _urlhandler, already "leveled", at root of site
                 $source_mp3 = $file_mp3;
                 $mp3_line = '<p><a class="use-player" href="'.level_url().$file_mp3.'" title="play audio"><img src="'.level_url_webfront().'link_hifi.gif" alt="play audio" /></a>'
@@ -1338,7 +1340,7 @@ class hSideTable extends HTML {
 			}
             // provide link to hifi-in-background if not playing, or link to plain lyrics if playing
             $hifi_old_line = '';
-            if(file_exists($file_hifi_old)) { // hifi is a decimal time value, so '0.0' must be converted to (int)
+            if(stream_resolve_include_path($file_hifi_old)) { // hifi is a decimal time value, so '0.0' must be converted to (int)
                 if($section=='hifi'.($id ? '_'.$id : '')) {
                     $hifi_old_line = '<p><img src="'.level_url_webfront().'linked_hifi.gif" alt="Playing HiFi MP3" /> <a href="'.$url.'">stop</a>';
                 } else {
@@ -1350,7 +1352,7 @@ class hSideTable extends HTML {
             }
 			// provide link to lofi-in-background if not playing, or link to plain lyrics if playing
 			$lofi_line = '';
-			if(file_exists($file_lofi)) {
+			if(stream_resolve_include_path($file_lofi)) {
 				if($section=='lofi'.($id ? '_'.$id : '')) {
 					$lofi_line = '<p><img src="'.level_url_webfront().'linked_lofi.gif" alt="Playing LoFi MP3" /> <a href="'.$url.'">stop</a>';
 				} else {
@@ -1361,7 +1363,7 @@ class hSideTable extends HTML {
 			}
 			// provide link to lofi-WMA-in-background if not playing, or link to plain lyrics if playing
 			$lowm_line = '';
-			if(file_exists($file_lowm)) {
+			if(stream_resolve_include_path($file_lowm)) {
 				if($section=='lowm'.($id ? '_'.$id : '')) {
 					$lowm_line = '<p><img src="'.level_url_webfront().'linked_lowm.gif" alt="Playing LoFi Windows Media Audio" /> <a href="'.$url.'">stop</a>';
 				} else {
@@ -1372,7 +1374,7 @@ class hSideTable extends HTML {
 			}
 			// provide link to MusicXML
 			$xml_line = '';
-			if(file_exists($file_xml)) {
+			if(stream_resolve_include_path($file_xml)) {
 				$source_xml = $file_xml;
 				$xml_line .= ' <span style="font-weight:normal;">[<a class="source" href="'.level_url().$source_xml.'" title="Download MusicXML file">.xml</a>]</span>';
 			}
@@ -1566,7 +1568,7 @@ function doc_outline(&$document, $type, $toc = false) {
 			}
 			// if section type is music and score is available, add link
 			if($parts[$i]->sections[$j]->type == 'music') {
-				if(file_exists('library/music/'.substr($url_st,0,1).'/'.$url_st.'/'.$url_st.'.sib')) {
+				if(stream_resolve_include_path('library/music/'.substr($url_st,0,1).'/'.$url_st.'/'.$url_st.'.sib')) {
 					$item_start = '<li class="score_link"><a class="score_link" href="'.level_url().'music/'.$url_st.'/score/" title="View Score Sheet Music">'
 						.'<img src="'.level_url_webfront().'link_score.gif" alt="View Score Sheet Music" /></a>';
 				}
