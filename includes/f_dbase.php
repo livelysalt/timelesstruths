@@ -12,7 +12,7 @@ function db_connect(&$db){
         define('TT_CONFIG_FILE', '_config.dev.php');
 	}
 
-    include TT_CONFIG_FILE;
+    include (DEV ? '../../' : '') . TT_CONFIG_FILE;
 
     $db = $config_db;
     
