@@ -381,7 +381,7 @@ function xml_to_html($parse, $element, $attrs = false) {
 						$cite = true;
 						$work_url = title_url_format($pfE['WORK']);
 						// if it's in the library, provide a link
-						if(file_exists('library/texts/'.$work_url[0].'/'.$work_url.'/'.$work_url.'.xml')) {
+						if(stream_resolve_include_path('library/texts/'.$work_url[0].'/'.$work_url.'/'.$work_url.'.xml')) {
 							$workline = '<a href="'.level_url().'texts/'.$work_url.'/"><i>'.apply_formatting($pfE['WORK']).'</i></a>';
 						} else {
 							$workline = '<i>'.apply_formatting($pfE['WORK']).'</i>';
@@ -405,7 +405,7 @@ function xml_to_html($parse, $element, $attrs = false) {
 					if($pfE['FROM']) {
 						$cite = true;
 						// if it's in the library, provide a link
-						if(($work_url = title_url_format($pfE['WORK'])) && file_exists('library/texts/'.$work_url[0].'/'.$work_url.'/'.$work_url.'.xml')) {
+						if(($work_url = title_url_format($pfE['WORK'])) && stream_resolve_include_path('library/texts/'.$work_url[0].'/'.$work_url.'/'.$work_url.'.xml')) {
 							$quo_l = '&ldquo;';
 							$quo_r = '&rdquo;';
 							$fromline = '<a href="'.level_url().'texts/'.$work_url.'/'.title_url_format($pfE['FROM']).'/">'.apply_formatting($pfE['FROM']).'</a>';
@@ -659,7 +659,7 @@ function xml_to_html($parse, $element, $attrs = false) {
 					if($parser_flags[2]['SECTION']['TYPE'] == 'music') {
 						$url_st = title_url_format($pfE['DATA']);
 						// if score is available, add score link
-						if(file_exists('library/music/'.substr($url_st,0,1).'/'.$url_st.'/'.$url_st.'.sib')) {
+						if(stream_resolve_include_path('library/music/'.substr($url_st,0,1).'/'.$url_st.'/'.$url_st.'.sib')) {
 							$html .= '<a class="score_link" href="'.level_url().'music/'.$url_st.'/score/" title="View Score Sheet Music">'
 								.'<img src="'.level_url_webfront().'link_score.gif" alt="View Score Sheet Music" /></a>';
 						}
