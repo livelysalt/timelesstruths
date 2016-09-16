@@ -211,7 +211,8 @@ class hMeta extends HTML {
 			 * Timeless Truths 3 Column Bootstrap template - by thezoomla.com(http://www.thezoomla.com)
 			 * Code licensed under the Apache License v2.0.
 			 * For details, see http://www.apache.org/licenses/LICENSE-2.0.
-			 */.book-section,.search-a-to-z p:hover,.sidebar-item{box-shadow:0 1px 3px 0 rgba(0,0,0,.2)}body{padding-top:55px}body,button,input,select,textarea{color:#444;font:16px 'Open Sans',serif;line-height:1.6;word-wrap:break-word;font-weight:400}.portfolio-item{margin-bottom:25px}.book-section,.sidebar-item{padding:10px;margin-bottom:25px}a{color:#000}a:hover{color:#289DCC}.navbar{margin-bottom:0;height:55px}.navbar-nav{margin:5px -15px 7.5px}.navbar-inverse{background-color:#fff;border-color:#289DCC;border-bottom:5px solid #289DCC;color:#232323;font-weight:500}.navbar-inverse .navbar-brand,.navbar-inverse .navbar-brand:focus,.navbar-inverse .navbar-brand:hover{color:#289DCC;text-transform:uppercase;font-weight:600}.navbar-inverse .navbar-nav>li>a{color:#289DCC;font-size:14px;text-transform:uppercase;background-color:#fff;margin-top:-5px}.navbar-default .navbar-toggle .icon-bar,.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-toggle .icon-bar{background-color:#289DCC}.navbar-inverse .navbar-toggle{color:#289DCC;border-color:#fff}.mumbo-jumbo,.welcome-message{color:#fff;background-color:#289dcc;background-image:url(../images/checked-background.png);padding:100px 0;margin-bottom:50px}.mumbo-jumbo{background-color:#289dcc;background-image:url(../images/square-background.png)}.mumbo-jumbo .page-header,.welcome-message .page-header{font-size:82px;font-weight:700;color:#fff;margin-top:0}.btn-outline{padding:10px 15px;border:1px solid #fff;background-color:transparent;color:#fff;font-weight:400;font-size:16px}.btn-outline:hover{background-color:#fff;color:#289DCC}.btn-orange{background-color:#e05e48;border:none}.btn-lightblue{background-color:#264967;border:none}.email-subscribe{color:#fff;background-color:#289dcc;background-image:url(../images/checked-background.png);padding:50px 0;margin-top:50px}.email-subscribe .input-group{max-width:500px;margin:30px auto 0}footer{background-color:#303440;color:#fff;padding:50px 0}footer ul li{line-height:1.5;padding:5px 0;border-bottom:1px solid #444}footer ul li a{color:#fff}.book-section .post-title-blue,footer .post-title-blue,section .post-title-blue{border-bottom:2px solid #289dcc;font-size:18px;margin-bottom:15px;padding-bottom:0}.book-section .post-title-blue span,footer .post-title-blue span,section .post-title-blue span{background-color:#289dcc;color:#fff;padding:6px 12px;display:inline-block}footer .copyright{padding:50px 0 15px;color:#b1b6b6;font-size:14px}@media (max-width:767px){.welcome-message .page-header{font-size:52px}}@media (min-width:768px) and (max-width:991px){.welcome-message .page-header{font-size:62px}}@media (min-width:992px) and (max-width:1199px){.welcome-message .page-header{font-size:82px}}.edit-option{position:relative;display:none}@media (min-width:768px){.edit-option{position:relative;display:block}}.btn-edit{position:absolute;top:0;right:0;z-index:10;display:block;padding:5px 8px;font-size:12px;color:#767676;cursor:pointer;background-color:#fff;border:1px solid #e1e1e8;border-radius:0 4px}.faq-section{background:url(default-bg-bbc.gif) 50% 0 no-repeat}.faq-content{font-family:Helvetica,Arial,sans-serif;padding:25px 50px 50px;font-weight:400;background:url(default-bg-bbc.gif) no-repeat}.faq-content h1,.faq-content h2,.faq-content strong{text-transform:uppercase;vertical-align:baseline;color:#289dcc;font-weight:600}.faq-content .panel-group .panel-heading{padding-top:20px}.faq-content a{color:#289dcc}.faq-content .panel-primary strong{color:#fff}.faq-content .panel-group .panel{border-radius:0}.margin-top-40{margin-top:40px}.search-a-to-z h2{color:#fff;background-color:#4B4644;padding:10px 5px;line-height:50px;font-size:16px}.search-a-to-z p{padding:10px 5px;color:#4B4644;background-color:silver}.atoz{padding-left:10px;padding-right:10px}.text-menu,.text-menu a{background-color:#081F2C;color:#fff;line-height:40px;font-size:16px;padding:10px 5px;text-transform:uppercase}.text-menu a:hover{text-decoration:underline}#form-messages *,#form-messages :after,#form-messages :before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}#page-wrapper{width:640px;background:#FFF;padding:1em;margin:1em auto;border-top:5px solid #69c773;box-shadow:0 2px 10px rgba(0,0,0,.8)}#ajax-contact{padding:0 10px}#form-messages h1{margin-top:0}            
+			 */
+			.book-section,.search-a-to-z p:hover,.sidebar-item{box-shadow:0 1px 3px 0 rgba(0,0,0,.2)}body{padding-top:55px}body,button,input,select,textarea{color:#444;font:16px "Open Sans",serif;line-height:1.6;word-wrap:break-word;font-weight:400}.portfolio-item{margin-bottom:25px}.book-section,.sidebar-item{padding:10px;margin-bottom:25px}a{color:#000}a:hover{color:#289DCC}.navbar{margin-bottom:0;height:55px}.navbar-nav{margin:5px -15px 7.5px}.navbar-inverse{background-color:#fff;border-color:#289DCC;border-bottom:5px solid #289DCC;color:#232323;font-weight:500}.navbar-inverse .navbar-brand,.navbar-inverse .navbar-brand:focus,.navbar-inverse .navbar-brand:hover{color:#289DCC;text-transform:uppercase;font-weight:600}.navbar-inverse .navbar-nav>li>a{color:#289DCC;font-size:14px;text-transform:uppercase;background-color:#fff;margin-top:-5px}.navbar-default .navbar-toggle .icon-bar,.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-toggle .icon-bar{background-color:#289DCC}.navbar-inverse .navbar-toggle{color:#289DCC;border-color:#fff}.mumbo-jumbo,.welcome-message{color:#fff;background-color:#289dcc;background-image:url(../images/checked-background.png);padding:100px 0;margin-bottom:50px}.mumbo-jumbo{background-color:#289dcc;background-image:url(../images/square-background.png)}.mumbo-jumbo .page-header,.welcome-message .page-header{font-size:82px;font-weight:700;color:#fff;margin-top:0}.btn-outline{padding:10px 15px;border:1px solid #fff;background-color:transparent;color:#fff;font-weight:400;font-size:16px}.btn-outline:hover{background-color:#fff;color:#289DCC}.btn-orange{background-color:#e05e48;border:none}.btn-lightblue{background-color:#264967;border:none}.email-subscribe{color:#fff;background-color:#289dcc;background-image:url(../images/checked-background.png);padding:50px 0;margin-top:50px}.email-subscribe .input-group{max-width:500px;margin:30px auto 0}footer{background-color:#303440;color:#fff;padding:50px 0}footer ul li{line-height:1.5;padding:5px 0;border-bottom:1px solid #444}footer ul li a{color:#fff}.book-section .post-title-blue,footer .post-title-blue,section .post-title-blue{border-bottom:2px solid #289dcc;font-size:18px;margin-bottom:15px;padding-bottom:0}.book-section .post-title-blue span,footer .post-title-blue span,section .post-title-blue span{background-color:#289dcc;color:#fff;padding:6px 12px;display:inline-block}footer .copyright{padding:50px 0 15px;color:#b1b6b6;font-size:14px}@media (max-width:767px){.welcome-message .page-header{font-size:52px}}@media (min-width:768px) and (max-width:991px){.welcome-message .page-header{font-size:62px}}@media (min-width:992px) and (max-width:1199px){.welcome-message .page-header{font-size:82px}}.edit-option{position:relative;display:none}@media (min-width:768px){.edit-option{position:relative;display:block}}.btn-edit{position:absolute;top:0;right:0;z-index:10;display:block;padding:5px 8px;font-size:12px;color:#767676;cursor:pointer;background-color:#fff;border:1px solid #e1e1e8;border-radius:0 4px}.faq-section{background:url(default-bg-bbc.gif) 50% 0 no-repeat}.faq-content{font-family:Helvetica,Arial,sans-serif;padding:25px 50px 50px;font-weight:400;background:url(default-bg-bbc.gif) no-repeat}.faq-content h1,.faq-content h2,.faq-content strong{text-transform:uppercase;vertical-align:baseline;color:#289dcc;font-weight:600}.faq-content .panel-group .panel-heading{padding-top:20px}.faq-content a{color:#289dcc}.faq-content .panel-primary strong{color:#fff}.faq-content .panel-group .panel{border-radius:0}.margin-top-40{margin-top:40px}.search-a-to-z h2{color:#fff;background-color:#4B4644;padding:10px 5px;line-height:50px;font-size:16px}.search-a-to-z p{padding:10px 5px;color:#4B4644;background-color:silver}.atoz{padding-left:10px;padding-right:10px}.text-menu,.text-menu a{background-color:#081F2C;color:#fff;line-height:40px;font-size:16px;padding:10px 5px;text-transform:uppercase}.text-menu a:hover{text-decoration:underline}#form-messages *,#form-messages :after,#form-messages :before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}#page-wrapper{width:640px;background:#FFF;padding:1em;margin:1em auto;border-top:5px solid #69c773;box-shadow:0 2px 10px rgba(0,0,0,.8)}#ajax-contact{padding:0 10px}#form-messages h1{margin-top:0}            
             </style>
             ';
 		global $url_bits;
@@ -1070,16 +1071,16 @@ class hSideTable extends HTML {
                 $editable_subject   = "data-editable='tt3_music|url=$url_title|subject'";
                 $editable_scripture = "data-editable='tt3_music|url=$url_title|scripture'";
 
-				$this->html = '
-				<div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
-					<div class="row sidebar-item">
-						<h2 class="post-title-blue">
+				$this->html = "
+				<div class='col-xs-12 col-sm-5 col-md-4 col-lg-4'>
+					<div class='row sidebar-item'>
+						<h2 class='post-title-blue'>
 							<span>$titleline</span>
 						</h2>
-					<p class="author" $editable_author>$authoryear</p>
-					<p class="pubstatus last">$copyline</p>
+					<p class='author' $editable_author>$authoryear</p>
+					<p class='pubstatus last'>$copyline</p>
 					<hr />
-                    <p class='$subject_class' $editable_subject>Subject'. (count($document->subjects) > 1 ? 's' : '') .":";
+                    <p class='$subject_class' $editable_subject>Subject". (count($document->subjects) > 1 ? 's' : '') .":";
                 foreach ($document->subjects as $i => $subject) {
                     $this->html .= ($i > 0 ? ',' : '') ."
                         <a href='". level_url() ."$type/_/". title_url_format($subject) ."/?sortby=subject'>". str_replace(' ','&nbsp',$subject) ."</a>";
@@ -1137,17 +1138,17 @@ class hSideTable extends HTML {
 				
 				$onclick = 'onclick="return trackLink(this, \'Downloads\', this.href.replace(/^.+\//,\'\'));"';
 
-				$this->html = '
-				<div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
-					<div class="row sidebar-item">
-						<h2 class="post-title-blue">
+				$this->html = "
+				<div class='col-xs-12 col-sm-5 col-md-4 col-lg-4'>
+					<div class='row sidebar-item'>
+						<h2 class='post-title-blue'>
 							<span>$document->title</span>
 						</h2>
 					$imageline
-					<p class="author">$authoryear</p>
-					<p class="pubstatus last">$pubstatus<br />$copyline</p>
+					<p class='author'>$authoryear</p>
+					<p class='pubstatus last'>$pubstatus<br />$copyline</p>
 					<hr />
-                    <p class='$subject_class'>Subject'. (count($document->subjects) > 1 ? 's' : '') .":";
+                    <p class='$subject_class'>Subject". (count($document->subjects) > 1 ? 's' : '') .":";
                 foreach ($document->subjects as $i => $subject) {
                     $this->html .= ($i > 0 ? ',' : '') ."
                         <a href='". level_url() ."$type/_/". title_url_format($subject) ."/?sortby=subject'>". str_replace(' ','&nbsp',$subject) ."</a>";
