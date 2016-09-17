@@ -599,9 +599,18 @@ TT.Admin = {
 // [2016-03-28] added
 TT.Dev = {
     init: function() {
-        $('body').append("<div id=\'dev\'>Dev | <button data-opt=\'exit\'>exit</button></dev>");
-        $('#dev [data-opt="exit"]').click(function(){
-            $.cookie('dev',false,{path:'/'});
+        $('body').append("<div id=\'dev\'>Dev "
+            + "<select data-opt=\'dev\'>"
+            + "<option value='master'>master</option>"
+            + "<option value='bootstrap'>bootstrap</option>"
+            + "<optgroup>"
+            + "<option value=''>exit &times;</option>"
+            + "</optgroup>"
+            + "</select>");
+        $('#dev [data-opt="dev"]').on('change',function(){
+            var v = $(this).val();
+            console.log('v:',v);
+            $.cookie('dev', (v ? v : null), {path:'/',expires:30/*days*/});
             window.location.reload();
         });
     }, // init()
