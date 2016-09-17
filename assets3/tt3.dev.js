@@ -612,22 +612,22 @@ TT.Dev = {
             console.log('v:',v);
             $.cookie('dev', (v ? v : null), {path:'/',expires:30/*days*/});
             window.location.reload();
-        });
+        }).val($.cookie('dev'));
     }, // init()
 };
 
 //=================================================================================================
 // on ready...
 $(function(){
+    if ($('html').hasClass('dev') || $.cookie('dev')) {
+        TT.Dev.init();
+    }
+
     TT.Utility.initNotes();
     
     TT.Player.init();
     
     if (window.location.hostname == 'localhost') {
         TT.Admin.init();
-    }
-    
-    if ($('html').hasClass('dev')) {
-        TT.Dev.init();
     }
 });
