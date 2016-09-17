@@ -28,8 +28,9 @@ if(strlen($url)) {
     $url_bits = explode('/', $url);
 }
 ////////////////////////////////////////////////////////////////////////////////////
-if ($_GET['dev']) {
-    setcookie('dev','master', time()+60*60*24*30/*30 days*/,'/','.'.$_SERVER['HTTP_HOST']);
+if (isset($_GET['dev'])) {
+    setcookie('dev',$_GET['dev'], time()+60*60*24*30/*30 days*/,'/','.'.$_SERVER['HTTP_HOST']);
+    header('Location: http://'.$_SERVER['HTTP_HOST']. str_replace('dev='.$_GET['dev'], '', $_SERVER['REQUEST_URI']));
 }
 define('DEV',$_COOKIE['dev']);
 if ($_GET['ver'] == '4') {
@@ -134,7 +135,7 @@ preg_match("'(music/.+/score(?:_\d)?/)\?(?:&?format=(sib|pdf))?(?:&?notes=(stand
 if ($rm && ($rm[2] || $rm[3] || $rm[4])) {
     // only change cookie value if url argument is present
     if($rm[2]) setcookie("m_score_format",($rm[2] != DEFAULT_M_SCORE_FORMAT ? $rm[2] : ''), time()+100000000,"/","",0);
-    if($rm[3]) setcookie("m_score_notes", ($rm[3] == 'shaped' ? '+' : '')           , time()+100000000,"/","",0);
+    if($rm[3]) setcookie("m_score_notes", ($rm[3] == 'shaped' ? '+' : '')                 , time()+100000000,"/","",0);
     if($rm[4]) setcookie("m_score_zoom",  ($rm[4] != DEFAULT_M_SCORE_ZOOM   ? $rm[4] : ''), time()+100000000,"/","",0);
     header('Location: http://'. NORMALIZED_DOMAIN . $rm[1] . (isset($_GET['updatecache']) ? '?updatecache' : ''));
     exit;
