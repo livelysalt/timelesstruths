@@ -1422,11 +1422,11 @@ class hScore extends HTML {
 			// file note type and zoom width always set to default for caching
 			// THESE VALUES MUST BE EXAMINED FOR CUSTOMIZING AFTER EXTRACTING FROM CACHE (in _page.php)
 			$url_stub = level_url().'library/music/'.substr($title,0,1).'/'.$title.'/'.$title.substr($section,5); // [score]_2 - includes variation, if any
-			$src = $url_stub.'.sib';
-			// custom object code for valid XHTML
-			$this->html = '<!--#score:start-->
-			<!--#score [data-src="'.$src.'"]-->
-            <iframe id="s_pdf" frameborder="0" src="'.$scr.'">
+            $src = $url_stub.'.'.DEFAULT_M_SCORE_FORMAT;
+            // custom object code for valid XHTML
+            $this->html = '<!--#score:start-->
+            <!--#score [data-src="'.$src.'"]-->
+            <iframe id="s_pdf" frameborder="0" src="'.$src.'">
                 <div class="error-message">
                 <p>Sorry, your browser does not support iframes, which are used to display the PDF score.</p>
                 </div>
