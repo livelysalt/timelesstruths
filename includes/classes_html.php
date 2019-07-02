@@ -621,8 +621,10 @@ class hAudio extends HTML {
         if ($type == 'bible') {
             $audio_file = '//'. NORMALIZED_LOCALHOST . "bible.timelesstruths.org/{$title}.{$section}.mp3";
         }
-		$audio_file = str_replace(level_library(), "", $audio_file);
-		if (!stream_resolve_include_path($audio_file)) return;
+
+    $audio_file = str_replace(level_library(), "", $audio_file);
+
+    if (!stream_resolve_include_path($audio_file)) return;
 
 		$audiopath = level_url_webfront().'f_audio.swf?mp3='.urlencode(level_url().$audio_file);
 		// gets around Flash bug in certain IE 5.5 versions
@@ -695,13 +697,14 @@ class hContent extends HTML {
                 $zoom   = DEFAULT_M_SCORE_ZOOM;
                 $notes  = DEFAULT_M_SCORE_NOTES;
 
-			    $url_stub = 'library/music/'.substr($title,0,1).'/'.$title.'/'.$title.substr($section,5); // [score]_2 - includes variation suffix, if any
-                $document->has_pdf_standard = stream_resolve_include_path($url_stub.'.pdf');
-                $document->has_pdf_shaped   = stream_resolve_include_path($url_stub.'+.pdf');
-                $document->has_pdf          = ($document->has_pdf_standard || $document->has_pdf_shaped);
-		$document->has_sib_standard = stream_resolve_include_path($url_stub.'.sib');
-                $document->has_sib_shaped   = stream_resolve_include_path($url_stub.'+.sib');
-                $document->has_sib          = ($document->has_sib_standard || $document->has_sib_shaped);
+			  $url_stub = 'library/music/'.substr($title,0,1).'/'.$title.'/'.$title.substr($section,5); // [score]_2 - includes variation suffix, if any
+        $document->has_pdf_standard = stream_resolve_include_path($url_stub.'.pdf');
+        $document->has_pdf_shaped   = stream_resolve_include_path($url_stub.'+.pdf');
+        $document->has_pdf          = ($document->has_pdf_standard || $document->has_pdf_shaped);
+
+        $document->has_sib_standard = stream_resolve_include_path($url_stub.'.sib');
+        $document->has_sib_shaped   = stream_resolve_include_path($url_stub.'+.sib');
+        $document->has_sib          = ($document->has_sib_standard || $document->has_sib_shaped);
 
 				$this->html .= "\r\n"
 				.'<div class="panel score">
@@ -1048,10 +1051,10 @@ class hSideTable extends HTML {
 				$subject_class = ($document->scripture ? 'first' : 'first last');
 				$titleline  = format_orphan(apply_formatting($document->title));
 				$authoryear = format_author($document->author,'author');
-                $url_title = title_url_format($document->title);
+                $url_title  = title_url_format($document->title);
 
-                $url_path  = level_url()."music/$url_title";
-                $file_path = 'library/music/'.$url_title[0].'/'.$url_title.'/'.$url_title;
+                $url_path   = level_url()."music/$url_title";
+                $file_path  = 'library/music/'.$url_title[0].'/'.$url_title.'/'.$url_title;
                 // provide link to other languages PDF
                 $langs = array(
                     'de' => 'Deutsch (German)',
@@ -1166,15 +1169,13 @@ class hSideTable extends HTML {
 						: '')
 					.($has_other
 						? "\r\n"
-						  .'<div class="row sidebar-item">
-						  		<h2 class="post-title-blue">
-									<span>Other Formats</span>
-								</h2>'
+						  .'<fieldset>
+						  <p class="help"><i>This document in other formats:</i></p>'
                           .(stream_resolve_include_path($file_epub)   ? '<p><a href="'.$url_path.'.epub" '.$onclick.' title="Download EPUB file ('.format_filesize($file_epub).')"><img src="'.level_url_webfront().'icon_epub.png" alt="Open EPUB" /></a> EPUB [<a class="source" href="'.$url_path.'.epub" '.$onclick.' title="Download EPUB file ('.format_filesize($file_epub).')">.epub</a>]</p>' : '')
-			  .(stream_resolve_include_path($file_kindle) ? '<p><a href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')"><img src="'.level_url_webfront().'icon_mobi.gif" alt="Open Mobipocket" /></a> Kindle [<a class="source" href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')">.mobi</a>]</p>' : '')
+						              .(stream_resolve_include_path($file_kindle) ? '<p><a href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')"><img src="'.level_url_webfront().'icon_mobi.gif" alt="Open Mobipocket" /></a> Kindle [<a class="source" href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')">.mobi</a>]</p>' : '')
                           .(stream_resolve_include_path($file_pdf)    ? '<p><a href="'.$url_path.'.pdf"  '.$onclick.' title="Download PDF file ('.format_filesize($file_pdf).')"><img src="'.level_url_webfront().'icon_pdf.gif" alt="Open PDF" /></a> Adobe PDF [<a class="source" href="'.$url_path.'.pdf" '.$onclick.' title="Download PDF file ('.format_filesize($file_pdf).')">.pdf</a>]</p>' : '')
                           .(stream_resolve_include_path($file_m3u)    ? '<p><a href="'.$url_path.'.m3u"  '.$onclick.' title="Download M3U file"><img src="'.level_url_webfront().'icon_m3u.gif" alt="Open M3U" /></a> MP3 Playlist [<a class="source" href="'.$url_path.'.m3u" '.$onclick.' title="Download M3U file">.m3u</a>]</p>' : '')
-						  .'</div>'
+						  .'</fieldset>'
 						: '')
 					."\r\n".'</div>
 				';
