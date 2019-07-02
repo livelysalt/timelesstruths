@@ -21,6 +21,7 @@ class Page extends HTML {
 	var $h_score;
 	var $h_source;
 	var $h_footer;
+
 	
 	function Page($type, $title, $section) {
 		if($type == 'music' && $title) {
@@ -185,14 +186,34 @@ class hMeta extends HTML {
 		}
 		$this->html = '
 		<!DOCTYPE html>
-		<html class="no-js">
+		<html>
 		
 		<head>
             <meta charset="utf-8">
+		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		    <meta name="viewport" content="width=device-width, initial-scale=1">
+		    <!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    		<!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
+    		<!--[if lt IE 9]>
+      		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    		<![endif]-->
+
 			<title>'.apply_formatting($titleline).'</title>
 			<meta name="description" content="'.$meta.'" />
+			<meta name="author" content="">
 			<link rel="shortcut icon" href="'.level_url_webfront().'timeless.ico" />
             <link rel="stylesheet" href="'.level_url_webfront().'tt3.'. (DEV ? 'dev' : FILENAME_JS_CSS_DATE) .'.css" media="all" />
+            <style>
+            /*! Temp style for testing
+			 * Timeless Truths 3 Column Bootstrap template - by thezoomla.com(http://www.thezoomla.com)
+			 * Code licensed under the Apache License v2.0.
+			 * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+			 */
+			.book-section,.search-a-to-z p:hover,.sidebar-item{box-shadow:0 1px 3px 0 rgba(0,0,0,.2)}body{padding-top:55px}body,button,input,select,textarea{color:#444;font:16px "Open Sans",serif;line-height:1.6;word-wrap:break-word;font-weight:400}.portfolio-item{margin-bottom:25px}.book-section,.sidebar-item{padding:10px;margin-bottom:25px}a{color:#000}a:hover{color:#289DCC}.navbar{margin-bottom:0;height:55px}.navbar-nav{margin:5px -15px 7.5px}.navbar-inverse{background-color:#fff;border-color:#289DCC;border-bottom:5px solid #289DCC;color:#232323;font-weight:500}.navbar-inverse .navbar-brand,.navbar-inverse .navbar-brand:focus,.navbar-inverse .navbar-brand:hover{color:#289DCC;text-transform:uppercase;font-weight:600}.navbar-inverse .navbar-nav>li>a{color:#289DCC;font-size:14px;text-transform:uppercase;background-color:#fff;margin-top:-5px}.navbar-default .navbar-toggle .icon-bar,.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-toggle .icon-bar{background-color:#289DCC}.navbar-inverse .navbar-toggle{color:#289DCC;border-color:#fff}.mumbo-jumbo,.welcome-message{color:#fff;background-color:#289dcc;background-image:url(../images/checked-background.png);padding:100px 0;margin-bottom:50px}.mumbo-jumbo{background-color:#289dcc;background-image:url(../images/square-background.png)}.mumbo-jumbo .page-header,.welcome-message .page-header{font-size:82px;font-weight:700;color:#fff;margin-top:0}.btn-outline{padding:10px 15px;border:1px solid #fff;background-color:transparent;color:#fff;font-weight:400;font-size:16px}.btn-outline:hover{background-color:#fff;color:#289DCC}.btn-orange{background-color:#e05e48;border:none}.btn-lightblue{background-color:#264967;border:none}.email-subscribe{color:#fff;background-color:#289dcc;background-image:url(../images/checked-background.png);padding:50px 0;margin-top:50px}.email-subscribe .input-group{max-width:500px;margin:30px auto 0}footer{background-color:#303440;color:#fff;padding:50px 0}footer ul li{line-height:1.5;padding:5px 0;border-bottom:1px solid #444}footer ul li a{color:#fff}.book-section .post-title-blue,footer .post-title-blue,section .post-title-blue{border-bottom:2px solid #289dcc;font-size:18px;margin-bottom:15px;padding-bottom:0}.book-section .post-title-blue span,footer .post-title-blue span,section .post-title-blue span{background-color:#289dcc;color:#fff;padding:6px 12px;display:inline-block}footer .copyright{padding:50px 0 15px;color:#b1b6b6;font-size:14px}@media (max-width:767px){.welcome-message .page-header{font-size:52px}}@media (min-width:768px) and (max-width:991px){.welcome-message .page-header{font-size:62px}}@media (min-width:992px) and (max-width:1199px){.welcome-message .page-header{font-size:82px}}.edit-option{position:relative;display:none}@media (min-width:768px){.edit-option{position:relative;display:block}}.btn-edit{position:absolute;top:0;right:0;z-index:10;display:block;padding:5px 8px;font-size:12px;color:#767676;cursor:pointer;background-color:#fff;border:1px solid #e1e1e8;border-radius:0 4px}.faq-section{background:url(default-bg-bbc.gif) 50% 0 no-repeat}.faq-content{font-family:Helvetica,Arial,sans-serif;padding:25px 50px 50px;font-weight:400;background:url(default-bg-bbc.gif) no-repeat}.faq-content h1,.faq-content h2,.faq-content strong{text-transform:uppercase;vertical-align:baseline;color:#289dcc;font-weight:600}.faq-content .panel-group .panel-heading{padding-top:20px}.faq-content a{color:#289dcc}.faq-content .panel-primary strong{color:#fff}.faq-content .panel-group .panel{border-radius:0}.margin-top-40{margin-top:40px}.search-a-to-z h2{color:#fff;background-color:#4B4644;padding:10px 5px;line-height:50px;font-size:16px}.search-a-to-z p{padding:10px 5px;color:#4B4644;background-color:silver}.atoz{padding-left:10px;padding-right:10px}.text-menu,.text-menu a{background-color:#081F2C;color:#fff;line-height:40px;font-size:16px;padding:10px 5px;text-transform:uppercase}.text-menu a:hover{text-decoration:underline}#form-messages *,#form-messages :after,#form-messages :before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}#page-wrapper{width:640px;background:#FFF;padding:1em;margin:1em auto;border-top:5px solid #69c773;box-shadow:0 2px 10px rgba(0,0,0,.8)}#ajax-contact{padding:0 10px}#form-messages h1{margin-top:0}            
+            </style>
             ';
 		global $url_bits;
 		if(substr_count('//texts/music/','/'.$url_bits[0].'/') && !$url_bits[1]) {
@@ -218,13 +239,12 @@ class hMeta extends HTML {
 ';
 		global $url_bits;
 		// base functions loaded first to make sure accessed functions are present
-		$html .= '
-        <script src="//cdn.jsdelivr.net/g/jquery@3.1,jplayer@2.9"></script>
-        <script src="'.level_url_webfront().'tt3.'. (DEV ? 'dev' : FILENAME_JS_CSS_DATE) .'.js"></script>
-        ';
+		//removed the script files and added them before the end of body tag so that
+		//after the page loads the script files will load
+
 		$html .= "\r\n"
-		.'</head>
-		';
+		.'</head>';
+
 		return $html;
 	}
 }
@@ -240,10 +260,15 @@ class hBody extends HTML {
 		}
 		global $url_bits;
 		$this->pre = "\r\n"
-		.'<body data-level="'.level_url().'" data-relhost="http://'. NORMALIZED_LOCALHOST .'" class="'.$color.'"><div id="column">';
+		.'<body data-level="'.level_url().'" data-relhost="http://'. NORMALIZED_LOCALHOST .'">';
 
 		$this->post = "\r\n"
-		.'</div>
+		.'
+		<!-- jQuery required for Bootstraps -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    	<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="'.level_url_webfront().'tt3.'. (DEV ? 'dev' : FILENAME_JS_CSS_DATE) .'.js"></script>		
 		</body>'
 		."\r\n".'</html>';
 	}
@@ -252,27 +277,46 @@ class hBody extends HTML {
 class hGlobalNav extends HTML {
 	function hGlobalNav($selected=false) {
 		$options = '&nbsp;<script>document.write("<button id=\'btn_translate\'>Translate</button>");</script>';
-		$google_translate = '<div id="translate"><div id="google_translate"></div></div><script>TT.Utility.initTranslate();</script>';
+		$google_translate = '<span id="translate"><span id="google_translate"></span></span><script>TT.Utility.initTranslate();</script>';
 
-		$this->html = '
-		<div id="logo"><a href="http://library.timelesstruths.org" accesskey="1"><span>Timeless Truths Free Online Library</span></a></div>'
-		.(substr_count('bible|texts|music',$selected) ? '<div class="inprint block byline">Timeless Truths Free Online Library | books, sheet music, midi, and more</div>' : '')
-		."\r\n".'<a class="skipnav" href="#content" accesskey="2">Skip over navigation</a>'
-		.'
-		<nav id="globalnav" class="global">
-			<div id="tab-bible" class="tab'.($selected=='bible' ? ' current' : '').'"><a href="//'. ($selected != 'welcome' ? NORMALIZED_LOCALHOST : '') .'bible.timelesstruths.org/">Bible</a></div>
-			<div id="tab-texts" class="tab'.($selected=='texts' ? ' current' : '').'"><a href="'.level_url().'texts/">Texts</a></div>
-			<div id="tab-music" class="tab'.($selected=='music' ? ' current' : '').'"><a href="'.level_url().'music/">Music</a></div>
-			<div id="site-links"><a href="'.level_url().'">Welcome</a> | <a href="'.level_url().'about/">About Us</a> | <a href="'.level_url().'search/">Search</a> | <a href="'.level_url().'help/">Help</a>'.$options.'</div>
-		</nav>
-		'.$google_translate;
+		$this->html = '<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://library.timelesstruths.org" accesskey="1">Timeless Truths</a></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="//'.'bible.timelesstruths.org/">Bible</a></li>
+					<li><a href="'.level_url().'texts/">Texts</a></li>
+					<li><a href="'.level_url().'music/">Music</a></li>
+					<li><a href="'.level_url().'about/">About Us</a></li>
+					<li><a href="'.level_url().'help/">Help</a></li>
+					<li>'.$options.$google_translate.'</li>
+					<li>
+                    <a href="'.level_url().'search/"><i class="glyphicon glyphicon-search"></i><span class="hidden-lg hidden-md hidden-sm">Search Timeless Truths</span></a>
+                	</li></ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>';
 	}
 }
 
 // creates the site subnavigation bar with a list of the current ancestor category and siblings, if applicable
 class hSubNav extends HTML {
 	function hSubNav($type,$music_coll) {
-		$this->html = "\r\n\t".'<div class="navbar subnav"><p>';
+		$this->html = "\r\n\t".'<nav class="text-menu">
+        	<div class="container">
+            	<div class="text-center">';
 		if($type == "bible") {
 		    //[2012-10-12] removed
 			//$this->html .= $this->list_colls($type,array("Old Testament","New Testament"),$music_coll);
@@ -285,19 +329,17 @@ class hSubNav extends HTML {
 		} else {
 			$this->html .= "";//date('F j, Y'); // timezone set to Pacific
 		}
-		$this->html .= "\r\n\t".'</p></div>';
+		$this->html .= "\r\n\t".'</div>
+						</div>
+    				</nav>';
         
         if ($type == 'bible') {
-            $this->html .= "\r\n". '<style>'
-                .'.bible-alert {background-color:white;border-bottom:1px solid #9cc; padding:0px 0; font-family:Arial,sans-serif;}'
-                .'.bible-alert div {margin:0 0px; padding:10px 20px; background-color:#F6E8D4;}'
-                .'.bible-alert p {margin:10px 0;}'
-                .'.bible-alert a {text-decoration:underline;}'
-                .'</style>'
-                .'<div class="bible-alert"><div style="text-align:center;">'
-                    .'<p>We have a new site for online Bible study, featuring Strong\'s definitions, in addition to search and audio.</p>'
+            $this->html .= "\r\n"
+                .'<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
+                    .'<p><strong>We have a new site for online Bible study, featuring Strong\'s definitions, in addition to search and audio.</strong></p>'
                     .'<p style="line-height:5em; font-size:20px;"><a href="//'. NORMALIZED_LOCALHOST .'bible.timelesstruths.org/">bible.timelesstruths.org</a></p>'
-                .'</div></div>';
+                .'</div>';
         }
 	}
 	
@@ -333,10 +375,17 @@ class hSubNav extends HTML {
 
 class hFooter extends HTML {
 	function hFooter($type,$title) {
-		$this->html = '
-		<div class="navbar footer"><p>
-        <!--Site by LivelySalt. --><a href="'.level_url().'help/Management_and_Policies/Copyrights/">Copyright</a> &copy; 2002-2016 Timeless Truths Publications. <span id="footer-hostedby">Hosted by <a href="http://ibiblio.org">ibiblio</a>.</span>
-		</p></div>
+		$this->html = '<footer>            
+			<div class="container">
+        		<div class="row">
+            		<div class="copyright">
+            			<p class="text-center">
+        					<!--Site by LivelySalt. --><a href="'.level_url().'help/Management_and_Policies/Copyrights/">Copyright</a> &copy; 2002-2016 Timeless Truths Publications. <span id="footer-hostedby">Hosted by <a href="http://ibiblio.org">ibiblio</a>.</span>
+        				</p>
+        			</div>
+        		</div>
+    		</div> <!-- End of Footer Container-->
+		</footer>
 		';
 	}
 }
@@ -359,11 +408,11 @@ class hHeader extends HTML {
 					if($score->sib) {
 						// create tooltip-compatible 'title|primary-author' string
 						$tooltip = ($score->title ? $score->title.' | ' : '').preg_replace("'^.*?>(.*?)</author>[\s\S]+$'","$1",$score->author);
-						$score_links .= "\r\n\t\t".'<div class="score_link"><a href="'.level_url().'music/'
+						$score_links .= "\r\n\t\t".'<span class="score_link"><a href="'.level_url().'music/'
 						// append score id, if any, to link
 						.title_url_format($document->title).'/score'.($score->id ? '_'.$score->id : '')
 						.'/" title="'.title_tooltip_format($tooltip).'">'
-						.'<img src="'.level_url_webfront().'link_score.gif" alt="'.title_tooltip_format($tooltip).'" /></a></div>';
+						.'<img src="'.level_url_webfront().'link_score.gif" alt="'.title_tooltip_format($tooltip).'" /></a></span>';
 					}
 				}
 			}
@@ -374,18 +423,18 @@ class hHeader extends HTML {
 					.'" title="'.($type=='music' ? 'Show Lyrics' : 'Table of Contents').'">';
 			}
 			$this->html = 
-			"\r\n\t".'<div class="header">'
+			"\r\n\t".'<div class="container"><div class="row"><h1 class="header">'
 				.($type=='music' ? $score_links : '')
-				."\r\n\t\t".'<div class="title">'
-					.($title_link ? $title_link : '<span class="current">')
+				."\r\n\t\t".'<span class="title">'
+					.($title_link ? $title_link : '<small class="current">')
 					.apply_formatting($document->title)
-					.($title_link ? '</a> ' : '</span> ')
-					.'| <span>'.$author.$score_author.'</span>
-				</div>
-				<div class="subject">
-					<span>'.$document->subject.'</span>
-				</div>'
-			."\r\n\t".'</div>';
+					.($title_link ? '</a> ' : '</small> ')
+					.'| <small>'.$author.$score_author.'</small>
+				</span>
+				<span class="pull-right">
+					<small class="subject">'.$document->subject.'</small>
+				</span>'
+			."\r\n\t".'</h1></div></div>';
 		} elseif(strtolower(get_parent_class($document)) == 'listing') {
 			$sortby = $document->sortby;
 			$order = $document->order;
@@ -396,7 +445,7 @@ class hHeader extends HTML {
 				$default = "\r\n\t".'<p><a href="./?sortby=title&sortlast='.$document->sortby.'">'.$document->title.' sorted by title</a></p>';
 			}
 			$this->html = 
-			"\r\n\t".'<div class="header hidden"><!--SEARCH ENGINE FRIENDLY LINKS-->'
+			"\r\n\t".'<div class="container"><div class="header hidden" style="display:hidden;"><!--SEARCH ENGINE FRIENDLY LINKS-->'
 			.($type == 'bible' ? "\r\n\t".'<p><a href="./&sortlast='.$document->sortby.'">Bible sorted by collection</a></p>' : '')
 			.$default
 			.($type != 'bible' ? "\r\n\t".'<p><a href="./?sortby=author&sortlast='.$document->sortby.'">'.$document->title.' sorted by author</a></p>' : '')
@@ -414,7 +463,7 @@ class hHeader extends HTML {
 			.($type == 'music' ? "\r\n\t".'<p><a href="./?sortby=composed&sortlast='.$document->sortby.'">'.$document->title.' sorted by composed</a></p>' : '')
 			.($type == 'music' ? "\r\n\t".'<p><a href="./?sortby=meter&sortlast='.$document->sortby.'">'.$document->title.' sorted by meter</a></p>' : '')
 			.($type == 'music' ? "\r\n\t".'<p><a href="./?sortby=key&sortlast='.$document->sortby.'">'.$document->title.' sorted by key</a></p>' : '')
-			."\r\n\t".'</div>';
+			."\r\n\t".'</div></div>';
 
 			if(substr_count('|Foundation Truth|Treasures of the Kingdom|Dear Princess|','|'.$document->title.'|')) {
 				$default = "\r\n\t".'<option value="issue"'.($sortby=='' ? ' selected="selected"' : '').'>issue</option>';
@@ -422,8 +471,9 @@ class hHeader extends HTML {
 				$default = "\r\n\t".'<option value="title"'.(($sortby=='' && $type != 'bible') || $sortby == 'title' ? ' selected="selected"' : '').'>title</option>';
 			}
 			$this->html .= 
-			"\r\n\t".'<div class="header"><!--HUMAN FRIENDLY FORM OPTION LIST-->
-				<form id="flist" name="flist" action="./" method="get">
+			"\r\n\t".'<div class="container"><div class="header"><!--HUMAN FRIENDLY FORM OPTION LIST-->
+				<form class="form-inline" id="flist" name="flist" action="./" method="get">
+					<div class="form-group">
 					<label for="sortby" class="form_item">Sort by:</label>
 					<select name="sortby" id="sortby" onchange="document.flist.submit();">'
 			.($type == 'music' ? "\r\n\t".'<optgroup label="Lyrics">' : '')
@@ -448,22 +498,22 @@ class hHeader extends HTML {
                 ."\r\n\t".'<option value="published"'.($sortby=='published' ? ' selected="selected"' : '').'>published</option>'
 				: '')
 			.'				
-					</select>'
-					.'<input type="hidden" name="sortlast" id="sortlast" value="'.$document->sortby.'" />
+					</select></div>'
+					.'<div class="form-group"><input type="hidden" name="sortlast" id="sortlast" value="'.$document->sortby.'" />
 					&nbsp;<span class="form_item">Order:</span>'
 					.'<input type="radio" name="order" id="ascending" value="ascending"'.($order=='ascending' ? ' checked="checked"' : '').' />'
 					.'<label for="ascending">ascending</label>'
 					.'&nbsp;<input type="radio" name="order" id="descending" value="descending"'.($order=='descending' ? ' checked="checked"' : '').' />'
-					.'<label for="descending">descending</label>'
-					.'&nbsp;&nbsp;<input type="submit" value="Apply" />
+					.'<label for="descending">descending</label></div>'
+					.'&nbsp;&nbsp;<input type="submit" class="btn btn-success" value="Apply" />
 				</form>'
-			."\r\n\t".'</div>';
+			."\r\n\t".'</div></div>';
 		} elseif(strtolower(get_parent_class($document)) == 'querylist') {
 			$this->html = 
-			"\r\n\t".'<div class="header">'
-			."\r\n".'<form name="lib_query" action="./" method="get"><input type="hidden" name="query" id="query" value="'.$_GET['query'].'" /><label for="'.$input.'" class="form_item">'.ucfirst($_GET['query']).' query:</label> '
-			.'<input type="text" style="width:35%;" name="q" id="q" accesskey="L" title="Alt+L" value="'.htmlentities(stripslashes(stripslashes( ($_GET['q'] ? $_GET['q'] : $_GET['passage']) ))).'" onfocus="this.select();" />&nbsp;&nbsp;<input type="submit" value="Look It Up" /></form>'
-			."\r\n\t".'</div>'."\r\n";
+			"\r\n\t".'<div class="container"><div class="header">'
+			."\r\n".'<form class="form-inline" name="lib_query" action="./" method="get"><div class="form-group"><input type="hidden" name="query" id="query" value="'.$_GET['query'].'" /><label for="'.$input.'" class="form_item">'.ucfirst($_GET['query']).' query:</label>'
+			.'<input type="text" style="width:35%;" name="q" id="q" accesskey="L" title="Alt+L" value="'.htmlentities(stripslashes(stripslashes( ($_GET['q'] ? $_GET['q'] : $_GET['passage']) ))).'" onfocus="this.select();" />&nbsp;&nbsp;<input type="submit" value="Look It Up" /></div></form>'
+			."\r\n\t".'</div></div>'."\r\n";
 		}
 	}
 }
@@ -537,8 +587,8 @@ class hNavBar extends HTML {
 				.$nextline
 				.'</span>
 			</div>';
-		$this->pre = "\r\n\t". '<div class="navbar docnav">' . $this->pre . $this->html . "\r\n\t".'</div>';
-		$this->post = "\r\n\t". '<div class="navbar docnav">' . $this->post . $this->html . "\r\n\t".'</div>';
+		$this->pre = "\r\n\t". '<nav aria-label="Page navigation"><ul class="pagination"><li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span>' . $this->pre . $this->html . "\r\n\t".'</li></ul></nav>';
+		$this->post = "\r\n\t". '<nav aria-label="Page navigation"><ul class="pagination"><li><a href="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span>' . $this->post . $this->html . "\r\n\t".'</li></ul></nav>';
 	}
 }
 
@@ -571,8 +621,10 @@ class hAudio extends HTML {
         if ($type == 'bible') {
             $audio_file = '//'. NORMALIZED_LOCALHOST . "bible.timelesstruths.org/{$title}.{$section}.mp3";
         }
-        $audio_file = str_replace(level_library(), "", $audio_file);
-		if (!stream_resolve_include_path($audio_file)) return;
+
+    $audio_file = str_replace(level_library(), "", $audio_file);
+
+    if (!stream_resolve_include_path($audio_file)) return;
 
 		$audiopath = level_url_webfront().'f_audio.swf?mp3='.urlencode(level_url().$audio_file);
 		// gets around Flash bug in certain IE 5.5 versions
@@ -634,7 +686,7 @@ class hContent extends HTML {
 				$class_side = ' sidebar';
 			}
 			$this->pre = "\r\n"
-			.'<div class="content'.$class_side.'" id="content">
+			.'<section><div class="container'.$class_side.'" id="content">
 			';
 			}	
 		if($type=='music' && strtolower(get_parent_class($document)) == 'document') {
@@ -645,13 +697,14 @@ class hContent extends HTML {
                 $zoom   = DEFAULT_M_SCORE_ZOOM;
                 $notes  = DEFAULT_M_SCORE_NOTES;
 
-			    $url_stub = 'library/music/'.substr($title,0,1).'/'.$title.'/'.$title.substr($section,5); // [score]_2 - includes variation suffix, if any
-                $document->has_pdf_standard = stream_resolve_include_path($url_stub.'.pdf');
-                $document->has_pdf_shaped   = stream_resolve_include_path($url_stub.'+.pdf');
-                $document->has_pdf          = ($document->has_pdf_standard || $document->has_pdf_shaped);
-			    $document->has_sib_standard = stream_resolve_include_path($url_stub.'.sib');
-                $document->has_sib_shaped   = stream_resolve_include_path($url_stub.'+.sib');
-                $document->has_sib          = ($document->has_sib_standard || $document->has_sib_shaped);
+			  $url_stub = 'library/music/'.substr($title,0,1).'/'.$title.'/'.$title.substr($section,5); // [score]_2 - includes variation suffix, if any
+        $document->has_pdf_standard = stream_resolve_include_path($url_stub.'.pdf');
+        $document->has_pdf_shaped   = stream_resolve_include_path($url_stub.'+.pdf');
+        $document->has_pdf          = ($document->has_pdf_standard || $document->has_pdf_shaped);
+
+        $document->has_sib_standard = stream_resolve_include_path($url_stub.'.sib');
+        $document->has_sib_shaped   = stream_resolve_include_path($url_stub.'+.sib');
+        $document->has_sib          = ($document->has_sib_standard || $document->has_sib_shaped);
 
 				$this->html .= "\r\n"
 				.'<div class="panel score">
@@ -691,25 +744,74 @@ class hContent extends HTML {
 		} else {
 			if(strtolower(get_parent_class($document)) == 'listing' && ($document->section || $type == 'bible') ) {
 				$this->html = '
-				<div class="list"><div class="list_table">'."\r\n\r\n"
-				.$document->xml				
-				."\r\n\r\n".'
+				<div class="col-xs-12 col-sm-7 col-md-8 col-lg-8 pull-right">
+					<div class="sidebar-item">
+						<div>
+							<p class="pull-right">
+								<a href="#">
+								<span class="text-info"><i class="glyphicon glyphicon-backward"></i>Prev
+								</span>
+								</a>
+								|
+								<a href="#">
+									<span class="text-info">Next <i class="glyphicon glyphicon-forward"></i>
+									</span>
+								</a>
+							</p>	
+						</div>	
+						<div class="list"><div class="list_table">'."\r\n\r\n"
+						.$document->xml				
+						."\r\n\r\n".'
+						</div></div>
 				</div></div>
 				';
 			} elseif( (strtolower(get_parent_class($document)) == 'document' || strtolower(get_parent_class($document)) == 'listing') && $section == '') {
 				// if this is Table of Contents, $document->xml has been already set by function called from hNavBar
 				$this->html = '
-				<div class="document toc">'."\r\n\r\n"
-				.$document->xml
-				."\r\n\r\n".'
+				<div class="col-xs-12 col-sm-7 col-md-8 col-lg-8 pull-right">
+					<div class="sidebar-item">
+						<div>
+							<p class="pull-right">
+								<a href="#">
+								<span class="text-info"><i class="glyphicon glyphicon-backward"></i>Prev
+								</span>
+								</a>
+								|
+								<a href="#">
+									<span class="text-info">Next <i class="glyphicon glyphicon-forward"></i>
+									</span>
+								</a>
+							</p>	
+						</div>'."\r\n\r\n"
+						.$document->xml
+						."\r\n\r\n".'
+						</div>
+					</div>	
 				</div>
 				';
 			} elseif(strtolower(get_class($document)) == 'sitesplit') {
 				$this->html = '
-				<div class="site '.$type.'">'."\r\n\r\n"
-				.$document->xml
-				."\r\n\r\n".'
-				</div>
+				<div class="col-xs-12 col-sm-7 col-md-8 col-lg-8 pull-right">
+					<div class="sidebar-item">
+						<div>
+							<p class="pull-right">
+								<a href="#">
+								<span class="text-info"><i class="glyphicon glyphicon-backward"></i>Prev
+								</span>
+								</a>
+								|
+								<a href="#">
+									<span class="text-info">Next <i class="glyphicon glyphicon-forward"></i>
+									</span>
+								</a>
+							</p>	
+						</div>
+						<div class="site '.$type.'">'."\r\n\r\n"
+						.$document->xml
+						."\r\n\r\n".'
+						</div>
+					</div>
+				</div>		
 				';
                 //[2012-10-12]
                 if ($type == 'bible' && !$title) {
@@ -718,7 +820,7 @@ class hContent extends HTML {
 			}
 		}
 		if(!is_score()) {
-			$this->post = "\r\n".'</div>';
+			$this->post = "\r\n".'</div></section>';
 		}
 	}
 	
@@ -866,8 +968,7 @@ class hSideTable extends HTML {
 	var $final;
 	function hSideTable($type,$section,&$document) {
 		$this->pre = '
-		<table summary=""><tr>
-		<th>
+		<!-- Before it was the table begining, now changed to div-->
 		';
 		if(strtolower(get_parent_class($document)) == 'document' || (strtolower(get_parent_class($document)) == 'listing' && !$document->section) ) {
 			$copyline = format_copyright($document->author,$document->copyright,$document->title,'Text');
@@ -912,28 +1013,38 @@ class hSideTable extends HTML {
 					$score_icon = $arrKeysigs[str_replace('#','s',preg_replace("',.+'",'',$rM['keytone']))];
 					
 					$html = "\r\n"
-					."\r\n".'<div class="recent"><table summary="" class="first"><tr><td class="top"><div class="date"><p>'.convert_date($rM['sib']).'</p></div></td></tr>'
-					."\r\n".'<tr><td class="icon"><a href="'.level_url().'music/'.$title_url.'/score'.($rM['s_id'] ? '_'.$rM['s_id'] : '').'/"><img src="'.level_url_webfront().'score_icon/keysig_'.$score_icon.'.gif" alt="'.title_tooltip_format($arrM['title']).'" width="120" height="60" /></a></td></tr>'
-					."\r\n".'<tr><td class="bottom"><div class="title"><p><a href="'.level_url().'music/'.$title_url.'/">'.$arrM['title'].'</a></p></div></td></tr></table></div>';
+					."\r\n".'<p>'.convert_date($rM['sib']).'</p>'
+					."\r\n".'<p><a href="'.level_url().'music/'.$title_url.'/score'.($rM['s_id'] ? '_'.$rM['s_id'] : '').'/"><img src="'.level_url_webfront().'score_icon/keysig_'.$score_icon.'.gif" alt="'.title_tooltip_format($arrM['title']).'" width="120" height="60" /></a></p>'
+					."\r\n".'<p><a href="'.level_url().'music/'.$title_url.'/">'.$arrM['title'].'</a></p>';
 				}
 				// disconnect from database
 				db_disconnect($db);
 	
-				$this->html = "
-				<div class='sidebar'>
-					<h1 class='first'>$titleline</h1>"
-					.($authoryear ? "
-					<p class='author'>$authoryear</p>
-					<p class='pubstatus last'>$copyline</p>"
-					: '')
-					.($document->summary ? '
-					<fieldset>
-					<p>'.apply_formatting($document->summary).'</p>
-					</fieldset>'
-					: '<hr />').'
-					<p>Most Recent:</p>
-					'.$html.'
-				</div>
+				$this->html = '
+				<div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+					<div class="row sidebar-item">
+						<h2 class="post-title-blue">
+							<span>$titleline</span>
+						</h2>
+						<!--h1 class="first"></h1-->'
+
+						.($authoryear ? "
+						<p class='author'>$authoryear</p>
+						<p class='pubstatus last'>$copyline</p><hr>"
+						: '')
+						.($document->summary ? '
+						<div class="well">
+							<p>'.apply_formatting($document->summary).'</p>
+						</div>'
+						: '<hr />').'
+					</div>
+					<div class="row sidebar-item">
+						<h2 class="post-title-blue">
+							<span>Most Recent:</span>
+						</h2>
+							'.$html.'
+					</div>
+				</div>	
 				';
 			} elseif($type=='music') {
 				// assigns subject margins depending on whether scripture reference will follow
@@ -964,8 +1075,11 @@ class hSideTable extends HTML {
                 $editable_scripture = "data-editable='tt3_music|url=$url_title|scripture'";
 
 				$this->html = "
-				<div class='sidebar'>
-					<h1 class='first'>$titleline</h1>
+				<div class='col-xs-12 col-sm-5 col-md-4 col-lg-4'>
+					<div class='row sidebar-item'>
+						<h2 class='post-title-blue'>
+							<span>$titleline</span>
+						</h2>
 					<p class='author' $editable_author>$authoryear</p>
 					<p class='pubstatus last'>$copyline</p>
 					<hr />
@@ -975,13 +1089,15 @@ class hSideTable extends HTML {
                         <a href='". level_url() ."$type/_/". title_url_format($subject) ."/?sortby=subject'>". str_replace(' ','&nbsp',$subject) ."</a>";
                 }
                 $this->html .= "</p>"
-                    .($document->scripture ? "\r\n\t\t\t\t\t"."<p class='green last' $editable_scripture>Scripture: <a href='http://". NORMALIZED_LOCALHOST ."bible.timelesstruths.org/$document->scripture'>$document->scripture</a></p>" : '')
+                    .($document->scripture ? "\r\n\t\t\t\t\t"."<p class='green last' $editable_scripture>Scripture: <a href='http://". NORMALIZED_LOCALHOST ."bible.timelesstruths.org/$document->scripture'>$document->scripture</a></p></div>" : '</div>')
                     .$this->list_media($section,$document)
-                    .($html_langs ? "
-                        <fieldset>
-                        <p class='help'><i>This song in other languages:</i></p>
+                    .($html_langs ? '
+                        <div class="row sidebar-item">
+						<h2 class="post-title-blue">
+							<span>Other Languages</span>
+						</h2>
                         $html_langs
-                        </fieldset>"
+                        </div>'
                         : '') .'
                     </div>
 				';
@@ -1026,8 +1142,11 @@ class hSideTable extends HTML {
 				$onclick = 'onclick="return trackLink(this, \'Downloads\', this.href.replace(/^.+\//,\'\'));"';
 
 				$this->html = "
-				<div class='sidebar'>
-					<h1 class='first'>$document->title</h1>
+				<div class='col-xs-12 col-sm-5 col-md-4 col-lg-4'>
+					<div class='row sidebar-item'>
+						<h2 class='post-title-blue'>
+							<span>$document->title</span>
+						</h2>
 					$imageline
 					<p class='author'>$authoryear</p>
 					<p class='pubstatus last'>$pubstatus<br />$copyline</p>
@@ -1037,22 +1156,23 @@ class hSideTable extends HTML {
                     $this->html .= ($i > 0 ? ',' : '') ."
                         <a href='". level_url() ."$type/_/". title_url_format($subject) ."/?sortby=subject'>". str_replace(' ','&nbsp',$subject) ."</a>";
                 }
-                $this->html .= "</p>\r\n"
+                $this->html .= "</p></div>\r\n"
 					//.$publine
 					//.$editline
 					.(strlen($document->excerpt)
 						? "\r\n"
-						  .'<fieldset>
-						  <p>'.apply_formatting($document->excerpt).'</p>'
-						  .($document->excerpted ? "\r\n".'<p class="excerpted"><i>from</i> '.$excerptline.'</p>' : '')
-						  .'</fieldset>'
+						  .'<div class="row sidebar-item">
+						  		<div class="well">
+						  			<p>'.apply_formatting($document->excerpt).'</p>'
+						  			.($document->excerpted ? "\r\n".'<p class="excerpted"><i>from</i> '.$excerptline.'</p>' : '')
+						  	.'</div></div>'
 						: '')
 					.($has_other
 						? "\r\n"
 						  .'<fieldset>
 						  <p class="help"><i>This document in other formats:</i></p>'
                           .(stream_resolve_include_path($file_epub)   ? '<p><a href="'.$url_path.'.epub" '.$onclick.' title="Download EPUB file ('.format_filesize($file_epub).')"><img src="'.level_url_webfront().'icon_epub.png" alt="Open EPUB" /></a> EPUB [<a class="source" href="'.$url_path.'.epub" '.$onclick.' title="Download EPUB file ('.format_filesize($file_epub).')">.epub</a>]</p>' : '')
-						  .(stream_resolve_include_path($file_kindle) ? '<p><a href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')"><img src="'.level_url_webfront().'icon_mobi.gif" alt="Open Mobipocket" /></a> Kindle [<a class="source" href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')">.mobi</a>]</p>' : '')
+						              .(stream_resolve_include_path($file_kindle) ? '<p><a href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')"><img src="'.level_url_webfront().'icon_mobi.gif" alt="Open Mobipocket" /></a> Kindle [<a class="source" href="'.$url_path.'.mobi" '.$onclick.' title="Download Mobipocket file ('.format_filesize($file_kindle).')">.mobi</a>]</p>' : '')
                           .(stream_resolve_include_path($file_pdf)    ? '<p><a href="'.$url_path.'.pdf"  '.$onclick.' title="Download PDF file ('.format_filesize($file_pdf).')"><img src="'.level_url_webfront().'icon_pdf.gif" alt="Open PDF" /></a> Adobe PDF [<a class="source" href="'.$url_path.'.pdf" '.$onclick.' title="Download PDF file ('.format_filesize($file_pdf).')">.pdf</a>]</p>' : '')
                           .(stream_resolve_include_path($file_m3u)    ? '<p><a href="'.$url_path.'.m3u"  '.$onclick.' title="Download M3U file"><img src="'.level_url_webfront().'icon_m3u.gif" alt="Open M3U" /></a> MP3 Playlist [<a class="source" href="'.$url_path.'.m3u" '.$onclick.' title="Download M3U file">.m3u</a>]</p>' : '')
 						  .'</fieldset>'
@@ -1077,9 +1197,9 @@ class hSideTable extends HTML {
 
 					// key has 'z' prefix to precede music in reverse order
 					$html['z'.$rTexts['date'].strtolower(str_replace('_','',$url_title))] = "\r\n"
-					."\r\n".'<table summary=""><tr><td class="top"><div class="date"><p>'.convert_date($rTexts['date']).'</p></div></td></tr>'
-					."\r\n".'<tr><td class="icon"><a href="'.level_url().'texts/'.$url_title.'/" title="'.title_tooltip_format($rTexts['title']).'"><img src="'.level_url().'texts/'.$url_title.'.jpg" alt="'.title_tooltip_format($rTexts['title']).'" width="120" height="120" /></a></td></tr>'
-					."\r\n".'<tr><td class="bottom"><div class="title"><p><a href="'.level_url().'texts/'.$url_title.'/">'.$rTexts['title'].'</a></p></div></td></tr></table>';
+					."\r\n".'<div class="well"><p>'.convert_date($rTexts['date']).'</p>'
+					."\r\n".'<p><a href="'.level_url().'texts/'.$url_title.'/" title="'.title_tooltip_format($rTexts['title']).'"><img src="'.level_url().'texts/'.$url_title.'.jpg" alt="'.title_tooltip_format($rTexts['title']).'" width="120" height="120" /></a><p>'
+					."\r\n".'<p><a href="'.level_url().'texts/'.$url_title.'/">'.$rTexts['title'].'</a></p></div>';
 				}
                 $html['x'] = "\r\n"
                     ."\r\n"."<p><br /><a href='".level_url()."texts/_/?sortby=published'>More...</a></p>";
@@ -1107,9 +1227,9 @@ class hSideTable extends HTML {
 					
 					// key has 'y' prefix to follow texts in reverse order
 					$html['y'.$rM['sib'].strtolower(str_replace('_','',$title_url))] = "\r\n"
-					."\r\n".'<table summary=""><tr><td class="top"><div class="date"><p>'.convert_date($rM['sib']).'</p></div></td></tr>'
-					."\r\n".'<tr><td class="icon"><a href="'.level_url().'music/'.$title_url.'/score'.($rM['s_id'] ? '_'.$rM['s_id'] : '').'/" title="'.title_tooltip_format($rM['title']).'"><img src="'.level_url_webfront().'score_icon/keysig_'.$score_icon.'.gif" alt="'.title_tooltip_format($rM['title']).'" width="120" height="60" /></a></td></tr>'
-					."\r\n".'<tr><td class="bottom"><div class="title"><p><a href="'.level_url().'music/'.$title_url.'/">'.$arrM['title'].'</a></p></div></td></tr></table>';
+					."\r\n".'<div class="well"><p>'.convert_date($rM['sib']).'</p>'
+					."\r\n".'<p><a href="'.level_url().'music/'.$title_url.'/score'.($rM['s_id'] ? '_'.$rM['s_id'] : '').'/" title="'.title_tooltip_format($rM['title']).'"><img src="'.level_url_webfront().'score_icon/keysig_'.$score_icon.'.gif" alt="'.title_tooltip_format($rM['title']).'" width="120" height="60" /></a></p>'
+					."\r\n".'<p><a href="'.level_url().'music/'.$title_url.'/">'.$arrM['title'].'</a></p></div>';
 				}
                 $html['x'] = "\r\n"
                     ."\r\n"."<p><br /><a href='".level_url()."music/_/?sortby=published'>More...</a></p>";
@@ -1125,8 +1245,8 @@ class hSideTable extends HTML {
 			// sets the content of the side panel
 			
 			$this->html = "\r\n"
-			.'<div class="sidebar'.($type == '' || $type == 'texts' || $type == 'music' ? '"><div class="recent">' : ' site">')
-			."\r\n\t".'<h1 class="first">'.$titleline.ucfirst($type).'</h1>';
+			.'<div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">'.($type == '' || $type == 'texts' || $type == 'music' ? '<div class="row sidebar-item">' : ' <div class="row sidebar-item">')
+			."\r\n\t".'<h2 class="post-title-blue"><span>'.$titleline.ucfirst($type).'</span></h2>';
 			if(is_array($html)) {
 				krsort($html);
 				foreach($html as $content) {
@@ -1139,15 +1259,13 @@ class hSideTable extends HTML {
 				$this->html .= $document->sidebar;
 			}
 			$this->html .= "\r\n"
-			.($type == '' || $type == 'texts' || $type == 'music' ? '</div>' : '').'</div>';
+			.($type == '' || $type == 'texts' || $type == 'music' ? '</div></div><!--Musics sidebar -->' : '').'</div></div><!--Musics sidebar -->';
 		}
 		$this->post = '
-		</th>
-		<td>
+		<!-- Coments to check if post is working -->
 		';
 		$this->final = '
-		</td>
-		</tr></table>
+		<!-- End of sidebar div before it was the table end, now replaced with div-->
 		';
         //[2012-10-12] hidden
         if ($type == 'bible' && get_class($document) == 'SiteSplit') {

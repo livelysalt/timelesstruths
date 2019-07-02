@@ -323,7 +323,7 @@ function extract_xml_text($type,&$document) {
 //print_r($GLOBALSL); exit;	
 //exit;
 	// if there is no such file, redirect to search page
-    if(!($xml_path = stream_resolve_include_path($xml_path))) {
+	if(!($xml_path = stream_resolve_include_path($xml_path))) {
 		header('Location: http://'. NORMALIZED_DOMAIN .'search/?404='.($type == 'bible' ? substr($title,3) : $title).'&in='.$document->type);
 		exit;
 	}
