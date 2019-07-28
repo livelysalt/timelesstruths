@@ -1,0 +1,49 @@
+<?php // views/Bible/default/elements/contact.phtml
+
+/**
+ * EXTRACTED VARS----------------
+ * $tt_address;
+ * $email_is_submitted;
+ * $email_is_success;
+ * $email_from_name;
+ * $email_from_email;
+ */
+?>
+
+<?php
+$note      = "We appreciate the opportunity to get in touch with you. If you provide your name and email, we will try to respond promptly, but it may take up to a week. Thank you for your patience.";
+$c_name    = "";
+$c_email   = "";
+$c_message = "";
+
+if ($email_is_submitted) {
+    $note = "Your message was sent!";
+    if ($email_from_email) {
+        $note = "Your message was sent, and you'll receive a copy at $email_from_email. We'll try to respond promptly, but it may take up to a week. Thank you for your patience.";
+    }
+    if (!$email_is_success) {
+        $note      = "Sorry&mdash;the system failed to send your email. Please try again later, or contact us by postal mail and alert us to the problem. Thanks!";
+        $c_name    = $email_from_name;
+        $c_email   = $email_from_email;
+        $c_message = $email_message;
+    }
+}
+?>
+
+<div class="contact <?php if ($email_is_submitted) { echo ($email_is_success ? 'email-sent success' : 'email-sent failure'); } ?>">
+    <div class="column"><div class="sheet">
+            <header class="section">
+                <h1 class="info-heading">Contact Us</h1>
+            </header>
+            <form action="./" method="post">
+                <table class="fields-h labels-r">
+                    <!--tr><th>&nbsp;</th><td class="address"><?php echo ''; $tt_address ?></td></tr-->
+                    <tr><th>&nbsp;</th><td><p class="note"><?php echo $note ?></p></td></tr>
+                    <tr><th><label for="c-name">Name</label></th><td><input type="text" name="c-name" id="c-name" value="<?php echo $c_name ?>" /></td></tr>
+                    <tr><th><label for="c-email">Email</label></th><td><input type="text" name="c-email" id="c-email" value="<?php echo $c_email ?>" /></td></tr>
+                    <tr><th><label for="c-message">Message</label></th><td><textarea name="c-message" id="c-message" rows="10"><?php echo $c_message ?></textarea></td></tr>
+                    <tr><th>&nbsp;</th><td><button type="submit">Send</button></td></tr>
+                </table>
+            </form>
+    </div><!--/.sheet--></div><!--/.column-->
+</div><!--/.contact-->

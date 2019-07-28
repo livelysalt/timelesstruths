@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'tt-test';
+  src: url("../../../default/font/tt-test.eot");
+  src: url("../../../default/font/tt-test.eot?#iefix") format('embedded-opentype'), url("../../../default/font/tt-test.woff") format('woff'), url("../../../default/font/tt-test.ttf") format('truetype'), url("../../../default/font/tt-test.svg#tt-test") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'tt-test';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  opacity: 0.8;
+/* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+/* Animation center compensation - magrins should be symmetric */
+/* remove if not needed */
+  margin-left: 0.2em;
+/* you can be more comfortable with increased icons size */
+/* font-size: 120%; */
+/* Uncomment for 3D effect */
+/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-left-open:before { content: '\e75d'; } /* '' */
+.icon-right-open:before { content: '\e75e'; } /* '' */
+.icon-down-micro:before { content: '\e7a7'; } /* '' */
+.icon-up-micro:before { content: '\e7a8'; } /* '' */
+.icon-download:before { content: '📥'; } /* '\1f4e5' */
+.icon-volume-off:before { content: '🔇'; } /* '\1f507' */
+.icon-volume-down:before { content: '🔉'; } /* '\1f509' */
+.icon-volume-up:before { content: '🔊'; } /* '\1f50a' */
+.icon-search:before { content: '🔍'; } /* '\1f50d' */
+
+/*===============================================================================================*/
+.dev-off .is-dev {
+    display:none;
+}
+.dev .column {
+    z-index:1;
+    position: relative;
+}
+.dev .dev-v-width {
+    position:fixed;
+    z-index:0;
+    top:0;
+    bottom:0;
+    left:50%;
+    height:100%;
+    width:0px;
+}
+.dev .dev-v-width hr {
+    position:absolute;
+    height:100%;
+    margin:0;
+    border:0;
+    left:-160px;
+    width:320px;
+    border-left:1px solid #f99;
+    border-right:1px solid #f99;
+}
+.dev .dev-v-width hr:before {
+    position:absolute;
+    bottom:0;
+    right:5px;
+    content: '320';
+}
+
+.dev-switch:after {
+    position: fixed;
+    left: 2px;
+    bottom: 2px;
+    width: 50px;
+    text-align: center;
+    background-color: #9f9;
+    border-radius: 5px;
+    color: #3c3;
+    content: "DEV";
+    font-family: arial;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.dev-switch:hover:after {
+    opacity: 1;
+    box-shadow: 0 0 10px white;
+}
+.dev-off .dev-switch:after {
+    background-color:#ccc;
+    color: #999;
+}
+
+
+/* MEDIA QUERIES */
+
+/*Print __________________________________________________________________________________________________________ */
+@media print {
+
+}/*/mediaquery*/
+
+/*480px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 480px) {
+
+.dev .dev-v-width hr {
+    left:-240px;
+    width:480px;
+}
+.dev .dev-v-width hr:before {
+    content: '480';
+}
+
+}/*/mediaquery*/
+
+/*768px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 768px) {
+
+.dev .dev-v-width hr {
+    left:-384px;
+    width:768px;
+}
+.dev .dev-v-width hr:before {
+    content: '768';
+}
+
+}/*/mediaquery*/
+
+/*992px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 992px) {
+
+.dev .dev-v-width hr {
+    left:-496px;
+    width:992px;
+}
+.dev .dev-v-width hr:before {
+    content: '992';
+}
+
+}/*/mediaquery*/
+
+/*1382px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 1382px) {
+
+.dev .dev-v-width hr {
+    left:-691px;
+    width:1382px;
+}
+.dev .dev-v-width hr:before {
+    content: '1382';
+}
+
+}/*/mediaquery*/
+
+/*2x __________________________________________________________________________________________________________ */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+}/*/mediaquery*/

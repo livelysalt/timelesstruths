@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+
+.icon-left-open:before { content: '\e75d'; } /* '' */
+.icon-right-open:before { content: '\e75e'; } /* '' */
+.icon-down-micro:before { content: '\e7a7'; } /* '' */
+.icon-up-micro:before { content: '\e7a8'; } /* '' */
+.icon-download:before { content: '📥'; } /* '\1f4e5' */
+.icon-volume-off:before { content: '🔇'; } /* '\1f507' */
+.icon-volume-down:before { content: '🔉'; } /* '\1f509' */
+.icon-volume-up:before { content: '🔊'; } /* '\1f50a' */
+.icon-search:before { content: '🔍'; } /* '\1f50d' */

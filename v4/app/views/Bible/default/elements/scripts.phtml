@@ -1,0 +1,21 @@
+<?php // views/Bible/default/elements/scripts.phtml ?>
+
+<!-- Grab Google CDN's jQuery, with a protocol relative URL -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<!-- Scripts -->
+<?php if($_COOKIE['dev']): ?>
+    <script src="<?php echo $this->findFront('js/libs/jquery.jplayer.js') ?>"></script>
+<?php else: ?>
+    <script src="<?php echo $this->findFront('js/libs/jquery.jplayer.min.js') ?>"></script>
+<?php endif; ?>
+<script src="<?php echo $this->findFront('js/plugins.js') ?>"></script>
+<script src="<?php echo $this->findFront('js/script.js') ?>"></script>
+
+<?php if($_COOKIE['dev']) echo '<script src="'. $this->findFront('js/dev.js') .'"></script>' ?>
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="<?php echo $this->findFront('js/libs/DOMAssistantCompressed-2.8.js') ?>"></script>
+    <script src="<?php echo $this->findFront('js/libs/selectivizr-1.0.1.js') ?>"></script>
+    <script src="<?php echo $this->findFront('js/libs/respond.min.js') ?>"></script>
+<![endif]-->

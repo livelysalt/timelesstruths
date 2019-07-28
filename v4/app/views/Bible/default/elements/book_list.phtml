@@ -1,0 +1,37 @@
+<?php // views/Bible/default/elements/book_list.phtml
+
+/**
+ * EXTRACTED VARS----------------
+ * $bookList (array)
+ * $search (array)
+ */ 
+
+if (!isset($bookList)) { echo "<!-- ERROR: \$bookList not set -->"; return; }
+?>
+
+<?php
+$urlBase = $this->relRoot();
+$hiddenCss = (isset($search['input']) || $pageId == 'contact' ? 'hidden' : '');
+?>
+
+<nav class="nav-index <?php echo $hiddenCss; ?>">
+    <div class="column"><div class="sheet">
+    
+    <ol class="nav-index-list nav-index-ot clearfix">
+        <?php
+        foreach($bookList as $book) {
+            if ($book->id == 40):
+        ?>
+    </ol>
+    
+    <ol class="nav-index-list nav-index-nt clearfix" start="40">
+        <?php
+            endif;
+            $book->fullnameCss = str_replace(' ','',$book->fullname);
+            echo "\r\n\t" . "<li id='nav-index-{$book->fullnameCss}'><a href='{$urlBase}book: {$book->fullname}'><abbr title='{$book->auralname}'>{$book->abbrhtml}</abbr></a></li>";
+        }
+        ?>
+    </ol>
+
+    </div><!--/.sheet--></div><!--/.column-->    
+</nav>

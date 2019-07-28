@@ -1,0 +1,358 @@
+<?php // views/Bible/default/elements/tag_testing.phtml ?>
+
+<!-- Sample Content to Plugin to Template -->
+<article>
+<code>div, span, article, nav, hr, a</code>
+    
+<div>This HTML includes all possible <span>HTML Elements</span> to help determine how the default CSS is applied.</div>
+
+<nav>    
+<ol>
+    <li><a href="#textblock">Text (Block)</a></li>
+    <li><a href="#textinline">Text (Inline)</a></li>
+    <li><a href="#textcomputer">Text (Computer)</a></li>
+    <li><a href="#lists">Lists</a></li>
+    <li><a href="#tables">Tables</a></li>
+    <li><a href="#forms">Forms</a></li>
+</ol>
+</nav>
+
+<!-- ####################################################################### -->
+
+<hr />
+<section>
+<h1 id="textblock">Text (Block)</h1>
+<aside><code>h1, h2, h3, h4, h5, h6, p, pre, blockquote, address</code></aside>
+
+<h1>Heading 1</h1>
+<p>Donec posuere enim hendrerit dui dignissim tempor.
+<br />Donec luctus, metus eget pulvinar rutrum, quam metus placerat velit, ac hendrerit nulla mi nec ante. Vestibulum ultricies tempus elit, vel dignissim orci luctus quis. Aliquam semper vehicula bibendum. Sed ac tristique odio.</p>
+<h2>Heading 2</h2>
+<p>Morbi ut viverra mi. Vestibulum interdum dignissim laoreet. Vestibulum elementum commodo lorem at consequat. Suspendisse mollis vestibulum tortor nec interdum. In sed ante ante. Curabitur nulla sapien, elementum eu feugiat at, elementum et ipsum.</p>
+<h3>Heading 3</h3>
+<p>Praesent tempor ante id sapien vulputate dignissim. Proin blandit arcu at nunc pharetra tincidunt. Mauris ut dolor enim, luctus adipiscing eros.</p>
+<h4>Heading 4</h4>
+<p>Praesent ut metus purus, eget volutpat felis. Morbi at nisi eu lectus ultrices posuere in at turpis. Vestibulum sodales massa vitae nunc gravida sed rhoncus dolor ullamcorper. Nullam at neque ut nunc condimentum aliquet. Vestibulum id urna magna, ac faucibus purus.</p>
+<h5>Heading 5</h5>
+<p>Curabitur in lacinia nisl. Mauris lacinia malesuada metus, quis semper metus vestibulum vel. Vivamus enim dui, gravida vel egestas eget, gravida malesuada orci.</p>
+<h6>Heading 6</h6>
+<p>Pellentesque aliquam, ante eget mattis consectetur, risus leo interdum enim, eget gravida elit nibh quis est. Morbi tempus mauris eu urna tempor pellentesque. Donec eleifend semper quam vitae dictum.</p>
+<p>Morbi ut viverra mi. Vestibulum interdum dignissim laoreet. Vestibulum elementum commodo lorem at consequat. Suspendisse mollis vestibulum tortor nec interdum. In sed ante ante. Curabitur nulla sapien, elementum eu feugiat at, elementum et ipsum.</p>
+<blockquote>
+<p>This stylesheet is going to help a lot.</p>
+<p>I repeat: this stylesheet is going to help a lot.</p>
+<footer>&mdash;<cite>Blockquote Citations</cite>, pp. 49</footer>
+</blockquote>
+<blockquote>
+<p>Curabitur in lacinia nisl. Mauris lacinia malesuada metus, quis semper metus vestibulum vel. Vivamus enim dui, gravida vel egestas eget, gravida malesuada orci.</p>
+<p>Pellentesque aliquam, ante eget mattis consectetur, risus leo interdum enim, eget gravida elit nibh quis est. Morbi tempus mauris eu urna tempor pellentesque. Donec eleifend semper quam vitae dictum.</p>
+</blockquote>
+<pre>
+    This is some
+    preformatted text
+    with only spaces and line breaks...      for "markup"
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  <abbr title="Avenue">AVE</abbr></p>
+</pre>
+<p>The author of this page:</p>
+<address>Timeless Truths Publications
+    <br />mail@timelesstruths.org
+    <br />PO Box 1212
+    <br />Jefferson, OR 97352</address>
+</section>
+
+<!-- ####################################################################### -->
+
+<hr />
+<section>
+<h1 id="textinline">Text (Inline)</h1>
+<aside><code>br, b, i, strong*, em*, small, s, del, ins, sup, sub, abbr, cite, mark, bdo, q</code></aside>
+
+<p>Joel is <s>18 years old</s>, and he likes <del>chocolate truffles</del> <ins datetime="2011-07-04">vanilla ice cream</ins>.
+<br />Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipiscing elit. Nullam <small>dignissim</small> convallis est. Quisque aliquam. <cite>cite</cite>. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse <abbr title="Avenue">AVE</abbr> quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+<p>Pellentesque aliquam, <b>ante eget <i>mattis</i></b> consectetur, risus leo <i>interdum</i> enim, eget gravida elit <strong>nibh</strong> quis <em>est</em>. Donec eleifend semper quam vitae dictum.</p>
+<p>For more information read <cite title="Birth of a Reformation">Byers</cite>.</p>
+<p>Some supposed <bdo>backward text</bdo>. And also some <mark>marked text</mark> to call attention. And finally, to quote the president, <q>We must change things around here.</q></p>
+</section>
+
+<!-- ####################################################################### -->
+
+<hr />
+<section>
+<h1 id="textcomputer">Text (Computer)</h1>
+<aside><code>code, samp, kbd, var</code></aside>
+
+<p>This is the source code: 
+    <code><var>$var</var> = 2 + 2;
+        implode(array($var,2,3,4));
+    </code>
+</p>
+<p>You are expected to type <kbd>Sample Address</kbd>.</p>
+<p>And this is the output:
+    <samp>
+        5;
+        Sample Address
+    </samp>
+</p>
+</section>
+
+
+<!-- ####################################################################### -->
+
+<hr />
+<section>
+<h1 id="lists">Lists</h1>
+<aside><code>ol, ul, li, dl, dt, dd, dfn*</code></aside>
+
+<ol>
+    <li>Item #1</li>
+    <li>Item #2</li>
+    <li>Item #3</li>
+</ol>
+<ul>
+    <li>Item #1</li>
+    <li>Item #2</li>
+    <li>Item #3</li>
+</ul>
+<dl>
+    <dt>Term</dt>
+    <dd>This the definition of Term</dd>
+    <dt><dfn>Term 2</dfn></dt>
+    <dd>This the definition of Term 2</dd>
+</dl>
+</section>
+
+<!-- ####################################################################### -->
+
+<hr />
+<section>
+<h1 id="tables">Tables</h1>
+<aside><code>table, caption, colgroup, col, thead, tbody, tfoot, tr, th, td</code></aside>
+
+<table>
+    <caption>This is the caption of the table</caption>
+    <colgroup span="3">
+        <col span="2" />
+        <col />
+    </colgroup>
+    <thead>
+    <tr><th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th></tr>
+    </thead>
+    <tbody>
+    <tr><td>Division 1</td><td>Division 2</td><td>Division 3</td></tr>
+    <tr><td>Division 1</td><td>Division 2</td><td>Division 3</td></tr>
+    <tr><td>Division 1</td><td>Division 2</td><td>Division 3</td></tr>
+    </tbody>
+    <tfoot>
+    <tr><td colspan="2">Division 1 and 2</td><td>Division 3</td></tr>
+    </tfoot>
+</table>
+</section>
+
+<!-- ####################################################################### -->
+
+<hr />
+<section>
+<h1 id="forms">Forms</h1>
+<aside><code>fieldset, legend, form, label, input, select, optgroup, option, button</code></aside>
+
+<fieldset>
+    <legend>Legend</legend>
+    
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
+    
+    <form>
+        <h2>Form Element</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+        
+        <p><label for="text_field">Text Field:</label><br />
+        <input type="text" id="text_field" /></p>
+        
+        <p><label for="text_area">Text Area:</label><br />
+        <textarea id="text_area"></textarea></p>
+        
+        <p><label for="password">Password:</label><br />
+            <input type="password" class="password" name="password" />
+        </p>
+        
+        <p><label for="file">File Input:</label><br />
+            <input type="file" class="file" name="file" />
+        </p>
+        
+        <p><label for="select_element">Select Element:</label><br />
+            <select name="select_element">
+            <optgroup label="Option Group 1">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </optgroup>
+            <optgroup label="Option Group 2">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </optgroup>
+        </select></p>
+        
+        <p><label for="radio_buttons">Radio Buttons:</label><br />
+            <input type="radio" class="radio" name="radio_button" value="radio_1" checked="checked" /> Radio 1<br/>
+            <input type="radio" class="radio" name="radio_button" value="radio_2" /> Radio 2<br/>
+            <input type="radio" class="radio" name="radio_button" value="radio_3" /> Radio 3<br/>
+        </p>
+        
+        <p><label for="checkboxes">Checkboxes:</label><br />
+            <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Radio 1<br/>
+            <input type="checkbox" class="checkbox" name="checkboxes" value="check_2" checked="checked" /> Radio 2<br/>
+            <input type="checkbox" class="checkbox" name="checkboxes" value="check_3" checked="checked" /> Radio 3<br/>
+        </p>
+        
+        <p><input class="button" type="reset" value="Clear" />
+            <input class="button" type="submit" value="Submit" />
+            <br />
+            <button type="reset">Clear</button>
+            <button type="submit">Submit</button></p>
+        
+    </form>
+</fieldset>
+</section>
+
+<!-- ########################################################################################### -->
+
+</article>
+
+<!-- ########################################################################################### -->
+
+<table id="tags">
+<thead>
+<tr><th>Tag</th>                <th>Description</th></tr>
+</thead>
+<tbody>
+<tr><th>!--</th>                <td>a comment</td></tr>
+<tr><th>!DOCTYPE</th>           <td>the document type</td></tr>
+<tr><th>a</th>                  <td>a hyperlink</td></tr>
+<tr><th>abbr</th>               <td>an abbreviation</td></tr>
+<tr class="x"><th>acronym</th>  <td>- [use <var>abbr</var>]</td></tr>
+<tr><th>address</th>            <td>contact for author or owner (not any other postal address)</td></tr>
+<tr class="x"><th>applet</th>   <td>-</td></tr>
+<tr class="todo-"><th>area</th>               <td>an area inside an image map</td></tr>
+<tr class="new"><th>article</th><td>an article</td></tr>
+<tr class="new"><th>aside</th>  <td>content aside from the page content</td></tr>
+<tr class="new-"><th>audio</th>  <td>sound content</td></tr>
+<tr><th>b</th>                  <td>bold text</td></tr>
+<tr><th>base</th>               <td>a base URL for all the links in a page</td></tr>
+<tr class="x"><th>basefont</th> <td>-</td></tr>
+<tr><th>bdo</th>                <td>the direction of text display</td></tr>
+<tr class="x"><th>big</th>      <td>- [use css]</td></tr>
+<tr><th>blockquote</th>         <td>a long quotation</td></tr>
+<tr><th>body</th>               <td>the body element</td></tr>
+<tr><th>br</th>                 <td>Inserts a single line break</td></tr>
+<tr><th>button</th>             <td>a push button</td></tr>
+<tr class="new-"><th>canvas</th> <td>graphics</td></tr>
+<tr><th>caption</th>            <td>a table caption</td></tr>
+<tr class="x"><th>center</th>   <td>- [use css]</td></tr>
+<tr><th>cite</th>               <td>a citation</td></tr>
+<tr><th>code</th>               <td>computer code text</td></tr>
+<tr><th>col</th>                <td>attributes for table columns</td></tr>
+<tr><th>colgroup</th>           <td>groups of table columns</td></tr>
+<tr class="new-"><th>command</th><td>a command button</td></tr>
+<tr class="new-"><th>datalist</th><td>a dropdown list</td></tr>
+<tr><th>dd</th>                 <td>a definition description</td></tr>
+<tr><th>del</th>                <td>deleted text</td></tr>
+<tr class="new-"><th>details</th><td>details of an element</td></tr>
+<tr><th>dfn</th>                <td>a definition term</td></tr>
+<tr class="x"><th>dir</th>      <td>- [use <var>ul</var>]</td></tr>
+<tr><th>div</th>                <td>a section in a document</td></tr>
+<tr><th>dl</th>                 <td>a definition list</td></tr>
+<tr><th>dt</th>                 <td>a definition term</td></tr>
+<tr><th>em</th>                 <td>emphasized text</td></tr>
+<tr class="new-"><th>embed</th>  <td>external interactive content or plugin</td></tr>
+<tr><th>fieldset</th>           <td>a fieldset</td></tr>
+<tr class="new-"><th>figcaption</th><td>the caption of a figure element</td></tr>
+<tr class="new-"><th>figure</th> <td>a group of media content, and their caption</td></tr>
+<tr class="x"><th>font</th>     <td>- [use css]</td></tr>
+<tr class="new"><th>footer</th> <td>a footer for a section or page</td></tr>
+<tr><th>form</th>               <td>a form</td></tr>
+<tr class="x"><th>frame</th>    <td>-</td></tr>
+<tr class="x"><th>frameset</th> <td>-</td></tr>
+<tr><th>h1...h6</th>            <td>header 1 to header 6</td></tr>
+<tr><th>head</th>               <td>information about the document</td></tr>
+<tr class="new"><th>header</th> <td>a header for a section or page</td></tr>
+<tr class="new-"><th>hgroup</th> <td>information about a section in a document</td></tr>
+<tr><th>hr</th>                 <td>a horizontal rule</td></tr>
+<tr><th>html</th>               <td>an html document</td></tr>
+<tr><th>i</th>                  <td>italic text</td></tr>
+<tr class="todo-"><th>iframe</th>             <td>an inline sub window (frame)</td></tr>
+<tr class="todo-"><th>img</th>                <td>an image</td></tr>
+<tr><th>input</th>              <td>an input field</td></tr>
+<tr><th>ins</th>                <td>inserted text</td></tr>
+<tr class="new-"><th>keygen</th> <td>a generated key in a form</td></tr>
+<tr><th>kbd</th>                <td>keyboard text</td></tr>
+<tr><th>label</th>              <td>a label for a form control</td></tr>
+<tr><th>legend</th>             <td>a title in a fieldset</td></tr>
+<tr><th>li</th>                 <td>a list item</td></tr>
+<tr><th>link</th>               <td>a resource reference </td></tr>
+<tr class="todo-"><th>map</th>                <td>an image map</td></tr>
+<tr class="new"><th>mark</th>   <td>marked text</td></tr>
+<tr class="todo-"><th>menu</th>               <td>a menu list</td></tr>
+<tr><th>meta</th>               <td>meta information</td></tr>
+<tr class="new-"><th>meter</th>  <td>measurement within a predefined range</td></tr>
+<tr class="new"><th>nav</th>    <td>navigation links</td></tr>
+<tr class="x"><th>noframes</th> <td>-</td></tr>
+<tr><th>noscript</th>           <td>a noscript section</td></tr>
+<tr class="todo-"><th>object</th>             <td>an embedded object</td></tr>
+<tr><th>ol</th>                 <td>an ordered list</td></tr>
+<tr><th>optgroup</th>           <td>an option group</td></tr>
+<tr><th>option</th>             <td>an option in a drop-down list</td></tr>
+<tr class="new-"><th>output</th> <td>some types of output</td></tr>
+<tr><th>p</th>                  <td>a paragraph</td></tr>
+<tr class="todo-"><th>param</th>              <td>a parameter for an object</td></tr>
+<tr><th>pre</th>                <td>preformatted text</td></tr>
+<tr class="new-"><th>progress</th><td>progress of a task of any kind</td></tr>
+<tr><th>q</th>                  <td>a short quotation</td></tr>
+<tr class="new-"><th>rp</th>     <td>Used in ruby annotations to define what to show if a browser does not support the ruby element</td></tr>
+<tr class="new-"><th>rt</th>     <td>explanation to ruby annotations</td></tr>
+<tr class="new-"><th>ruby</th>   <td>ruby annotations</td></tr>
+<tr><th>s</th>                  <td>text that is no longer correct</td></tr>
+<tr><th>samp</th>               <td>sample computer code</td></tr>
+<tr><th>script</th>             <td>a script</td></tr>
+<tr class="new"><th>section</th><td>a section</td></tr>
+<tr><th>select</th>             <td>a selectable list</td></tr>
+<tr><th>small</th>              <td>small text</td></tr>
+<tr class="new-"><th>source</th> <td>media resources</td></tr>
+<tr><th>span</th>               <td>a section in a document</td></tr>
+<tr class="x"><th>strike</th>   <td>- [use <var>del</var>]</td></tr>
+<tr><th>strong</th>             <td>strong text</td></tr>
+<tr><th>style</th>              <td>a style definition</td></tr>
+<tr><th>sub</th>                <td>subscripted text</td></tr>
+<tr class="new-"><th>summary</th><td>the header of a <var>details</var> element</td></tr>
+<tr><th>sup</th>                <td>superscripted text</td></tr>
+<tr><th>table</th>              <td>a table</td></tr>
+<tr><th>tbody</th>              <td>a table body</td></tr>
+<tr><th>td</th>                 <td>a table cell</td></tr>
+<tr><th>textarea</th>           <td>a text area</td></tr>
+<tr><th>tfoot</th>              <td>a table footer</td></tr>
+<tr><th>th</th>                 <td>a table header</td></tr>
+<tr><th>thead</th>              <td>a table header</td></tr>
+<tr class="new-"><th>time</th>   <td>a date/time</td></tr>
+<tr><th>title</th>              <td>the document title</td></tr>
+<tr><th>tr</th>                 <td>a table row</td></tr>
+<tr class="x"><th>tt</th>       <td>- [use css]</td></tr>
+<tr class="x"><th>u</th>        <td>- [use css]</td></tr>
+<tr><th>ul</th>                 <td>an unordered list</td></tr>
+<tr><th>var</th>                <td>a variable</td></tr>
+<tr class="new-"><th>video</th>  <td>a video</td></tr>
+<tr class="new-"><th>wbr</th>    <td>a possible line-break</td></tr>
+<tr class="x"><th>xmp</th>      <td>- [use <var>pre</var>]</td></tr>
+</tbody>
+</table>
+<style type="text/css">
+#tags th { text-align:left; }
+#tags tbody th:before,
+#tags tbody var:before { content:'<'; }
+#tags tbody th:after,
+#tags tbody var:after { content:'>'; }
+#tags .x { color:lightGray; }
+#tags .new { color:brown; }
+#tags .todo-,
+#tags .new- { color:red; }
+#tags code:before { content:'Tags used: '; }
+</style>
+<!-- End of Sample Content -->

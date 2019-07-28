@@ -1,0 +1,17 @@
+<?php // views/Bible/default/elements/search_bar.phtml
+
+/**
+ * EXTRACTED VARS----------------
+ * $search (array)
+ */ 
+?>
+
+<form class="form-search" action="<?php echo $this->relRoot() ?>" method="get">
+<div class="search-bar">
+<table><tr>
+    <td><div class="input-wrap search-wrap"><label for="search" class="visuallyhidden">Search:</label><input type="search" id="search" name="search" class="max" accesskey="4" value="<?php if(isset($search['input'])) { echo htmlspecialchars($search['input']); } ?>" autofocus="autofocus" /></div></td>
+    <td class="min"><div class="input-wrap"><button type="submit" title="Search" alt="Submit Search">Search</button></div></td>
+</tr></table>
+</div><!--/.search-bar-->
+</form>
+<script>TT.run('Search');</script>

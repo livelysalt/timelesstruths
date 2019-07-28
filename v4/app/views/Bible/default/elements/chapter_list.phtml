@@ -1,0 +1,41 @@
+<?php // views/Bible/default/elements/chapter_list.phtml
+
+/**
+ * EXTRACTED VARS----------------
+ * $book (object)
+ */ 
+
+?>
+
+<?php
+$urlBase = $this->relRoot();
+
+if ($book->chapters):
+?>
+
+<nav class="nav-index">
+    <div class="column"><div class="sheet">
+
+    <header class="section">
+        <h2 class="chapter-title"><?php echo $book->fullname; ?></h2>
+    </header>
+    
+    <ol class="nav-index-list nav-index-chapters clearfix">
+
+        <?php
+        $book->fullnameCss = str_replace(' ','',$book->fullname);
+        $book->abbrname = ucwords($book->abbrname);
+        $auralname = str_replace('1 ','First ', str_replace('2 ','Second ', str_replace('3 ','Third ',$book->fullname)));
+
+        for ($chapter = 1; $chapter <= $book->chapters; $chapter++) {
+            echo "<li id='nav-index-{$book->fullnameCss}-{$chapter}'><a href='{$urlBase}{$book->fullname} {$chapter}'><span>$chapter</span></a></li>";
+        }
+        ?>
+    </ol>
+
+    </div><!--/.sheet--></div><!--/.column-->    
+</nav>
+
+<?php
+endif; // ($book->chapters)
+?>

@@ -1,0 +1,33 @@
+<?php // views/Bible/default/elements/errors.phtml
+
+/**
+ * EXTRACTED VARS----------------
+ * $errors (array)
+ */ 
+
+?>
+
+<?php
+$urlBase = $this->relRoot();
+
+if (count($errors)):
+?>
+
+<div class="errors">
+    <div class="column"><div class="sheet"><ul>
+
+<?php
+
+foreach ($errors as $error) {
+
+    echo "<li>{$error}</li>";
+
+}
+?>
+
+    </ul></div><!--/.sheet--></div><!--/.column-->    
+</div><!--/.errors-->
+
+<?php
+endif; // (count($errors))
+?>

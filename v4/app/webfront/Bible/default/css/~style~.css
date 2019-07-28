@@ -1,0 +1,935 @@
+/* _________________________________________________
+
+320 and Up boilerplate extension
+
+Author: Andy Clarke
+Version: 0.9b
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+_____________________________________________________
+
+1.ROOT
+2.HEADINGS
+3.TYPOGRAPHY
+4.LINKS
+5.FIGURES & IMAGES
+6.TABLES
+7.FORMS (See css/mylibs/forms.css)
+8.BANNER header[role="banner"]
+9.NAVIGATION nav[role="navigation"]
+10.CONTENT
+11.MAIN div[role="main"]
+12.COMPLIMENTARY div[role="complementary"]
+13.CONTENTINFO footer[role="contentinfo"]
+14.GLOBAL OBJECTS
+15.VENDOR-SPECIFIC 
+16.TEMPLATE SPECIFICS
+17.MODERNIZR
+
+COLOURS 
+
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin : 0;
+padding : 0;
+border : 0;
+font-size : 100%;
+font : inherit;
+vertical-align : baseline; }
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+display : block; }
+
+abbr[title] { 
+border-bottom : 1px dotted; 
+cursor : help; }
+
+/* 1.ROOT */
+
+html {
+    height: 100%;
+    overflow-y : scroll;
+    background : rgb(255,255,255) /* url(../img/tmp/grid.png) repeat-y 50% 0 */;
+}
+
+body { 
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size:100%;
+    color: #000;
+    background-color: #f6e8d4; /* hsl(36,65%,90%) */ 
+}
+/*
+body:hover .hovertest {
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:99999;
+    background-color: #fcc;
+}
+*/
+/* 2.HEADINGS */
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+font-family : "Helvetica Neue", Helvetica, Arial;
+font-weight : bold; }
+
+h1 { 
+margin-bottom : .75em;
+font-size : 3em; /* 48 / 16 = 3 */
+line-height : 1.2; }
+
+h2 { 
+margin-bottom : .75em;
+font-size : 2em; /* 36 / 16 = 2 */
+line-height : 1.2; }
+
+h3 { 
+margin-bottom : 1em;
+font-size : 1.5em; /* 24 / 16 = 1.5 */
+line-height : 1.3; }
+
+h4 { 
+margin-bottom : 1.25em;
+font-size : 1.25em; /* 20 / 16 = 1.25 */
+line-height : 1.25; }
+
+h5 { 
+margin-bottom : 1.5em;
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+h6 { 
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+/* 3.TYPOGRAPHY */
+
+body {
+    font: 93.75%/1.4 Cambria, Helvetica, Arial; /* 15px/21 */
+}
+
+.banner,
+.search-wrap,
+.chapter-title {
+    font: 1.467em/1.25 Calibri, Helvetica, Arial; /* (22/15px)/27.5 */
+}
+.no-fontsmoothing .search-wrap,
+.no-fontsmoothing .chapter-title {
+    font: 1.267em/1.473 Helvetica, Arial; /* (19/15px)/28 */
+}
+.search-wrap {
+    padding-left: 0.136em; /* (3/22px) */
+}
+.no-fontsmoothing  .search-wrap {
+    padding-left: 0.158em; /* (3/19px) */
+}
+
+.chapter-title {
+    font-weight: normal;
+    margin:0;
+}
+.verse {
+    padding-bottom: 0.25em; /* (3.75/15px) */
+}
+.no-fontsmoothing .verse {
+    font: 0.933em/1.5 Helvetica, Arial; /* (14/15px)/21 */
+}
+.verse-num {
+    font-family: "Segoe UI", Helvetica, Arial;
+    font-size: 0.6666em; /* 10px/15px */
+    font-weight: bold;
+    color: #666;
+}
+
+.psalm-title,
+.epistle-colophon {
+    font-style: italic;
+}
+.psalm-title .foreign {
+    font-style: normal;
+}
+
+.nav-index li {
+    font: 1.467em/1.5 Calibri, Helvetica, Arial; /* (22/15px)/33 */
+}
+
+p, 
+ol, 
+ul, 
+dl, 
+address { 
+margin-bottom : 1.5em; 
+font-size : 1em; /* 15px */ }
+
+ul, 
+ol { 
+margin : 0 0 1.5em -24px; 
+padding-left : 24px; }
+
+ul { 
+list-style-type : disc; }
+
+ol { 
+list-style-type : decimal; }
+
+li ul, 
+li ol { 
+margin : 0;
+font-size : 1em; /* 15px */ }
+
+dl, 
+dd { 
+margin-bottom : 1.5em; }
+
+dt { 
+font-weight : normal; }
+
+blockquote  { 
+margin : 0 0 1.5em -24px; 
+padding-left : 24px; 
+border-left : 1px solid rgb(200,200,200);
+font-style : italic; }
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+content : '';
+content : none; }
+
+b, 
+strong	{ 
+font-weight : bold; }
+
+i, 
+em { 
+font-style : italic; }
+
+sup, 
+sub { 
+    position: relative;
+    font-size: 0.75em; 
+    line-height: 0;
+}
+
+sup { 
+    top: -0.3em;
+}
+
+sub { 
+bottom : -0.3em; }
+
+address { 
+font-style : normal; }
+
+pre { 
+margin-bottom : 1.5em; 
+white-space : pre; 
+white-space : pre-wrap; 
+word-wrap : break-word; }
+
+pre, 
+code { 
+font : .875em 'andale mono', 'lucida console', monospace; 
+line-height : 1.5; }
+
+small {
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+/* 4.LINKS */
+
+a, 
+a:visited {
+    outline: none;
+    text-decoration: none;
+}
+ 
+a:hover { 
+    outline: none;
+    text-decoration: underline;
+}
+ 
+a:active, 
+a:focus { 
+    outline: none;
+    text-decoration: underline;
+    color: #e00;
+}
+
+.nav-index-chapters li {
+    position: relative;
+}
+.nav-index-chapters li:before,
+.nav-index-chapters li:after {
+    color: #ccc;
+    position: absolute;
+    z-index: 0;
+}
+.nav-index-chapters li:before {
+    content: '[';
+    left: 0;
+}
+.nav-index-chapters li:after {
+    content: ']';
+    right: 0;
+}
+.nav-index a {
+    position: relative;
+    display: inline-block;
+    min-width: 2.2em;
+    text-align: center;
+    z-index: 1;
+}
+.nav-index a abbr,
+.nav-index a span {
+    position: relative;
+    z-index: 2;
+}
+
+.nav-index abbr,
+.nav-results abbr {
+    border-bottom: none;
+    cursor: inherit;
+}
+
+/* 5.FIGURES & IMAGES */
+
+figure {
+margin-bottom : 1.5em; }
+
+figure img,
+figure object,
+figure embed {
+margin-bottom : .75em;
+max-width : 100%; }
+
+figcaption {
+display : block;
+font-weight : normal; }
+
+/* 6.TABLES */
+
+table { 
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th { 
+    font-weight: bold;
+}
+
+th,
+td,
+caption {
+    vertical-align:top;
+    padding:0;
+}
+
+tfoot { 
+font-style : italic; }
+
+caption { 
+background-color : transparent; }
+
+.min {
+    width:1%;
+}
+.max {
+    width:100%;
+}
+
+/* 7.FORMS (See css/mylibs/forms.css) */
+
+.search-wrap {
+    background-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 1px;
+}
+.input-wrap [type="search"] {
+    font: inherit;
+    margin:0;
+    border:0;
+    padding:0;
+    background:none;
+    color: #630;
+    -webkit-appearance: textfield;
+}
+.input-wrap [type="search"]:focus {
+    outline: none;
+}
+.form-search [type="submit"] {
+    font: inherit; /* line-height: 15px */
+    background-color: #eee;
+    background-image: url("../../../default/img/search@50x50.png");
+    background-position: 0.266em -0.266em; /* (4/15px) */
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #888;
+    border-radius: 0.2em; /* (3/15px) */
+    color: transparent;
+    height: 1.933em; /* (29/15px) */
+    line-height: 0.5em;
+    margin-left: 0.2em; /* (3/15px) */
+    /*margin-top: 1px;*/
+    width: 2.4em;
+}
+button::-moz-focus-inner {
+    border: 0;
+}
+.form-search [type="submit"]:focus,
+.form-search [type="submit"]:hover {
+    outline:none;
+    border-color: #999 #666 #666 #999;
+    box-shadow: 0 0 3px rgba(0,0,0,0.35);
+}
+.form-search [type="submit"]:active {
+    border-color:#666;
+    background-color:#ddd;
+    box-shadow: none;
+}
+
+/* 8.BANNER */
+
+header.global {
+    position: fixed; 
+    width:100%;
+    z-index: 999 !important;
+    background-color: hsla(36, 65%, 80%, 0.9);
+    border-bottom: 1px solid #CCBBAA;
+    box-shadow: 0 0 1em hsla(36, 65%, 25%, 0.25);
+    padding-top: 0.2em; /* 3px */
+    padding-bottom: 0.2em; /* 3px */
+}
+.banner {
+    float:left;
+    margin: 1px 0.454em 0 0.682em; /* 1px 10px 0 15px */
+}
+.search-bar {
+    margin:0 1em; /* 15px */
+}
+
+/* 9.NAVIGATION */
+
+.nav-results {
+    margin-bottom:1em; /* 15px */
+}
+.nav-results-showing,
+.nav-results-pages {
+    margin:0 1em; /* 15px */
+}
+.nav-results-showing {
+    float:left;
+}
+.nav-results-pages {
+    float:right;
+}
+/*
+.nav-index .sheet {
+    background-color: #fff;
+}
+*/
+.nav-index .nav-index-list {
+    list-style:none;
+    padding: 0;
+    margin: -0.5em 0 -0.5em -0.75em; /* offset <li> margin-left (see below) */
+}
+.nav-index .nav-index-list:first-child {
+    padding-bottom: 1.5em;
+}
+.nav-index .nav-index-chapters {
+    padding-top: 0;
+}
+.nav-index li {
+    margin:0;
+    padding:0;
+    float: left;
+    margin-left: 0.5em;
+    white-space: nowrap;
+}
+
+/* 10.CONTENT */
+
+.content {
+    padding-top: 4em; /* clearance for fixed header */
+}
+.sheet {
+    position: relative;
+    margin: 1em 1em;
+    background-color:#fff;
+    padding: 1.5em; /* (22.5/15px) */ 
+    box-shadow:0 0 5px rgba(0, 0, 0, 0.15);
+}
+.sheet-gap-top {
+    margin-top:6px; /* leaves a 1px gap */
+    padding-top:0;
+}
+.sheet-gap-top:before,
+.sheet-gap-bottom:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: transparent !important;
+    background-image: url("../../../default/img/section_snippet_edging.png");
+    background-repeat:repeat-x;
+}
+.sheet-gap-top:before {
+    top: -5px;
+    background-position: bottom left;
+}
+.sheet-gap-bottom {
+    padding-bottom:0;/*.2em;*/
+    margin-bottom:6px; /* leaves a 1px gap */
+}
+.sheet-gap-bottom:after {
+    bottom: -5px;
+    background-position: top left;
+}
+.verse-gap {
+    position: absolute;
+    display: block;
+    left:0;
+    right:0;
+    bottom: -6px;
+    height: 6px;
+    z-index: 1;
+    margin: 0 -1.5em;
+/*    background: none repeat-x scroll left top, 
+                none repeat-x scroll left bottom transparent;
+    -moz-transition: background-color .25s ease-in-out;*/
+}
+/* 'affords' ajax insertion */
+.js .verse-gap:hover {
+/*    background: url("../../../default/img/section_snippet_edging.png") repeat-x scroll left top, 
+                url("../../../default/img/section_snippet_edging.png") repeat-x scroll left bottom rgba(0,0,255,1);
+    cursor: -moz-zoom-in;*/    
+}
+.verse-gap .verse-num {
+    color: transparent;
+}
+header.section {
+    margin-top:-0.5em; /* visual margin to match sides */
+}
+.chapter-audio {
+    font-size: 0.62em;
+    margin-left: 0.5em;
+}
+.chapter-section .audio-link {
+    display: none;
+    position:relative;
+    bottom: 0.1em;
+}
+.chapter-section.is-complete-chapter .audio-link {
+    display: inline;
+    opacity: 0.5;
+    -webkit-transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -ms-transition: opacity .25s ease-in-out;
+    -o-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+}
+.chapter-section.is-complete-chapter .chapter-title:hover .audio-link {
+    opacity: 1;
+}
+/* initialize to invisible to avoid flash-of-content */
+.js .audio-link.no-jp {
+    opacity: 0;
+}
+.audio-link.no-jp:after {
+    content: '.mp3';
+}
+.audio-link.jp:after {
+    content: 'listen';
+    position: relative;
+    bottom: 1px;
+}
+[data-jp-state="playing"] {
+    background: transparent url("../../../default/img/audio_on@16.png") no-repeat 0 center;
+    padding-left:20px;
+}
+[data-jp-state="playing"]:after {
+    content: 'pause' !important;
+}
+
+.block-p .p {
+    position: relative;
+    text-indent: 1em;
+    margin-bottom:0;
+}
+.block-p .x-gap-p {
+    text-indent: 0; /* don't indent truncated paragraph */
+}
+.block-v .verse {
+    position: relative;
+    text-indent: -1em; /* 15px */
+    padding-left: 1em;
+}
+.verse.is-end-of-chapter {
+    padding-bottom: 0; /* margin to match sides */
+}
+.block-v .verse-num {
+    display: inline-block;
+    min-width: 1.5em; /* (15/10px) */
+    text-indent: 0;
+}
+.block-p .verse {
+    display: inline;
+}
+.quote {
+    color: #c00;
+}
+.transChange.added {
+    font-style:italic;
+}
+
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+
+/* 13.CONTENTINFO */
+
+mark {
+    background-color: #fe0;
+}
+
+/* 14.GLOBAL OBJECTS */
+
+.column {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 32em; /* x15px = 480 */
+}
+
+.clearfix { 
+zoom : 1; }
+
+.clearfix:before, 
+.clearfix:after { 
+content : "\0020"; 
+display : block; 
+height : 0; 
+overflow : hidden; }
+
+.clearfix:after { 
+clear : both; }
+
+/* 15.VENDOR-SPECIFIC */
+
+body {
+-webkit-text-size-adjust : 100%; 
+-ms-text-size-adjust : 100%; }
+
+a:link { 
+-webkit-tap-highlight-color : rgb(52,158,219); }
+
+::-webkit-selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::-moz-selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+/*input[type="search"] {
+-webkit-appearance : none; }
+
+input[type="search"]::-webkit-search-decoration, 
+input[type="search"]::-webkit-search-cancel-button {
+display : none; }*/
+
+::-webkit-input-placeholder {
+padding : 10px;
+font-size : .875em; 
+line-height : 1.4; }
+
+input:-moz-placeholder { 
+padding : 10px;
+font-size : .875em; 
+line-height : 1.4; }
+
+.ie7 img,
+.iem7 img { 
+-ms-interpolation-mode : bicubic; }
+
+div,
+input,
+textarea  { 
+-webkit-box-sizing : border-box;
+-moz-box-sizing : border-box;
+-o-box-sizing : border-box;
+box-sizing : border-box; }
+
+/* Non-semantic helper classes */
+
+/* Image replacement */
+.ir { 
+display : block; 
+text-indent : -999em; 
+overflow : hidden; 
+background-repeat : no-repeat; 
+text-align : left; 
+direction : ltr; }
+
+/* Hide for screenreaders and visual browsers */
+.hidden { 
+display : none; 
+visibility : hidden; }
+
+/* Hide visually */
+.visuallyhidden,
+.block-p .p-mark { 
+    position : absolute;
+    clip : rect(0 0 0 0); 
+    overflow : hidden;
+    margin: -1px;
+    padding : 0;
+    height : 1px;      
+    width : 1px;
+    border : 0;
+}
+
+/* Allow an element to be focusable via keyboard  */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { 
+position : static;
+clip : auto; 
+overflow : visible;
+height : auto; 
+margin : 0;   
+width : auto; }
+
+/* Hide but maintain layout */
+.invisible { 
+visibility : hidden; }
+
+/* 16.TEMPLATE SPECIFICS */
+
+#goog-fixurl ul  {
+list-style-type : none; }
+
+#goog-fixurl input  {
+margin-bottom : 1.5em; }
+
+/* 17.MODERNIZR */
+
+/* MEDIA QUERIES */
+
+/*Print __________________________________________________________________________________________________________ */
+@media print {
+* { 
+background : transparent !important; 
+color : black !important; 
+text-shadow : none !important; 
+filter : none !important;
+-ms-filter : none !important; } 
+
+a, a:visited { 
+color : #444 !important; 
+text-decoration : underline; }
+
+a[href]:after { 
+content : " (" attr(href) ")"; }
+
+abbr[title]:after { 
+content : " (" attr(title) ")"; }
+
+a[href^="javascript:"]:after, 
+a[href^="#"]:after { 
+content : ""; }
+  
+pre, blockquote { 
+border : 1px solid #999; 
+page-break-inside : avoid; }
+
+thead { 
+display : table-header-group; }
+
+tr, img { 
+page-break-inside : avoid; }
+
+@page { 
+margin : .5cm; }
+
+p, h2, h3 { 
+orphans : 3; 
+widows : 3; }
+
+h2, h3 { 
+page-break-after : avoid; }
+}/*/mediaquery*/
+
+/*480px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 480px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*768px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 768px) {
+
+/* 1.ROOT */
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*992px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 992px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*1382px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 1382px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+body {
+    font-size: 118.75%; /* (19/16px) */
+}
+.verse-num {
+    font-weight: normal;
+}
+
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+.block-p .verse-num {
+    margin-right: -0.15em;
+}
+
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*2x __________________________________________________________________________________________________________ */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/* 
+Sources: 
+http://meyerweb.com/eric/tools/css/reset
+http://people.opera.com/patrickl/experiments/keyboard/test
+http://gist.github.com/413930
+http://pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap
+http://sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars
+http://tjkdesign.com/ez-css/css/base.css
+http://viget.com/inspire/styling-the-button-element-in-internet-explorer
+http://code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing
+http://html5doctor.com/html-5-reset-stylesheet/
+http://praegnanz.de/weblog/htmlcssjs-kickstart/
+http://camendesign.com/design/
+http://yui.yahooapis.com/2.8.1/build/base/base.css
+http://webaim.org/techniques/css/invisiblecontent/
+http://drupal.org/node/897638
+*/

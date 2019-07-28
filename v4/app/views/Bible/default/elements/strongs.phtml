@@ -1,0 +1,71 @@
+<?php // views/Bible/default/elements/strongs.phtml
+
+/**
+ * EXTRACTED VARS----------------
+ * $strongs (object)
+ */ 
+
+?>
+
+<?php
+$urlBase = $this->relRoot();
+?>
+
+<div class="strongs">
+    <div class="column">
+
+<?php
+
+foreach ($strongs as $ss) {
+    
+    // link to single root ID if not already there
+    $show_id_link = ($ss->kjv_word || count($strongs) > 1);
+    
+    // make links out of internal strongs number references
+    $ss->description = preg_replace("/([GH]\d+)/","<a href='{$urlBase}$1'>$1</a>", $ss->description);
+    
+//print_r($ss);    
+    echo "\r\n<div class='sheet'>";
+    
+    echo "\r\n<dl><dt>" .
+            ($show_id_link ? "<a href='{$urlBase}$ss->id'>" : '') . 
+            "<span class='id'><dfn>$ss->id</dfn></span>" .
+            ($show_id_link ? "</a>" : '') . 
+            " &mdash; <span class='transliteration' title='transliteration'>$ss->transliteration</span> <span class='pronunciation' title='pronunciation'>($ss->pronunciation)</span> <span class='from'>$ss->title</span></dt>" .
+            "<dd>$ss->description</dd>";
+    
+    echo "</dl>";
+    
+    $num_words = count($ss->words);
+    
+    if ($num_words) {
+
+        // TODO; change hard-coded numbers to variables
+        $kjv_class = ($num_words > 10 ? ' hideable ' : '') . 
+            ($num_words > 100 ? ' oversize' : ''); // if more than a hundred, hide list by default
+        
+        echo "\r\n<aside class='nav-kjv-words clearfix {$kjv_class}' data-num-words='{$num_words}'>" .
+                "<span class='caption'>This word is translated as:</span> " . 
+                "<ul>";
+        
+        foreach ($ss->words as $kjv_word) {
+            
+            $frequency = $kjv_word->occurs / ($ss->occurs / $num_words);
+            
+            $css_word = ($frequency > 1.5 ? 'freq' : ''); // if 50% greater than average, consider as frequent
+            
+            $strongs_url_query = $urlBase . ($search['passage'] ? $search['passage'] . '/' : '') . $ss->id .' '. htmlspecialchars('"'.$kjv_word->word.'"');
+            echo "<li class='{$css_word}". ($kjv_word->word == $ss->kjv_word ? " current mark'>$kjv_word->word" : "'><a href=\"$strongs_url_query\">$kjv_word->word</a>") ."<small class='occurs'>($kjv_word->occurs)</small></li> ";
+            
+        }
+        
+        echo "</ul></aside><!--/.kjv_words-->";
+        
+    } // end kjv_words
+    
+    echo "\r\n</div><!--/.sheet-->";
+}
+?>
+
+    </div><!--/.column-->    
+</div><!--/.strongs-->

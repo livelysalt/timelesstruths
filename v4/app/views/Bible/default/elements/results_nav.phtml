@@ -1,0 +1,123 @@
+<?php // views/Bible/default/elements/results_nav.phtml
+
+/**
+ * EXTRACTED VARS----------------
+ * $location (string) ['top'|'bottom']
+ * $search (array)
+ * $defaults (array)
+ * $lookupType (string)
+ * $totalResults (int)
+ * $totalChapters (int)
+ */ 
+
+?>
+
+<?php
+    $htmlNavShowing = '';
+    
+    $lookupTypeIsPassage = ($lookupType == 'passage');
+    
+    if ($lookupTypeIsPassage) {
+        $search['show'] = $totalResults;
+    } else {
+        $search['stop'] = $search['start'] - 1 + $search['show'];
+        $htmlNavShowing .= "<span class='results-showing'>{$search['start']} - " 
+            . ($search['stop'] > $totalResults ? $totalResults : $search['stop'])
+            . " of </span><span class='results-total'>{$totalResults}</span> verse"
+            . ($totalResults > 1 ? 's' : '');
+    }
+    
+    $results_portion = ($search['start'] > 1 || $search['stop'] < $totalResults ? 'nav-results-partial' : 'nav-results-complete');
+    
+if ($totalResults > 0):
+?>
+
+<nav class="nav-results clearfix <?php echo "{$results_portion} {$location}" ?>">
+    <div class="column">
+
+    <div class="nav-results-showing"><div class="glue"><?php echo $htmlNavShowing ?></div><!--/.glue--></div>
+
+<?php
+    $htmlNavPages = '';
+
+    $totalPages = ($lookupTypeIsPassage
+        ? $totalChapters
+        : ceil($totalResults / $search['show'])
+        );
+    
+    if ($totalPages > 1):
+        
+    $currentPage = ($lookupTypeIsPassage
+        ? $search['currentChapter']
+        : ceil( ($search['start'] - 1 + $search['show']) / $search['show'])
+        );
+        
+    $navSearchUrlQuery = $this->relRoot() . ($lookupTypeIsPassage
+        ? $search['book']
+        : htmlspecialchars($search['input'])
+        );
+    $navSearchUrlShow = ($lookupTypeIsPassage
+        ? ''
+        : ($search['show'] != $defaults['show'] ? "/show:{$search['show']}" : '')
+        ); 
+
+    // if not at beginning, show Previous link
+    if ($currentPage/*$search['start']*/ > 1) {
+        $prevStart = $search['start'] - $search['show'];
+        $navSearchUrlStart = ($lookupTypeIsPassage
+            ? ' ' . ($search['currentChapter'] - 1)
+            : ($prevStart > 1 ? "/start:{$prevStart}" : '')
+            );
+        $htmlNavPages .= "<a class='nav-results-arrow' href='{$navSearchUrlQuery}{$navSearchUrlStart}{$navSearchUrlShow}'><abbr title='Previous'>‹</abbr></a> ";
+    }
+    
+    // add ellipsis if there are earlier unshown result pages
+    if ($currentPage - $defaults['page_range'] > 1) {
+        $htmlNavPages .= "&hellip;";
+    }
+    
+    // show a range of selectable result pages
+    for ($p = ($currentPage - $defaults['page_range'] < 1 ? 1 : $currentPage - $defaults['page_range']);
+        $p <= ($currentPage + $defaults['page_range'] > $totalPages ? $totalPages : $currentPage + $defaults['page_range']);
+        $p++) {
+        
+        if ($p == $currentPage) {
+            $htmlNavPages .= " <span class='current-page'>$currentPage</span>";
+        } else {
+            $pageStart = (($p - 1) * $search['show']) + 1;
+            $navSearchUrlStart = ($lookupTypeIsPassage
+                ? ' ' . $p
+                : ($pageStart > 1 ? "/start:{$pageStart}" : '')
+                );
+            $htmlNavPages .= " <a href='{$navSearchUrlQuery}{$navSearchUrlStart}{$navSearchUrlShow}'>{$p}</a>";
+        }
+    }
+    
+    // add ellipsis if there are later unshown result pages
+    if ($currentPage + $defaults['page_range'] < $totalPages) {
+        $htmlNavPages .= " &hellip;";
+    }
+    
+    // if not at end, show Next link
+    if ($currentPage < $totalPages /*$search['start'] - 1 + $search['show'] < $totalResults*/) {
+        $nextStart = $search['start'] + $search['show'];
+        $navSearchUrlStart = ($lookupTypeIsPassage
+            ? ' ' . ($search['currentChapter'] + 1)
+            : "/start:{$nextStart}"
+            );
+        $htmlNavPages .= " <a class='nav-results-arrow' href='{$navSearchUrlQuery}{$navSearchUrlStart}{$navSearchUrlShow}'><abbr title='Next'>›</abbr></a>";
+    }
+    
+    $htmlNavPages = ($lookupTypeIsPassage ? "<a href='{$this->relRoot()}book: {$search['book']}'>{$search['book']}</a>: " : 'Page: ') . $htmlNavPages;
+    
+    endif; // ($totalPages > 1)
+?>
+    <div class="nav-results-pages"><div class="glue"><?php echo $htmlNavPages ?></div><!--/.glue--></div>
+    
+    </div><!--/.column-->
+</nav>
+
+<?php
+endif; // ($totalResults > 0)
+?>
+

@@ -1,0 +1,73 @@
+<?php // views/Bible/default/elements/head.phtml ?>
+
+<head>
+    <meta charset="utf-8">
+    <title><?php echo $this->get('pageTitle') ?></title>
+    <meta name="description" content="Bible study tools online: full KJV search; Strong's definitions; mp3 audio downloads">
+    
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <?php /*
+    <!-- For less capable mobile browsers
+    <link rel="stylesheet" media="handheld" href="<?php echo $this->findFront('css/handheld.css') ?>">  -->
+    */ ?>
+    
+    <!--[if lte IE 6]><link rel="stylesheet" href="<?php echo $this->findFront('css/style.simple.css') ?>"><![endif]-->
+    <?php if(TT_DEV): ?>
+        <!--[if (gte IE 7)|!(IE)]><!-->
+            <link rel="stylesheet" href="<?php echo $this->findFront('css/style.css') ?>">
+            <link rel="alternate stylesheet" title="test A" href="<?php echo $this->findFront('css/style-test-a.css') ?>">
+        <!--<![endif]-->
+        <link rel="stylesheet" href="<?php echo $this->findFront('css/dev.css') ?>">
+    <?php else: ?>
+    <!--[if (gte IE 7)|!(IE)]><!-->
+        <link rel="stylesheet" href="<?php echo $this->findFront('css/style.20170314.css') ?>">
+    <!--<![endif]-->
+    <?php endif; ?>
+    
+    <script>
+        document.getElementsByTagName('html')[0].className += ' js';
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-1872604-1', 'timelesstruths.org'); ga('send', 'pageview');
+    </script>
+    
+    <?php if(TT_DEV): ?>
+        <!-- JavaScript at bottom except for Modernizr -->
+        <script src="<?php echo $this->findFront('js/libs/modernizr-2.0.js') ?>"></script>
+        <script src="<?php echo $this->findFront('js/libs/TypeHelpers.js') ?>"></script>
+        <script src="<?php echo $this->findFront('js/pre-script.js') ?>"></script>
+    <?php else: ?>
+        <script src="<?php echo $this->findFront('js/pre-script.js') ?>"></script>
+    <?php endif; ?>
+
+    <?php /* 
+    <!-- For iPhone 4 
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png"> -->
+    <!-- For iPad 1
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png"> -->
+    <!-- For iPhone 3G, iPod Touch and Android 
+    <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png"> -->
+    <!-- For Nokia 
+    <link rel="shortcut icon" href="img/l/apple-touch-icon.png"> -->
+    <!-- For everything else -->
+    */ ?>
+    <link rel="shortcut icon" href="<?php echo $this->findFront('img/favicon.ico') ?>">
+    
+    <?php /* 
+    <!--iOS. Delete if not required 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-startup-image" href="img/splash.png"> -->
+    */ ?>
+    
+    <!--Microsoft. Delete if not required -->
+    <meta http-equiv="cleartype" content="on">
+    
+    <?php /* 
+    <!-- http://t.co/y1jPVnT 
+    <link rel="canonical" href="/"> -->
+    */ ?>
+</head>

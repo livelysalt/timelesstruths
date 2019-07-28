@@ -1,0 +1,199 @@
+.jp-audio {
+    z-index: 999 !important;
+    position:fixed;
+    bottom:-2em;
+    left:0;
+    right:0;
+    opacity:0;
+}
+.jp-audio.open {
+    bottom:0;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.jp-dock {
+    background-color: hsla(36, 65%, 25%, 1); /* see: header.global */
+    box-shadow: 0 0 1em hsla(36, 65%, 25%, 0.5);
+    height:1.667em;
+    padding: 0.25em 1em;
+    border-radius: 0.25em 0.25em 0 0;
+    color: white;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.jp-interface {
+    font: 1.067em/1 Calibri,Arial, Helvetica, Verdana, sans-serif; /* 16px base (even number needed for play symbol) */
+    position: relative;
+}
+div.jp-interface ul.jp-controls {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+div.jp-interface ul.jp-controls li {
+    display: inline;
+}
+div.jp-interface ul.jp-controls a {
+    overflow: hidden;
+    position: absolute;
+}
+div.jp-interface ul.jp-controls a .text {
+    position: absolute;
+    text-indent: -9999px;
+}
+div.jp-interface ul.jp-controls a.jp-play:after {
+    content: "\0020";
+    position: absolute;
+    left: 0.375em; /* 6px */
+    top: 0.125em; /* 2px */
+    border-left: 0.5em solid rgba(255,255,255, 0.25); /* 8px */
+    border-top: 0.375em solid transparent; /* 6px */
+    border-bottom: 0.375em solid transparent; /* 6px */
+    border-right: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+}
+div.jp-interface ul.jp-controls a.jp-pause:after {
+    content: "\0020";
+    position:absolute;
+    left: 0.313em; /* 5px */
+    top: 0.125em; /* 2px */
+    height: 0.75em; /* 12px */
+    width: 0.188em; /* 3px */
+    border-left: 0.188em solid rgba(255,255,255, 0.25); /* 3px */
+    border-right: 0.188em solid rgba(255,255,255, 0.25); /* 3px */
+}
+a.jp-play, a.jp-pause {
+    height: 1em;
+    width: 3.667em;
+    left: 0;
+    top: 0;
+    z-index: 2; /* above timer */
+    background-color: rgba(0,0,0,0.1);
+    border:1px solid rgba(255,255,255, 0.25);
+    border-radius: 3px;
+}
+a.jp-play:hover,
+a.jp-pause:hover,
+a.jp-pause:hover:after {
+    border-color: rgba(255,255,255, 0.75) !important;
+}
+a.jp-play:hover:after {
+    border-left-color: rgba(255,255,255, 0.75) !important;
+}
+a.jp-pause {
+    display: none;
+}
+a.jp-stop {
+    left:-9999em;
+}
+.jp-progress {
+    background: url("../../../default/img/ajax_loader.bar@16x16.gif") no-repeat 5px center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    height: 1.133em;
+    border: 1px solid rgba(255,255,255, 0.5);
+    left: 4em;
+    right: 4em;
+    z-index:99;
+}
+.jp-seek-bar {
+    background-color: hsla(36, 65%, 80%, 0.9); /* see: header.global */
+    cursor: pointer;
+    height: 100%;
+    width: 0;
+}
+.jp-play-bar {
+    background-color: #fff;
+    color:#333;
+    height: 100%;
+    width: 0;
+    position: relative;
+}
+.jp-audio-label {
+    position: relative;
+    left: 0.1em;
+    top: -1px;
+}
+.jp-current-time, .jp-duration {
+    position: absolute;
+    top: 0;
+    z-index:1;
+    left: 1.25em; /* 20px */
+    right: 1.25em; 
+    color: rgba(255,255,255, 0.5);
+}
+.jp-duration {
+    text-align: right;
+}
+a.jp-download {
+    right: 0;
+    top: 0.125em;
+    width: 16px;
+    height: 16px;
+    background: transparent url("../../../default/img/download@16.png") no-repeat 0 center;
+}
+
+
+
+/* the following are not used [2011-10-25]
+div.jp-seeking-bg {
+    background: url("pbar-ani.gif") repeat scroll 0 0 transparent;
+}
+a.jp-mute, a.jp-unmute {
+    top:2px;
+    right:50px;
+    height: 14px;
+    width: 14px;
+    border: 1px solid;
+    border-color: #999;
+    border-radius: 3px;
+}
+a.jp-mute {
+    background-color: #ccc;
+}
+a.jp-mute:hover {
+    background-color: blue;
+}
+a.jp-unmute {
+    background-color: #ccc;
+    display: none;
+}
+a.jp-unmute:hover {
+    background: darkGray;
+}
+div.jp-volume-bar {
+    background-color: white;
+    cursor: pointer;
+    height: 5px;
+    border:1px solid #ccc;
+    overflow: hidden;
+    position: absolute;
+    top:7px;
+    right:1px;
+    width: 46px;
+}
+div.jp-volume-bar-value {
+    background-color: #ccc;
+    height: 5px;
+    width: 0;
+}
+div.jp-jplayer {
+    height: 0;
+    width: 0;
+}
+div.jp-jplayer {
+    background-color: #000000;
+}
+*/

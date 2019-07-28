@@ -1,0 +1,118 @@
+<?php // views/Bible/default/element/verses.phtml
+
+/**
+ * EXTRACTED VARS----------------
+ * $lookupType ('word'|'passage')
+ * $verses (array of objects)
+ */ 
+
+function formatBookTitle($book) {
+    return str_replace('Psalms', 'Psalm', $book);
+} // formatBookTitle()
+ 
+function insertGap($verseStart, $verseEnd, $verseStartId, $class='') {
+    $verseEndId = $verseStartId + ($verseEnd - $verseStart);
+    $ommitText = ($verseStart == $verseEnd ?
+        "verse {$verseStart} omitted" :
+        "verses {$verseStart}-{$verseEnd} omitted");
+    $vId = ($verseStart == $verseEnd ?
+        "v.{$verseStartId}" :
+        "v.{$verseStartId}-{$verseEndId}");
+    // ommit textual ellipses at beginning and end of chapter ($class = 'first' or 'last')
+    $ellip = ($class ? '' : "<sup class='verse-num'>&hellip;&nbsp;</sup>");
+    $html = "<div class='verse-gap {$class}' id='{$vId}' title='{$ommitText}'>{$ellip}</div>";
+    return $html;
+} // insertGap()
+
+function terminateChapter($verse) {
+
+    if ($verse->verse < $verse->verses_in_chapter) {
+        $html = insertGap(($verse->verse + 1), $verse->verses_in_chapter, ($verse->id + 1), 'last-gap-in-chapter');
+    }
+    
+    return "{$html}\r\n</div><!--/.p--></div><!--/.sheet--></div><!--/.column--></section>";
+} // terminateChapter()
+ 
+$prev = $inP = null;
+
+$urlBase = $this->relRoot();
+    
+//echo "<pre>".print_r($verses,true)."</pre>";
+
+if (count($verses)) {
+    
+    for ($i = 0; $i < count($verses); $i++) {
+        $verse = $verses[$i];
+        $prev  = ($i > 0 ? $verses[$i-1] : null);
+        $next  = ($i < count($verses) - 1 ? $verses[$i+1] : null);
+        $verse->bookCss = str_replace(' ','',$verse->book);
+        
+        if ($verse->is_first_in_chapter) {
+            
+            $displayBook = formatBookTitle($verse->book);
+            $displayTitle = $displayBook .' '. $verse->chapter;
+            
+            $base = (TT_ZONE == 'www' ? 'https://' : "http://{$_SERVER['HTTP_HOST']}/") . "bible.timelesstruths.org/";
+            $audioHref = $base . str_replace(' ','_',$verse->book) . ".{$verse->chapter}.mp3";
+            $linkToAudio = "<a id='a.{$verse->bookCss}.{$verse->chapter}' class='chapter-audio audio-link no-jp' title='listen to {$displayTitle}' href='{$audioHref}'>[.mp3]</a>";
+
+            $classSection = 'chapter-section' . $this->getClassFrom($verse,array('is_complete_chapter','is_prequel_chapter','is_prequel_chapter_verse','is_sequel_chapter','is_sequel_chapter_verse'));
+
+            // if the first verse in chapter is after a gap (i.e., not start of chapter) make chapter header sheet bottom ragged
+            // if the first verse in chapter is not part of a complete chapter, the sheet bottom should also be ragged
+            $classSheet = ($verse->is_after_gap || ($verse->is_start_of_chapter && !$verse->is_complete_chapter) ? ' sheet-gap-bottom' : '');
+
+            $classP = 'p' . $this->getClassFrom($verse,array('is_end_p_of_chapter')) . " {$verse->is_new_p}";
+            
+            $linkToChapter = !$verse->is_complete_chapter;
+
+            echo (!$verse->is_first_result ? terminateChapter($prev) : '') .
+                "\r\n<section id='c-id.{$verse->bookCss}.{$verse->chapter}' class='{$classSection}'><div class='column'><div class='sheet {$classSheet}'>" .
+                "<header class='section'>" .
+                "<h2 class='chapter-title" . ($linkToChapter ? ' link' : '') . "'>" .
+                ($linkToChapter ? "<a href='{$urlBase}{$displayTitle}'>" : '') . 
+                "<span class='chapter-book'>{$displayBook} </span><span class='chapter-num'>{$verse->chapter}</span>" .
+                ($linkToChapter ? "</a>" : '') . 
+                " <small>{$linkToAudio}</small>" .
+                "</h2>" .
+                "</header>" .
+                "\r\n<div class='{$classP}'>";
+            
+            $inP = false;
+        }
+
+        // check whether sheet continues to end of chapter
+        $versesRemaining = $verse->verses_in_chapter - $verse->verse;
+        $classSheet = ( $verses[$i + $versesRemaining]->id == $verse->id + $versesRemaining ? '' : 'sheet-gap-bottom');
+    
+        if ($verse->is_after_gap) {
+            $gapStart   = ($verse->is_first_in_chapter ? 1 : $prev->verse + 1);
+            $gapEnd     = ($verse->is_colophon ? $verse->verses_in_chapter : $verse->verse - 1);
+            $gapStartId = ($verse->id - 1) - ($gapEnd - $gapStart); 
+            echo insertGap($gapStart, $gapEnd, $gapStartId, ($verse->is_first_in_chapter ? 'first-gap-in-chapter' : ''));
+            // end sheet after gap
+            echo "\r\n</div><!--/.p--></div><!--/.sheet-->" .
+                ($verse->is_first_in_chapter ? "\r\n<div class='sheet sheet-gap-top {$classSheet}'>\r\n<div class='{$classP}'>" : '');
+            
+        }
+        
+        // make new paragraphs, separating psalm titles and epistle colophons
+        if ($inP && (isset($verse->is_new_p) || $prev->verse == 0 || $verse->verse == 0 || $verse->is_after_gap)) {
+            $classP = 'p' . $this->getClassFrom($verse,array('is_end_p_of_chapter')) . " {$verse->is_new_p}";
+            echo ($verse->is_after_gap
+                ? "\r\n<div class='sheet sheet-gap-top {$classSheet}'>"
+                : "</div>") .
+                "\r\n<div class='{$classP}'>";
+            $inP = false;
+        }
+        
+        $class = 'verse' . $this->getClassFrom($verse,array('is_after_gap','is_before_gap','is_end_of_chapter'));
+        
+        echo "<div class='{$class}' id='v.{$verse->id}'><sup class='verse-num'>" . ($verse->verse > 0 ? "{$verse->verse}&nbsp;" : '') . "</sup>{$verse->html} </div>";
+    
+        $inP = true;
+    }
+    
+    echo terminateChapter($verse);
+
+}

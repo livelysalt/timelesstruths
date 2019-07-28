@@ -1,0 +1,37 @@
+<?php // views/Bible/default/layouts/info_page.phtml ?>
+
+<?php echo $this->block('meta'); ?>
+
+<body class="clearfix block-p" data-relroot="<?php echo $this->relRoot() ?>">
+    
+    <header role="banner" class="global clearfix">
+        <div class="column">
+            <?php echo $this->block('header'); ?>
+        </div><!--/.column-->
+    </header>
+
+    <div class="content clearfix">
+        
+        <div role="main" class="info">
+            
+            <?php echo $this->block('main'); ?>
+
+        </div><!--/@main-->
+        
+        <?php 
+        $this->set('location','bottom');
+        echo $this->block('index');
+        ?>
+
+    </div><!--/.content-->
+    
+    <footer role="contentinfo" class="clearfix">
+        <div class="column">
+            <?php echo $this->block('footer'); ?>
+        </div><!--/.column-->
+    </footer>
+
+    <?php echo $this->block('scripts'); ?>
+
+</body>
+</html>
